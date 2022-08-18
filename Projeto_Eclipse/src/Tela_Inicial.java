@@ -40,35 +40,55 @@ public class Tela_Inicial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnCadastrarClientes = new JButton("Cadastrar Clientes");
+		JButton btnCadastrarClientes = new JButton("Clientes");
+		btnCadastrarClientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista_Clientes frame = new Lista_Clientes();
+				frame.setVisible(true);
+			}
+		});
 		btnCadastrarClientes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCadastrarClientes.setBounds(44, 32, 151, 23);
 		contentPane.add(btnCadastrarClientes);
 		
-		JButton btnCadastrarProdutos = new JButton("Cadastrar Produtos");
+		JButton btnCadastrarProdutos = new JButton("Produtos");
+		btnCadastrarProdutos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela_Estoque frame = new Tela_Estoque();
+				frame.setVisible(true);
+			}
+		});
 		btnCadastrarProdutos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCadastrarProdutos.setBounds(242, 32, 165, 23);
 		contentPane.add(btnCadastrarProdutos);
 		
-		JButton btnItensEmEstoque = new JButton("Itens em Estoque");
-		btnItensEmEstoque.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnItensEmEstoque.setBounds(44, 105, 151, 23);
-		contentPane.add(btnItensEmEstoque);
-		
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico de Vendas");
+		btnHistricoDeVendas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Historico_Vendas frame = new Historico_Vendas();
+				frame.setVisible(true);
+			}
+		});
 		btnHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnHistricoDeVendas.setBounds(242, 105, 165, 23);
+		btnHistricoDeVendas.setBounds(242, 178, 165, 23);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("Realizar Venda");
+		btnRealizarVenda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela_Venda frame = new Tela_Venda();
+				frame.setVisible(true);
+			}
+		});
 		btnRealizarVenda.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRealizarVenda.setBounds(242, 176, 165, 23);
+		btnRealizarVenda.setBounds(131, 108, 165, 23);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 			}
 		});
 		btnNewButton.setBounds(44, 178, 151, 23);

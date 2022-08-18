@@ -11,14 +11,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Cad_Produto extends JFrame {
+public class Alterar_Produto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
+	private JTextField txtNome;
 	private JTextField txtMarca;
 	private JTextField txtTamanho;
 	private JTextField txtCor;
-	private JTextField txtNome;
 
 	/**
 	 * Launch the application.
@@ -27,7 +27,7 @@ public class Cad_Produto extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Cad_Produto frame = new Cad_Produto();
+					Alterar_Produto frame = new Alterar_Produto();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,9 +39,9 @@ public class Cad_Produto extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Cad_Produto() {
+	public Alterar_Produto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 441, 300);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -49,48 +49,63 @@ public class Cad_Produto extends JFrame {
 		
 		JLabel lblId = new JLabel("ID:");
 		lblId.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblId.setBounds(85, 28, 46, 14);
+		lblId.setBounds(91, 36, 46, 14);
 		contentPane.add(lblId);
 		
-		txtID = new JTextField();
-		txtID.setBounds(192, 27, 118, 20);
-		contentPane.add(txtID);
-		txtID.setColumns(10);
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNome.setBounds(91, 75, 46, 14);
+		contentPane.add(lblNome);
 		
 		JLabel lblMarca = new JLabel("Marca:");
 		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMarca.setBounds(85, 98, 46, 14);
+		lblMarca.setBounds(91, 113, 46, 14);
 		contentPane.add(lblMarca);
-		
-		txtMarca = new JTextField();
-		txtMarca.setBounds(192, 97, 118, 20);
-		contentPane.add(txtMarca);
-		txtMarca.setColumns(10);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
 		lblTamanho.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblTamanho.setBounds(85, 129, 71, 14);
+		lblTamanho.setBounds(91, 148, 82, 14);
 		contentPane.add(lblTamanho);
-		
-		txtTamanho = new JTextField();
-		txtTamanho.setBounds(192, 128, 118, 20);
-		contentPane.add(txtTamanho);
-		txtTamanho.setColumns(10);
 		
 		JLabel lblCor = new JLabel("Cor:");
 		lblCor.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCor.setBounds(85, 171, 46, 14);
+		lblCor.setBounds(91, 185, 46, 14);
 		contentPane.add(lblCor);
 		
+		txtID = new JTextField();
+		txtID.setBounds(189, 35, 131, 20);
+		contentPane.add(txtID);
+		txtID.setColumns(10);
+		
+		txtNome = new JTextField();
+		txtNome.setBounds(189, 74, 131, 20);
+		contentPane.add(txtNome);
+		txtNome.setColumns(10);
+		
+		txtMarca = new JTextField();
+		txtMarca.setBounds(189, 112, 131, 20);
+		contentPane.add(txtMarca);
+		txtMarca.setColumns(10);
+		
+		txtTamanho = new JTextField();
+		txtTamanho.setBounds(189, 147, 131, 20);
+		contentPane.add(txtTamanho);
+		txtTamanho.setColumns(10);
+		
 		txtCor = new JTextField();
-		txtCor.setBounds(192, 170, 118, 20);
+		txtCor.setBounds(189, 184, 131, 20);
 		contentPane.add(txtCor);
 		txtCor.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Salvar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(286, 227, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton btnFechar = new JButton("Fechar");
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnFechar.setBounds(63, 227, 89, 23);
+		contentPane.add(btnFechar);
 		
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
@@ -103,28 +118,13 @@ public class Cad_Produto extends JFrame {
 			}
 		});
 		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLimpar.setBounds(163, 227, 89, 23);
+		btnLimpar.setBounds(162, 227, 89, 23);
 		contentPane.add(btnLimpar);
 		
-		JButton btnFechar = new JButton("Fechar");
-		btnFechar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
-		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFechar.setBounds(42, 229, 89, 23);
-		contentPane.add(btnFechar);
-		
-		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNome.setBounds(85, 67, 46, 14);
-		contentPane.add(lblNome);
-		
-		txtNome = new JTextField();
-		txtNome.setBounds(192, 66, 118, 20);
-		contentPane.add(txtNome);
-		txtNome.setColumns(10);
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnSalvar.setBounds(261, 227, 89, 23);
+		contentPane.add(btnSalvar);
 	}
 
 }

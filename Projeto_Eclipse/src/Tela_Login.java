@@ -8,12 +8,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Tela_Login extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtUsuario;
+	private JTextField txtSenha;
 
 	/**
 	 * Launch the application.
@@ -42,27 +44,32 @@ public class Tela_Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUsurio = new JLabel("Usu\u00E1rio:");
-		lblUsurio.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsurio.setBounds(61, 63, 66, 20);
-		contentPane.add(lblUsurio);
+		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
+		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblUsuario.setBounds(61, 63, 66, 20);
+		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSenha.setBounds(61, 152, 64, 14);
 		contentPane.add(lblSenha);
 		
-		textField = new JTextField();
-		textField.setBounds(159, 65, 178, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(159, 65, 178, 20);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(159, 151, 178, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtSenha = new JTextField();
+		txtSenha.setBounds(159, 151, 178, 20);
+		contentPane.add(txtSenha);
+		txtSenha.setColumns(10);
 		
 		JButton btnFechar = new JButton("Fechar");
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(61, 216, 89, 23);
 		contentPane.add(btnFechar);

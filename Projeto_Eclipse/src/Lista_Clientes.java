@@ -4,20 +4,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Tela_Estoque extends JFrame {
+public class Lista_Clientes extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JButton btnExcluir;
+	private JButton btnAlterar;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -26,7 +26,7 @@ public class Tela_Estoque extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tela_Estoque frame = new Tela_Estoque();
+					Lista_Clientes frame = new Lista_Clientes();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,21 +38,16 @@ public class Tela_Estoque extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Estoque() {
+	public Lista_Clientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 465, 310);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblItensEmEstoque = new JLabel("Itens em Estoque");
-		lblItensEmEstoque.setBounds(165, 22, 122, 17);
-		lblItensEmEstoque.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblItensEmEstoque);
-		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(58, 62, 330, 131);
+		scrollPane.setBounds(35, 38, 367, 157);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -60,34 +55,38 @@ public class Tela_Estoque extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Produto", "Tamanho", "Marca", "Cor"
+				"Nome", "CPF", "Data de Nascimento", "RG"
 			}
 		));
+		table.getColumnModel().getColumn(2).setPreferredWidth(115);
 		scrollPane.setViewportView(table);
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFechar.setBounds(21, 227, 89, 23);
+		btnFechar.setBounds(20, 214, 88, 23);
 		contentPane.add(btnFechar);
 		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnExcluir.setBounds(120, 227, 89, 23);
+		btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(118, 214, 90, 23);
 		contentPane.add(btnExcluir);
 		
-		JButton btnNewButton = new JButton("Alterar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(219, 227, 89, 23);
-		contentPane.add(btnNewButton);
+		btnAlterar = new JButton("Alterar");
+		btnAlterar.setBounds(218, 214, 85, 23);
+		contentPane.add(btnAlterar);
 		
-		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCadastrar.setBounds(318, 227, 110, 23);
-		contentPane.add(btnCadastrar);
+		btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cad_Cliente frame = new Cad_Cliente();
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(313, 214, 98, 23);
+		contentPane.add(btnNewButton);
 	}
+
 }
