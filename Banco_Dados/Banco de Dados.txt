@@ -1,0 +1,417 @@
+create table Clientes ( id number primary key, nome varchar(50), cpf varchar(50), rg number, data_nascimento varchar(20), constraint fk_rg foreign key (id) references Venda (id) );
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, '29/7/1976');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (2, 'Gib Cragoe', '92566136892222', 4343846, '26/3/1991');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (3, 'Brandi Lidden', '91482753443333', 1576831, '27/3/1966');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (4, 'Jolee Barrett', '1846893240444', 2000487, '5/5/1978');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (5, 'Nedi Dugood', '20270209855555', 91816708, '5/7/1965');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, '8/8/1990');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (7, 'Leesa Elsby', '0110854497777', 4395857, '18/12/1996');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, '19/1/1971');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (9, 'Brendon Baynton', '04000013819999', 3693552, '30/11/1976');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, '8/10/1974');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (11, 'Modesty Radbourn', '79688269931111', 5777614, '26/12/1991');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (12, 'Anatole Chambers', '75115495192222', 4218369, '24/12/1986');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (13, 'Chaim Mangam', '28127921833333', 1088340, '29/8/1973');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (14, 'Lora Barg', '76710341344444', 7120251, '3/12/1986');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (15, 'Hastings Tatem', '38206192675555', 7114356, '18/1/1992');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (16, 'Land Lozano', '20356746466666', 6915686, '26/4/1980');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (17, 'Thorpe Bentzen', '62999313617777', 5617663, '15/2/1995');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (18, 'Delmore Meldon', '13228103628888', 0558956, '5/3/2000');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (19, 'Bernardo Grimsdike', '57862838289999', 5705984, '3/9/1967');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (20, 'Lynnell Pinshon', '25102097520000', 2861649, '15/12/1971');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (21, 'Cary Dunston', '52982195191111', 0311008, '14/11/1999');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (22, 'Leese Sawart', '81689342372222', 5349311, '14/11/1974');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (23, 'Karoly Testin', '95246120463333', 5320466, '20/7/1964');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (24, 'Salomon Belchamber', '13853932113333', 4775675, '8/8/1976');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (25, 'Mair Kneafsey', '57427303814444', 3268536, '8/4/1979');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (26, 'Adelle Guerro', '32625456865555', 8717227, '28/12/1987');
+
+insert into Clientes (id ,nome, cpf, rg, data_nascimento) values (27,'Lindie O''Devey', '96495646406666', 8908111, '20/4/1995');
+
+
+create table Venda ( id number primary key, forma_pagamento varchar(20), data varchar(15), constraint fk_id foreign key (id) references Funcionario (id), constraint fk_idP foreign key (id) references Produtos (id) );
+
+insert into Venda (id, forma_pagamento, data) values (1, 'Á vista', '2/8/2022');
+
+insert into Venda (id, forma_pagamento, data) values (2, 'A prazo', '7/5/2022');
+
+insert into Venda (id, forma_pagamento, data) values (3, 'Á vista', '11/5/2021');
+
+insert into Venda (id, forma_pagamento, data) values (4, 'Á vista', '4/2/2022');
+
+insert into Venda (id, forma_pagamento, data) values (5, 'A prazo', '8/23/2021');
+
+insert into Venda (id, forma_pagamento, data) values (6, 'Á vista', '2/16/2022');
+
+insert into Venda (id, forma_pagamento, data) values (7, 'A prazo', '7/18/2022');
+
+insert into Venda (id, forma_pagamento, data) values (8, 'Á vista', '9/17/2021');
+
+insert into Venda (id, forma_pagamento, data) values (9, 'Á vista', '5/5/2022');
+
+insert into Venda (id, forma_pagamento, data) values (10, 'Á vista', '1/31/2022');
+
+insert into Venda (id, forma_pagamento, data) values (11, 'A prazo', '4/15/2022');
+
+insert into Venda (id, forma_pagamento, data) values (12, 'Á vista', '12/24/2021');
+
+insert into Venda (id, forma_pagamento, data) values (13, 'A prazo', '12/23/2021');
+
+insert into Venda (id, forma_pagamento, data) values (14, 'Á vista', '11/21/2021');
+
+insert into Venda (id, forma_pagamento, data) values (15, 'A prazo', '11/27/2021');
+
+insert into Venda (id, forma_pagamento, data) values (16, 'A prazo', '4/20/2022');
+
+insert into Venda (id, forma_pagamento, data) values (17, 'Á vista', '11/7/2021');
+
+insert into Venda (id, forma_pagamento, data) values (18, 'A prazo', '12/10/2021');
+
+insert into Venda (id, forma_pagamento, data) values (19, 'A prazo', '5/1/2022');
+
+insert into Venda (id, forma_pagamento, data) values (20, 'A prazo', '10/13/2021');
+
+insert into Venda (id, forma_pagamento, data) values (21, 'A prazo', '5/11/2022');
+
+insert into Venda (id, forma_pagamento, data) values (22, 'Á vista', '10/11/2021');
+
+insert into Venda (id, forma_pagamento, data) values (23, 'Á vista', '3/5/2022');
+
+insert into Venda (id, forma_pagamento, data) values (24, 'A prazo', '4/15/2022');
+
+insert into Venda (id, forma_pagamento, data) values (25, 'A prazo', '10/28/2021');
+
+insert into Venda (id, forma_pagamento, data) values (26, 'A prazo', '10/20/2021');
+
+insert into Venda (id, forma_pagamento, data) values (27, 'Á vista', '9/22/2021');
+
+insert into Venda (id, forma_pagamento, data) values (28, 'A prazo', '5/6/2022');
+
+insert into Venda (id, forma_pagamento, data) values (29, 'A prazo', '10/29/2021');
+
+insert into Venda (id, forma_pagamento, data) values (30, 'A prazo', '6/28/2022');
+
+insert into Venda (id, forma_pagamento, data) values (31, 'Á vista', '12/6/2021');
+
+insert into Venda (id, forma_pagamento, data) values (32, 'Á vista', '3/9/2022');
+
+insert into Venda (id, forma_pagamento, data) values (33, 'A prazo', '1/10/2022');
+
+insert into Venda (id, forma_pagamento, data) values (34, 'A prazo', '4/2/2022');
+
+insert into Venda (id, forma_pagamento, data) values (35, 'A prazo', '12/30/2021');
+
+insert into Venda (id, forma_pagamento, data) values (36, 'A prazo', '6/24/2022');
+
+insert into Venda (id, forma_pagamento, data) values (37, 'A prazo', '5/5/2022');
+
+insert into Venda (id, forma_pagamento, data) values (38, 'A prazo', '1/6/2022');
+
+insert into Venda (id, forma_pagamento, data) values (39, 'A prazo', '4/20/2022');
+
+insert into Venda (id, forma_pagamento, data) values (40, 'Á vista', '9/17/2021');
+
+insert into Venda (id, forma_pagamento, data) values (41, 'A prazo', '3/13/2022');
+
+insert into Venda (id, forma_pagamento, data) values (42, 'A prazo', '4/21/2022');
+
+insert into Venda (id, forma_pagamento, data) values (43, 'Á vista', '1/6/2022');
+
+insert into Venda (id, forma_pagamento, data) values (44, 'A prazo', '2/2/2022');
+
+insert into Venda (id, forma_pagamento, data) values (45, 'A prazo', '7/4/2022');
+
+insert into Venda (id, forma_pagamento, data) values (46, 'A prazo', '5/8/2022');
+
+insert into Venda (id, forma_pagamento, data) values (47, 'Á vista', '10/1/2021');
+
+insert into Venda (id, forma_pagamento, data) values (48, 'A prazo', '4/9/2022');
+
+insert into Venda (id, forma_pagamento, data) values (49, 'Á vista', '10/8/2021');
+
+insert into Venda (id, forma_pagamento, data) values (50, 'Á vista', '3/25/2022');
+
+create table Produtos ( id number primary key, nome varchar(50), marca varchar(60), tamanho varchar(15), cor varchar (20) );
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm 02 Medium - Deep', 'M', 'Goldenrod');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID Contains 1000 PIECES', 'M', 'Red');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (10, 'Lyell Brennon', 'ProFormance Series Foam Non-Alcohol Sanitizer', '2XL', 'Purple');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (11, 'Franchot Roskilly', 'Amitriptyline Hydrochloride', 'XL', 'Khaki');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (12, 'Alysia Perulli', 'Acetaminophen', 'XS', 'Crimson');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (13, 'Min Massingham', 'ACETANILIDUM', 'M', 'Pink');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (14, 'Marena Faulks', 'Stress and Anxiety', 'M', 'Mauv');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (15, 'Munroe Leech', 'WOMANS LAXATIVE', 'M', 'Khaki');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (16, 'Norman Padefield', 'Neuro', 'M', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (17, 'Bamby Kairns', 'Topiramate', '3XL', 'Mauv');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (18, 'Nathanial Rockingham', 'CEFACLOR', '2XL', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (19, 'Ludwig Cleworth', 'pain relief', '3XL', 'Red');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (20, 'Corinna Barendtsen', 'NARS Pure Radiant Tinted Moisturizer', 'XS', 'Mauv');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (21, 'Tim Arkle', 'MK Povidone-Iodine Swabstick Sterile', 'M', 'Red');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (22, 'Lissi Beatey', 'Peach Mango Anti-Bacterial Hand Sanitizer', '2XL', 'Maroon');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (23, 'Raina Shimmings', 'Cramps Spasms', 'L', 'Green');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (24, 'Christel Streets', 'Donatussin DROPS', 'XL', 'Fuscia');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (25, 'Derril Stickney', 'Mugwort', 'L', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (26, 'Manon McHale', 'Visco-Gel Medicated Round Callus Removers', 'XS', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (27, 'Pinchas Tour', 'ORAGESIC Oral Pain Reliever', 'S', 'Violet');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (28, 'Noak Jeckell', 'Nortriptyline Hydrochloride', 'XS', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (29, 'Kellie Lahrs', 'Exforge', 'XL', 'Green');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (30, 'Randolph McShea', 'Alabaster Perfecting Makeup SPF 25', 'M', 'Mauv');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (31, 'Bellanca Bowdidge', 'Leader Ibuprofen', 'XS', 'Violet');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (32, 'Mariele Yitzovicz', 'benzoyl peroxide', 'S', 'Turquoise');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (33, 'Hort Stump', 'Tramadol Hydrochloride', 'XL', 'Indigo');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (34, 'Korie Swine', 'Pain Reliever', 'S', 'Fuscia');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (35, 'Raphael Blaxland', 'Clopidogrel', '2XL', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (36, 'Colene Greetham', 'NEO-POLY-DEX', 'M', 'Violet');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (37, 'Noah Woolaghan', 'Clonazepam', 'XS', 'Puce');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (38, 'Kennan Raraty', 'Fetzima', 'M', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (39, 'Gardner Studeart', 'Balsamo de Ubre', 'L', 'Aquamarine');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (40, 'Rufus Alloway', 'EMLA', '2XL', 'Crimson');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (41, 'Lisabeth Kiddle', 'AMOREPACIFIC', '3XL', 'Maroon');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (42, 'Viola Bownas', 'CS-Brain', 'M', 'Red');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (43, 'Prudy Swepstone', 'No Drip Nasal Mist', 'M', 'Purple');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (44, 'Sarette Till', 'Amitriptyline Hydrochloride', 'XS', 'Goldenrod');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (45, 'Rosco Spratt', 'Pleo San Prot', 'XS', 'Turquoise');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (46, 'Gerik Derwin', 'Nivea For Men Q10 Energy', 'L', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (47, 'Sonya Stubbings', 'PHENADOZ', 'L', 'Blue');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (48, 'Quintina Reston', 'Up and Up Ibuprofen', 'XS', 'Green');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (49, 'Laure Greve', 'Lusair', 'XL', 'Yellow');
+
+insert into Produtos (id, nome, marca, tamanho, cor) values (50, 'Correy Venning', 'Sheer Genius Liquid Foundation - Extra Dark Look', 'S', 'Goldenrod');
+
+
+create table Funcionario ( id number primary key, senha varchar(20), nome varchar(50) );
+
+insert into Funcionario (id, senha, nome) values (1, 'Um3Wcbs6sUM', 'Morris Kolczynski');
+
+insert into Funcionario (id, senha, nome) values (2, 'KzesyJSUSIL', 'Sara Rockhill');
+
+insert into Funcionario (id, senha, nome) values (3, 'M0MDfu0HqveC', 'Karolina Benard');
+
+insert into Funcionario (id, senha, nome) values (4, 'STdp4v', 'Chilton Atteridge');
+
+insert into Funcionario (id, senha, nome) values (5, 'xPseBD8p7', 'Dinnie Bauman');
+
+insert into Funcionario (id, senha, nome) values (6, '2UHujULr', 'Babbie Baumert');
+
+insert into Funcionario (id, senha, nome) values (7, 'cNI2Yh6', 'Ty Nutley');
+
+insert into Funcionario (id, senha, nome) values (8, 'OZTcVP2', 'Allis Brandolini');
+
+insert into Funcionario (id, senha, nome) values (9, 'TWrLAhpTu', 'Olivette Major');
+
+insert into Funcionario (id, senha, nome) values (10, 'T7N5AU0', 'Dario Kilsby');
+
+insert into Funcionario (id, senha, nome) values (11, 'lPKvpzD', 'Westleigh Ianiello');
+
+insert into Funcionario (id, senha, nome) values (12, '6lK42Y', 'Kenon Philbrick');
+
+insert into Funcionario (id, senha, nome) values (13, 'hE2zkVpU', 'Falito Tonbye');
+
+insert into Funcionario (id, senha, nome) values (14, 'wMPAK0mSC7q6', 'Fred Piggins');
+
+insert into Funcionario (id, senha, nome) values (15, 'RyuIgowOU23j', 'Annabell Witherspoon');
+
+insert into Funcionario (id, senha, nome) values (16, 'Ol9UNwXwU1wN', 'Manolo Mounsie');
+
+insert into Funcionario (id, senha, nome) values (17, 'lmzbd8tbAy', 'Pris Lyptrade');
+
+insert into Funcionario (id, senha, nome) values (18, 'xda8AF8mz4', 'Shanda Arnowicz');
+
+insert into Funcionario (id, senha, nome) values (19, 'qbhgAYS', 'Aline Klain');
+
+insert into Funcionario (id, senha, nome) values (20, 'JOgt0V', 'Merissa Ibbitt');
+
+insert into Funcionario (id, senha, nome) values (21, 'BxGjniXg', 'Alyss Sherbourne');
+
+insert into Funcionario (id, senha, nome) values (22, 'xMGjqs6GF', 'Austina Rodolphe');
+
+insert into Funcionario (id, senha, nome) values (23, '70uWADOcp', 'Latashia Volkers');
+
+insert into Funcionario (id, senha, nome) values (24, 'ZM2ocD0esFu', 'Cecilia Rand');
+
+insert into Funcionario (id, senha, nome) values (25, 'zRzug3', 'Kaitlynn Dungate');
+
+insert into Funcionario (id, senha, nome) values (26, 'CuKOMma36T5F', 'Eberhard Ramet');
+
+insert into Funcionario (id, senha, nome) values (27, 'KuUXaLyDr6S', 'Kass Gange');
+
+insert into Funcionario (id, senha, nome) values (28, 'XPZgIy', 'Leanna Paxforde');
+
+insert into Funcionario (id, senha, nome) values (29, 'qw7hgvaUtL2', 'Joelly Moring');
+
+insert into Funcionario (id, senha, nome) values (30, 'Sodbw8mrWsB', 'Marietta Loughrey');
+
+insert into Funcionario (id, senha, nome) values (31, 'asVQgMoxVP', 'Susann Bowskill');
+
+insert into Funcionario (id, senha, nome) values (32, 'SE93oMyVZw', 'Nichols Starrs');
+
+insert into Funcionario (id, senha, nome) values (33, 'ZrBhj3qCz', 'Willi Ernshaw');
+
+insert into Funcionario (id, senha, nome) values (34, 'YOl8y8W', 'Leighton Roark');
+
+insert into Funcionario (id, senha, nome) values (35, 'xWDN9ik', 'Koral Owers');
+
+insert into Funcionario (id, senha, nome) values (36, 'FdoZlSAKQGh', 'Maxie Drayn');
+
+insert into Funcionario (id, senha, nome) values (37, 'xAf7Tq', 'Constantine Narraway');
+
+insert into Funcionario (id, senha, nome) values (38, 'NBQbn91C', 'Kerrill Pfeffle');
+
+insert into Funcionario (id, senha, nome) values (39, '7Mhwnau', 'Riki Richardeau');
+
+insert into Funcionario (id, senha, nome) values (40, 'HrxUR4FjtdAx', 'Gusti Langeren');
+
+insert into Funcionario (id, senha, nome) values (41, 'aop8G7Ai', 'Jamie Dudlestone');
+
+insert into Funcionario (id, senha, nome) values (42, 'eINLYmHhPS', 'Manon Malenoir');
+
+insert into Funcionario (id, senha, nome) values (43, 'Lz4TZuydsn1', 'Amalita Greensted');
+
+insert into Funcionario (id, senha, nome) values (44, 'HWuS9UJTY', 'Saba Thamelt');
+
+insert into Funcionario (id, senha, nome) values (45, 'Thbyxvt1la', 'Sheilakathryn Jorin');
+
+insert into Funcionario (id, senha, nome) values (46, '9YeBgeuyob0N', 'Vania Cardinale');
+
+insert into Funcionario (id, senha, nome) values (47, 'LEn6TCdVLiwe', 'Isaak Anstiss');
+
+insert into Funcionario (id, senha, nome) values (48, 'oVre90HcxgR', 'Evonne Kubyszek');
+
+insert into Funcionario (id, senha, nome) values (49, 'FhhyqK4', 'Em Vannuchi');
+
+insert into Funcionario (id, senha, nome) values (50, '8LDgBcfqFdJ', 'Penrod Woolvett');
+
+
+
+create table Fornecedor ( id number primary key, cnpj varchar(20), contato varchar(20), nome varchar(50), constraint fk_cnpj foreign key (id) references Produtos (id) );
+
+insert into Fornecedor (id, cnpj, contato, nome) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (2, '95.322.810/0001-70', '(394) 1551540', 'Karleen Brewett');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (3, '73.224.259/0001-90', '(877) 6633184', 'Samuele Acom');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (4, '69.427.339/0001-75', '(912) 3697795', 'Kristian Dawes');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (5, '17.627.024/0001-78', '(562) 4676405', 'Tadd Oakman');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (6, '80.107.368/0001-92', '(956) 2395462', 'Edgard Domange');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (7, '25.854.123/0001-10', '(215) 3104716', 'Karil Hearons');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (8, '14.459.938/0001-89', '(949) 9319835', 'Kiley Cloake');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (9, '85.825.878/0001-19', '(975) 5537978', 'Linet Furley');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (11, '55.427.674/0001-69', '(513) 8602680', 'Karl Forrestall');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (12, '19.856.246/0001-98', '(689) 9114987', 'Cassandra Orknay');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (13, '14.995.939/0001-48', '(407) 8034863', 'Ashil Fransson');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (14, '72.152.488/0001-83', '(608) 8946644', 'Candis Douch');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (15, '20.917.522/0001-60', '(687) 7930749', 'Storm Inkster');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (16, '83.548.887/0001-84', '(419) 3822835', 'Lind Surgison');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (17, '19.317.485/0001-18', '(152) 6950028', 'Minette Boutcher');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (18, '38.461.394/0001-58', '(526) 5881004', 'Kary Hutchinson');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (19, '48.042.318/0001-61', '(156) 9445171', 'Dallon Becks');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (20, '91.110.523/0001-46', '(437) 3375223', 'Lorri Flement');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (21, '79.759.830/0001-57', '(850) 5231563', 'Sianna Kobiera');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (22, '78.743.023/0001-83', '(168) 4167511', 'Brit Ipgrave');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (23, '60.752.112/0001-20', '(988) 9844180', 'Lorelle Baume');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (24, '36.310.959/0001-70', '(489) 5051725', 'Tyne Errichi');
+
+insert into Fornecedor (id, cnpj, contato, nome) values (25, '78.001.592/0001-53', '(560) 3537495', 'Deloria Cockerton');
