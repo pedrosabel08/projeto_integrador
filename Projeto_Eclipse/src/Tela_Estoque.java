@@ -81,11 +81,23 @@ public class Tela_Estoque extends JFrame {
 		contentPane.add(btnExcluir);
 		
 		JButton btnNewButton = new JButton("Alterar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Alterar_Produto frame = new Alterar_Produto();
+				frame.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.setBounds(219, 227, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cad_Produto frame = new Cad_Produto();
+				frame.setVisible(true);
+			}
+		});
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCadastrar.setBounds(318, 227, 110, 23);
 		contentPane.add(btnCadastrar);

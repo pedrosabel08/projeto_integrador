@@ -19,6 +19,7 @@ public class Alterar_Produto extends JFrame {
 	private JTextField txtMarca;
 	private JTextField txtTamanho;
 	private JTextField txtCor;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -54,22 +55,22 @@ public class Alterar_Produto extends JFrame {
 		
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNome.setBounds(91, 75, 46, 14);
+		lblNome.setBounds(91, 61, 46, 14);
 		contentPane.add(lblNome);
 		
 		JLabel lblMarca = new JLabel("Marca:");
 		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMarca.setBounds(91, 113, 46, 14);
+		lblMarca.setBounds(91, 86, 46, 14);
 		contentPane.add(lblMarca);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
 		lblTamanho.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblTamanho.setBounds(91, 148, 82, 14);
+		lblTamanho.setBounds(91, 111, 82, 14);
 		contentPane.add(lblTamanho);
 		
 		JLabel lblCor = new JLabel("Cor:");
 		lblCor.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCor.setBounds(91, 185, 46, 14);
+		lblCor.setBounds(91, 136, 46, 14);
 		contentPane.add(lblCor);
 		
 		txtID = new JTextField();
@@ -78,22 +79,22 @@ public class Alterar_Produto extends JFrame {
 		txtID.setColumns(10);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(189, 74, 131, 20);
+		txtNome.setBounds(189, 60, 131, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(189, 112, 131, 20);
+		txtMarca.setBounds(189, 85, 131, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		txtTamanho = new JTextField();
-		txtTamanho.setBounds(189, 147, 131, 20);
+		txtTamanho.setBounds(189, 110, 131, 20);
 		contentPane.add(txtTamanho);
 		txtTamanho.setColumns(10);
 		
 		txtCor = new JTextField();
-		txtCor.setBounds(189, 184, 131, 20);
+		txtCor.setBounds(189, 135, 131, 20);
 		contentPane.add(txtCor);
 		txtCor.setColumns(10);
 		
@@ -125,6 +126,16 @@ public class Alterar_Produto extends JFrame {
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnSalvar.setBounds(261, 227, 89, 23);
 		contentPane.add(btnSalvar);
+		
+		JLabel lblPreo = new JLabel("Pre\u00E7o:");
+		lblPreo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPreo.setBounds(91, 161, 46, 14);
+		contentPane.add(lblPreo);
+		
+		textField = new JTextField();
+		textField.setBounds(189, 160, 131, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
 
 }

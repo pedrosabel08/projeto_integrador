@@ -19,6 +19,7 @@ public class Cad_Produto extends JFrame {
 	private JTextField txtTamanho;
 	private JTextField txtCor;
 	private JTextField txtNome;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -59,31 +60,31 @@ public class Cad_Produto extends JFrame {
 		
 		JLabel lblMarca = new JLabel("Marca:");
 		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMarca.setBounds(85, 98, 46, 14);
+		lblMarca.setBounds(85, 84, 46, 14);
 		contentPane.add(lblMarca);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(192, 97, 118, 20);
+		txtMarca.setBounds(192, 83, 118, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
 		lblTamanho.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblTamanho.setBounds(85, 129, 71, 14);
+		lblTamanho.setBounds(85, 109, 71, 14);
 		contentPane.add(lblTamanho);
 		
 		txtTamanho = new JTextField();
-		txtTamanho.setBounds(192, 128, 118, 20);
+		txtTamanho.setBounds(192, 108, 118, 20);
 		contentPane.add(txtTamanho);
 		txtTamanho.setColumns(10);
 		
 		JLabel lblCor = new JLabel("Cor:");
 		lblCor.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCor.setBounds(85, 171, 46, 14);
+		lblCor.setBounds(85, 140, 46, 14);
 		contentPane.add(lblCor);
 		
 		txtCor = new JTextField();
-		txtCor.setBounds(192, 170, 118, 20);
+		txtCor.setBounds(192, 139, 118, 20);
 		contentPane.add(txtCor);
 		txtCor.setColumns(10);
 		
@@ -118,13 +119,22 @@ public class Cad_Produto extends JFrame {
 		
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNome.setBounds(85, 67, 46, 14);
+		lblNome.setBounds(85, 59, 46, 14);
 		contentPane.add(lblNome);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(192, 66, 118, 20);
+		txtNome.setBounds(192, 58, 118, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
+		
+		JLabel lblPreo = new JLabel("Pre\u00E7o:");
+		lblPreo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPreo.setBounds(85, 165, 46, 14);
+		contentPane.add(lblPreo);
+		
+		textField = new JTextField();
+		textField.setBounds(192, 164, 118, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
-
 }

@@ -15,7 +15,7 @@ public class Cliente {
 		return CPF;
 	}
 	public void setCPF(String cPF) {
-		CPF = cPF;
+		CPF = CPF;
 	}
 	public String getNasc() {
 		return Nasc;

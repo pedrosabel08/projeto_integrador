@@ -75,6 +75,12 @@ public class Lista_Clientes extends JFrame {
 		contentPane.add(btnExcluir);
 		
 		btnAlterar = new JButton("Alterar");
+		btnAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Alterar_Cliente frame = new Alterar_Cliente();
+				frame.setVisible(true);
+			}
+		});
 		btnAlterar.setBounds(218, 214, 85, 23);
 		contentPane.add(btnAlterar);
 		

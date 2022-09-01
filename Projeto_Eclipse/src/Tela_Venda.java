@@ -9,11 +9,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Tela_Venda extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -60,19 +61,28 @@ public class Tela_Venda extends JFrame {
 		comboBox_1.setBounds(67, 169, 141, 20);
 		contentPane.add(comboBox_1);
 		
-		textField = new JTextField();
-		textField.setBounds(272, 127, 93, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		JLabel lblValorPagar = new JLabel("Valor \u00E0 Pagar");
 		lblValorPagar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblValorPagar.setBounds(272, 83, 93, 14);
+		lblValorPagar.setBounds(272, 44, 93, 14);
 		contentPane.add(lblValorPagar);
 		
 		JButton btnNewButton = new JButton("Concluir ");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(272, 166, 93, 23);
+		btnNewButton.setBounds(272, 96, 93, 23);
 		contentPane.add(btnNewButton);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(282, 71, 61, 14);
+		contentPane.add(label);
+		
+		JButton btnNewButton_1 = new JButton("Cancelar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(272, 141, 93, 25);
+		contentPane.add(btnNewButton_1);
 	}
 }
