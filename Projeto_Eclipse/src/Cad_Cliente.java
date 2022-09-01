@@ -22,6 +22,7 @@ public class Cad_Cliente extends JFrame {
 	private JTextField txtRG;
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private Cliente clienteSelecionado;
+	private JTextField txtID;
 	/**
 	 * Launch the application.
 	 */
@@ -51,59 +52,56 @@ public class Cad_Cliente extends JFrame {
 		
 		JLabel lblNomeCompleto = new JLabel("Nome Completo:");
 		lblNomeCompleto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNomeCompleto.setBounds(43, 43, 135, 14);
+		lblNomeCompleto.setBounds(44, 77, 135, 14);
 		contentPane.add(lblNomeCompleto);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(188, 42, 186, 20);
+		txtNome.setBounds(198, 76, 186, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCpf.setBounds(118, 93, 44, 14);
+		lblCpf.setBounds(125, 113, 44, 14);
 		contentPane.add(lblCpf);
 		
 		txtCPF = new JTextField();
-		txtCPF.setBounds(188, 92, 186, 20);
+		txtCPF.setBounds(198, 112, 186, 20);
 		contentPane.add(txtCPF);
 		txtCPF.setColumns(10);
 		
 		JLabel lblDataDeNascimento = new JLabel("Data de Nascimento:");
 		lblDataDeNascimento.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblDataDeNascimento.setBounds(21, 136, 157, 14);
+		lblDataDeNascimento.setBounds(21, 146, 135, 14);
 		contentPane.add(lblDataDeNascimento);
 		
 		txtNasc = new JTextField();
-		txtNasc.setBounds(188, 135, 186, 20);
+		txtNasc.setBounds(198, 145, 186, 20);
 		contentPane.add(txtNasc);
 		txtNasc.setColumns(10);
 		
 		JLabel lblRg = new JLabel("RG:");
 		lblRg.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblRg.setBounds(125, 187, 37, 14);
+		lblRg.setBounds(125, 184, 37, 14);
 		contentPane.add(lblRg);
 		
 		txtRG = new JTextField();
-		txtRG.setBounds(188, 186, 186, 20);
+		txtRG.setBounds(198, 183, 186, 20);
 		contentPane.add(txtRG);
 		txtRG.setColumns(10);
 		
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nome = txtNome.getText();
-				String CPF = txtCPF.getText();
-				String Nasc = txtNasc.getText();
-				String RG = txtRG.getText();
-				Cliente c = new Cliente();
-				c.setNome(nome);
-				c.setCPF(CPF);
-				c.setNasc(Nasc);
-				c.setRG(RG);
-				listaClientes.add(c);
-				atualizarJTable();
-				limparCampos();
+				Cliente cliente;
+				cliente = new Cliente();
+				cliente.setId(txtID.getText());
+				cliente.setNome(txtNome.getText());
+				cliente.setCPF(txtCPF.getText());
+				cliente.setNasc(txtNasc.getText());
+				cliente.setRG(txtRG.getText());
+
+				
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -113,6 +111,7 @@ public class Cad_Cliente extends JFrame {
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				txtID.setText("");
 				txtNome.setText("");
 				txtCPF.setText("");
 				txtNasc.setText("");
@@ -132,6 +131,16 @@ public class Cad_Cliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(33, 248, 89, 23);
 		contentPane.add(btnFechar);
+		
+		JLabel lblNewLabel = new JLabel("ID:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setBounds(125, 52, 19, 14);
+		contentPane.add(lblNewLabel);
+		
+		txtID = new JTextField();
+		txtID.setBounds(198, 45, 186, 20);
+		contentPane.add(txtID);
+		txtID.setColumns(10);
 	}
 	protected void limparCampos() {
 		txtNome.setText("");

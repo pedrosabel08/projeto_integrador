@@ -76,6 +76,11 @@ public class Tela_Estoque extends JFrame {
 		contentPane.add(btnFechar);
 		
 		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
+			}
+		});
 		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnExcluir.setBounds(120, 227, 89, 23);
 		contentPane.add(btnExcluir);

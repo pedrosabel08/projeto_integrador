@@ -17,10 +17,14 @@ public class Conexao {
 			
 		} catch (ClassNotFoundException e) {
 			
-			throw new SQLException(e.getException());
-			
-			
-			
+			throw new SQLException(e.getException());	
 		}
+	}
+	
+	public boolean salvar(Cliente cliente) {
+		String inserir;
+		inserir = "INSERT INTO Clientes VALUES('" + cliente.getId() + "','" + cliente.getNome() + "','" + cliente.getCPF() + "','" + cliente.getRG() + "','" + cliente.getData_nascimento() + "','" + cliente.getVenda_idVenda();
+		
+		
 	}
 }
