@@ -125,22 +125,117 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29", 1);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26", 2);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27",3 );
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05", 4);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05", 5);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08", 6);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18", 7);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19", 8);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30", 9);
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08", 10);
+
+
+
+insert into Venda (idVenda, forma_pagamento, data) values (1, 'Á vista', "2022-08-02");
+
+insert into Venda (idVenda, forma_pagamento, data) values (2, 'A prazo', "2022-05-07");
+
+insert into Venda (idVenda, forma_pagamento, data) values (3, 'Á vista', "2021-05-11");
+
+insert into Venda (idVenda, forma_pagamento, data) values (4, 'Á vista', "2022-02-04");
+
+insert into Venda (idVenda, forma_pagamento, data) values (5, 'A prazo', "2021-08-23");
+
+insert into Venda (idVenda, forma_pagamento, data) values (6, 'Á vista', "2022-02-16");
+
+insert into Venda (idVenda, forma_pagamento, data) values (7, 'A prazo', "2022-07-18");
+
+insert into Venda (idVenda, forma_pagamento, data) values (8, 'Á vista', "2021-09-17");
+
+insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-05-05");
+
+insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
+
+
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue');
+
+insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple');
+
+
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (1, 'Um3Wcbs6sUM', 'Morris Kolczynski', 1);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (2, 'KzesyJSUSIL', 'Sara Rockhill', 2);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (3, 'M0MDfu0HqveC', 'Karolina Benard', 3);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (4, 'STdp4v', 'Chilton Atteridge', 4);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (5, 'xPseBD8p7', 'Dinnie Bauman', 5);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (6, '2UHujULr', 'Babbie Baumert', 6);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (7, 'cNI2Yh6', 'Ty Nutley', 7);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (8, 'OZTcVP2', 'Allis Brandolini', 8);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (9, 'TWrLAhpTu', 'Olivette Major', 9);
+
+insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (10, 'T7N5AU0', 'Dario Kilsby', 10);
+
+
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover', 1);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (2, '95.322.810/0001-70', '(394) 1551540', 'Karleen Brewett', 2);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (3, '73.224.259/0001-90', '(877) 6633184', 'Samuele Acom', 3);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (4, '69.427.339/0001-75', '(912) 3697795', 'Kristian Dawes', 4);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (5, '17.627.024/0001-78', '(562) 4676405', 'Tadd Oakman', 5);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (6, '80.107.368/0001-92', '(956) 2395462', 'Edgard Domange', 6);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (7, '25.854.123/0001-10', '(215) 3104716', 'Karil Hearons', 7);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (8, '14.459.938/0001-89', '(949) 9319835', 'Kiley Cloake', 8);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (9, '85.825.878/0001-19', '(975) 5537978', 'Linet Furley', 9);
+
+insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde', 10);
+
+
+select * from Clientes;
+select * from Venda;
+select * from Produtos;
+select * from Fornecedor;
+select * from Funcionario;
