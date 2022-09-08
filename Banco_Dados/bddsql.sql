@@ -53,7 +53,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
-  `idFuncionario` INT NOT NULL,
+  `idFuncionario` INT NOT NULL auto_increment,
   `senha` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
   `Venda_idVenda` INT NOT NULL,
@@ -239,3 +239,4 @@ select * from Venda;
 select * from Produtos;
 select * from Fornecedor;
 select * from Funcionario;
+
