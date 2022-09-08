@@ -1,17 +1,24 @@
-import java.awt.BorderLayout;
-import java.util.ArrayList;
+package visao;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import controle.ClienteBD;
+import modelo.Cliente;
+import modelo.Conexao;
 
 public class Cad_Cliente extends JFrame {
 
@@ -23,6 +30,7 @@ public class Cad_Cliente extends JFrame {
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private Cliente clienteSelecionado;
 	private JTextField txtID;
+
 	/**
 	 * Launch the application.
 	 */
@@ -49,65 +57,87 @@ public class Cad_Cliente extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblNomeCompleto = new JLabel("Nome Completo:");
 		lblNomeCompleto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNomeCompleto.setBounds(44, 77, 135, 14);
 		contentPane.add(lblNomeCompleto);
-		
+
 		txtNome = new JTextField();
 		txtNome.setBounds(198, 76, 186, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
-		
+
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblCpf.setBounds(125, 113, 44, 14);
 		contentPane.add(lblCpf);
-		
+
 		txtCPF = new JTextField();
 		txtCPF.setBounds(198, 112, 186, 20);
 		contentPane.add(txtCPF);
 		txtCPF.setColumns(10);
-		
+
 		JLabel lblDataDeNascimento = new JLabel("Data de Nascimento:");
 		lblDataDeNascimento.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblDataDeNascimento.setBounds(21, 146, 135, 14);
 		contentPane.add(lblDataDeNascimento);
-		
+
 		txtNasc = new JTextField();
 		txtNasc.setBounds(198, 145, 186, 20);
 		contentPane.add(txtNasc);
 		txtNasc.setColumns(10);
-		
+
 		JLabel lblRg = new JLabel("RG:");
 		lblRg.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblRg.setBounds(125, 184, 37, 14);
 		contentPane.add(lblRg);
-		
+
 		txtRG = new JTextField();
 		txtRG.setBounds(198, 183, 186, 20);
 		contentPane.add(txtRG);
 		txtRG.setColumns(10);
-		
+
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cliente cliente;
-				cliente = new Cliente();
-				cliente.setId(txtID.getText());
-				cliente.setNome(txtNome.getText());
-				cliente.setCPF(txtCPF.getText());
-				cliente.setNasc(txtNasc.getText());
-				cliente.setRG(txtRG.getText());
 
-				
+//				cliente.setId(txtID.getText());
+				String nome = txtNome.getText();
+				String cpf = txtCPF.getText();
+				if (!nome.isEmpty()) {
+					Cliente cliente = new Cliente();
+					cliente.setNome(nome);
+					cliente.setCPF(cpf);
+					cliente.setNasc(txtNasc.getText());
+					cliente.setRG(txtRG.getText());
+
+					try {
+						ClienteBD bd = new ClienteBD(Conexao.faz_conexao());
+						bd.salvar(cliente);
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
+				}
+
+//				if (status == false) {
+//					JOptionPane.showMessageDialog(null, "Erro na conexão com banco de dados");
+//				} else {
+//					status = con.salvar(cliente);
+//					if (status == false) {
+//						JOptionPane.showMessageDialog(null, "Erro ao tentar incluir o Cliente");
+//					} else {
+//						JOptionPane.showMessageDialog(null, "dados incluídos com sucesso");
+//					}
+//					con.desconectar();
+
+//				}
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnSalvar.setBounds(285, 248, 89, 23);
 		contentPane.add(btnSalvar);
-		
+
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -121,7 +151,7 @@ public class Cad_Cliente extends JFrame {
 		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnLimpar.setBounds(158, 248, 89, 23);
 		contentPane.add(btnLimpar);
-		
+
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -131,37 +161,33 @@ public class Cad_Cliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(33, 248, 89, 23);
 		contentPane.add(btnFechar);
-		
+
 		JLabel lblNewLabel = new JLabel("ID:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel.setBounds(125, 52, 19, 14);
 		contentPane.add(lblNewLabel);
-		
+
 		txtID = new JTextField();
 		txtID.setBounds(198, 45, 186, 20);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
 	}
+
 	protected void limparCampos() {
 		txtNome.setText("");
 		txtCPF.setText("");
 		txtNasc.setText("");
 		txtRG.setText("");
 	}
+
 	protected void atualizarJTable() {
-		DefaultTableModel modelo = new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Nome", "CPF", "Nasc", "RG"
-			}
-		);
-		
-		for(int i=0; i< listaClientes.size(); i++) {
+		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
+				new String[] { "Nome", "CPF", "Nasc", "RG" });
+
+		for (int i = 0; i < listaClientes.size(); i++) {
 			Cliente c = listaClientes.get(i);
 			modelo.addRow(new Object[] { c.getNome(), c.getCPF(), c.getNasc(), c.getRG() });
 		}
-		
-		
-}
+
+	}
 }
