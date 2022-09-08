@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class Tela_Estoque extends JFrame {
@@ -23,24 +24,17 @@ public class Tela_Estoque extends JFrame {
 
 	/**
 	 * Launch the application.
+	 
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Tela_Estoque frame = new Tela_Estoque();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private String ID;
+	private String Nome, Marca, Tamanho, Cor;
+	private String preco;
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Estoque() {
+	public Tela_Estoque (ArrayList<Produto> listaProdutos, Cad_Produto cadastro_produtos) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 465, 310);
 		contentPane = new JPanel();
@@ -58,13 +52,18 @@ public class Tela_Estoque extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		DefaultTableModel modelo = new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Produto", "Tamanho", "Marca", "Cor"
+				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço"
 			}
-		));
+		);
+		for(int i=0; i< listaProdutos.size(); i++) {
+			Tela_Estoque c = listaProdutos.get(i);
+			modelo.addRow(new Object[] {  c.getID(), c.getNome(), c.getMarca(), c.getTamanho(), c.getCor(), c.getPreco()  });
+		}
+		table.setModel(modelo);
 		scrollPane.setViewportView(table);
 		
 		JButton btnFechar = new JButton("Fechar");
@@ -109,4 +108,15 @@ public class Tela_Estoque extends JFrame {
 		btnCadastrar.setBounds(318, 227, 110, 23);
 		contentPane.add(btnCadastrar);
 	}
-}
+
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+	
+	}
+
