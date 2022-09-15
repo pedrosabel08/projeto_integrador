@@ -17,7 +17,7 @@ public class Conexao {
 
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/db_senhas", "root", "aluno");
 			st = conn.createStatement();
 

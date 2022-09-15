@@ -8,18 +8,22 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import controle.ClienteBD;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-
+import modelo.Cliente;
 public class Lista_Clientes extends JFrame {
-
+	private DefaultTableModel modelo;
 	private JPanel contentPane;
 	private JTable table;
 	private JButton btnExcluir;
 	private JButton btnAlterar;
 	private JButton btnNewButton;
-
+	private ArrayList<Cliente> listaClientes;
 	/**
 	 * Launch the application.
 	 */
@@ -60,6 +64,24 @@ public class Lista_Clientes extends JFrame {
 			}
 		));
 		scrollPane.setViewportView(table);
+		ClienteBD clientebd = new ClienteBD();
+		listaClientes = clientebd.listarTodosClientes();
+		table= new JTable();
+		table.setModel(new DefaultTableModel(
+				new Object[][] {
+				},
+				new String[] {
+					"ID", "Nome", "CPF", "Data de Nascimento", "RG"
+				}
+			));
+			scrollPane.setViewportView(table);
+			modelo = (DefaultTableModel) table.getModel();
+			for(int i = 0; i < listaClientes.size(); i++) {
+				Cliente c = listaClientes.get(i);
+				modelo.addRow(new Object[] {c.getId(),c.getNome(), c.getCPF(), c.getRG(),c.getData_nascimento()});
+				}
+			table.setModel(modelo);
+				
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {

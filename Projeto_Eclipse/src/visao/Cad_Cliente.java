@@ -29,7 +29,7 @@ public class Cad_Cliente extends JFrame {
 	private JTextField txtRG;
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private Cliente clienteSelecionado;
-	private JTextField txtID;
+	static Connection conexao;
 
 	/**
 	 * Launch the application.
@@ -102,46 +102,31 @@ public class Cad_Cliente extends JFrame {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-//				cliente.setId(txtID.getText());
 				String nome = txtNome.getText();
 				String cpf = txtCPF.getText();
-				if (!nome.isEmpty()) {
-					Cliente cliente = new Cliente();
-					cliente.setNome(nome);
-					cliente.setCPF(cpf);
-					cliente.setNasc(txtNasc.getText());
-					cliente.setRG(txtRG.getText());
+				String rg = txtRG.getText();
+				String dataNasc = txtNasc.getText();
 
-					try {
-						ClienteBD bd = new ClienteBD(Conexao.faz_conexao());
-						bd.salvar(cliente);
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					}
-				}
 
-//				if (status == false) {
-//					JOptionPane.showMessageDialog(null, "Erro na conexão com banco de dados");
-//				} else {
-//					status = con.salvar(cliente);
-//					if (status == false) {
-//						JOptionPane.showMessageDialog(null, "Erro ao tentar incluir o Cliente");
-//					} else {
-//						JOptionPane.showMessageDialog(null, "dados incluídos com sucesso");
-//					}
-//					con.desconectar();
-
-//				}
-			}
-		});
+				Cliente cliente = new Cliente();
+				cliente.setNome(nome);
+				cliente.setCPF(cpf);
+				cliente.setRG(rg);
+				cliente.setData_nascimento(dataNasc);
+				
+				ClienteBD bdCliente = new ClienteBD();
+				bdCliente.inserirCliente(cliente);
+				
+				
+			}}
+		);
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSalvar.setBounds(285, 248, 89, 23);
+		btnSalvar.setBounds(285, 248, 89, 23); 
 		contentPane.add(btnSalvar);
 
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtID.setText("");
 				txtNome.setText("");
 				txtCPF.setText("");
 				txtNasc.setText("");
@@ -161,16 +146,6 @@ public class Cad_Cliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(33, 248, 89, 23);
 		contentPane.add(btnFechar);
-
-		JLabel lblNewLabel = new JLabel("ID:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(125, 52, 19, 14);
-		contentPane.add(lblNewLabel);
-
-		txtID = new JTextField();
-		txtID.setBounds(198, 45, 186, 20);
-		contentPane.add(txtID);
-		txtID.setColumns(10);
 	}
 
 	protected void limparCampos() {
