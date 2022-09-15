@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+
+import modelo.Conexao;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -98,14 +101,20 @@ public class Cad_Produto extends JFrame {
 		JButton btnNewButton = new JButton("Salvar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String id = txtID.getText();
-				String nome = txtNome.getText();
-				String marca = txtMarca.getText();
-				String tamanho = txtTamanho.getText();
-				String cor = txtCor.getText();
-				String preco = txtPreco.getText();
+				//recebendo o que foi digitado:
+				String id = txtID.getText().trim();
+				String nome = txtNome.getText.trim();
+				String marca = txtMarca.getText.trim();
+				String tamanho = txtTamanho.getText.trim();
+				String cor = txtCor.getText().trim();
+				String preco = txtPreco.getText.trim();
+				
 
 				Produto c = new Produto();
+				
+				ProdutoBD bd = new ProdutoBD(Conexao.faz_conexao());
+				bd.salvar(produto);
+				
 
 				c.setID(id);
 				c.setNome(nome);
