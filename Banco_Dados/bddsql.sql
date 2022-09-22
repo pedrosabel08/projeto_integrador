@@ -125,28 +125,6 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29", 1);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26", 2);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27",3 );
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05", 4);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05", 5);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08", 6);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18", 7);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19", 8);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30", 9);
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08", 10);
-
-
-
 insert into Venda (idVenda, forma_pagamento, data) values (1, 'Á vista', "2022-08-02");
 
 insert into Venda (idVenda, forma_pagamento, data) values (2, 'A prazo', "2022-05-07");
@@ -167,6 +145,26 @@ insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-
 
 insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
 
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29", 1);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26", 2);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27",3 );
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05", 4);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05", 5);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08", 6);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18", 7);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19", 8);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30", 9);
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08", 10);
 
 
 insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet');
@@ -233,10 +231,4 @@ insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) 
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde', 10);
 
-
-select * from Clientes;
-select * from Venda;
-select * from Produtos;
-select * from Fornecedor;
-select * from Funcionario;
 
