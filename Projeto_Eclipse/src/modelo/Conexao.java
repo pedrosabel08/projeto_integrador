@@ -13,17 +13,24 @@ public class Conexao {
 	public Conexao() {
 	}
 
-	public static Connection faz_conexao() throws SQLException {
+	public static Connection faz_conexao() {
 
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/db_senhas", "root", "aluno");
-			st = conn.createStatement();
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			try {
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_senhas", "root", "aluno");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 
 		} catch (ClassNotFoundException e) {
 
-			throw new SQLException(e.getException());
 		}
 		return conn;
 

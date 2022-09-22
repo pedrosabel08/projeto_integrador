@@ -1,4 +1,4 @@
-
+package modelo;
 public class Produto {
 	private String ID;
 	private String Nome, Marca, Tamanho, Cor;

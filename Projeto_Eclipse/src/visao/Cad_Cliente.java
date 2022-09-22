@@ -1,16 +1,15 @@
 package visao;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -18,18 +17,17 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.ClienteBD;
 import modelo.Cliente;
-import modelo.Conexao;
 
 public class Cad_Cliente extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
-	private JTextField txtCPF;
-	private JTextField txtNasc;
-	private JTextField txtRG;
+	public JTextField txtNome;
+	public JTextField txtCPF;
+	public JTextField txtNasc;
+	public JTextField txtRG;
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private Cliente clienteSelecionado;
-	private JTextField txtID;
+	static Connection conexao;
 
 	/**
 	 * Launch the application.
@@ -102,36 +100,27 @@ public class Cad_Cliente extends JFrame {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-//				cliente.setId(txtID.getText());
 				String nome = txtNome.getText();
 				String cpf = txtCPF.getText();
-				if (!nome.isEmpty()) {
-					Cliente cliente = new Cliente();
-					cliente.setNome(nome);
-					cliente.setCPF(cpf);
-					cliente.setNasc(txtNasc.getText());
-					cliente.setRG(txtRG.getText());
+				String rg = txtRG.getText();
+				String dataNasc = txtNasc.getText();
+				
+				// fazer validacao
 
-					try {
-						ClienteBD bd = new ClienteBD(Conexao.faz_conexao());
-						bd.salvar(cliente);
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					}
-				}
+				Cliente cliente = new Cliente();
+				cliente.setNome(nome);
+				cliente.setCPF(cpf);
+				cliente.setRG(rg);
+				cliente.setData_nascimento(dataNasc);
 
-//				if (status == false) {
-//					JOptionPane.showMessageDialog(null, "Erro na conexão com banco de dados");
-//				} else {
-//					status = con.salvar(cliente);
-//					if (status == false) {
-//						JOptionPane.showMessageDialog(null, "Erro ao tentar incluir o Cliente");
-//					} else {
-//						JOptionPane.showMessageDialog(null, "dados incluídos com sucesso");
-//					}
-//					con.desconectar();
-
-//				}
+				ClienteBD bdCliente = new ClienteBD();
+				bdCliente.inserirCliente(cliente);
+				
+				txtNome.setText("");
+				txtCPF.setText("");
+				txtRG.setText("");
+				txtNasc.setText("");
+				
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -141,17 +130,12 @@ public class Cad_Cliente extends JFrame {
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtID.setText("");
 				txtNome.setText("");
 				txtCPF.setText("");
-				txtNasc.setText("");
 				txtRG.setText("");
+				txtNasc.setText("");
 			}
 		});
-		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLimpar.setBounds(158, 248, 89, 23);
-		contentPane.add(btnLimpar);
-
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,33 +145,20 @@ public class Cad_Cliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(33, 248, 89, 23);
 		contentPane.add(btnFechar);
-
-		JLabel lblNewLabel = new JLabel("ID:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(125, 52, 19, 14);
-		contentPane.add(lblNewLabel);
-
-		txtID = new JTextField();
-		txtID.setBounds(198, 45, 186, 20);
-		contentPane.add(txtID);
-		txtID.setColumns(10);
+		
+		JButton btntabela = new JButton("Tabela");
+		btntabela.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista_Clientes lc = new Lista_Clientes();
+				lc.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btntabela.setBounds(164, 250, 89, 23);
+		contentPane.add(btntabela);
 	}
 
-	protected void limparCampos() {
-		txtNome.setText("");
-		txtCPF.setText("");
-		txtNasc.setText("");
-		txtRG.setText("");
-	}
+	
 
-	protected void atualizarJTable() {
-		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome", "CPF", "Nasc", "RG" });
-
-		for (int i = 0; i < listaClientes.size(); i++) {
-			Cliente c = listaClientes.get(i);
-			modelo.addRow(new Object[] { c.getNome(), c.getCPF(), c.getNasc(), c.getRG() });
-		}
-
-	}
+	
 }
