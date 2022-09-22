@@ -1,16 +1,20 @@
 package visao;
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import controle.ClienteBD;
+import modelo.Cliente;
 
 public class Alterar_Cliente extends JFrame {
 
@@ -88,6 +92,51 @@ public class Alterar_Cliente extends JFrame {
 		txtRG.setColumns(10);
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cliente cliente = listaClientes.get(posicaoPessoa);
+
+				String nome = txtNome.getText();
+				String cpf = txtCPF.getText();
+				String rg = txtRG.getText();
+				String dataNasc = txtNasc.getText();
+				
+				cliente.setNome(nome);
+				cliente.setCPF(cpf);
+				cliente.setRG(rg);
+				cliente.setNasc(dataNasc);
+											
+				int result = cliente.alterarClientes(cliente);
+			
+				listaClientes.set(result, cliente);
+
+
+				while (table.getModel().getRowCount() > 0) {
+					((DefaultTableModel) table.getModel()).removeRow(0);
+				
+				}
+
+				ClienteBD clientebd = new ClienteBD();
+				listaClientes = clientebd.listarClientes();
+				table = new JTable();
+				table.setModel(new DefaultTableModel(new Object[][] {},
+						new String[] { "Nome", "CPF", "RG", "Nasc"}));
+				scrollPane.setViewportView(table);
+
+				modelo = (DefaultTableModel) table.getModel();
+				for (int i = 0; i < listaClientes.size(); i++) {
+					Cliente c = listaClientes.get(i);
+					modelo.addRow(new Object[] { c.getId(), c.getNome(), c.getCPF(), c.getRG(), c.getNasc()});
+
+				}
+				table.setModel(modelo);
+				
+				txtNome.setText("");
+				txtCPF.setText("");
+				txtRG.setText("");
+				txtNasc.setText("");
+			}
+		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnSalvar.setBounds(266, 227, 89, 23);
 		contentPane.add(btnSalvar);
