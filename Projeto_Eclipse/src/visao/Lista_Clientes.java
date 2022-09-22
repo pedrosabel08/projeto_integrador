@@ -25,6 +25,7 @@ public class Lista_Clientes extends JFrame {
 	private JButton btnNewButton;
 private DefaultTableModel modelo;
 private ArrayList<Cliente> listaClientes;
+private Cliente pessoaSelecionada;
 	/**
 	 * Launch the application.
 	 */
@@ -100,10 +101,10 @@ private ArrayList<Cliente> listaClientes;
 		JButton btnNewButton_1 = new JButton("Selecionar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				int posicaoPessoa = table.getSelectedRow();
 				if (posicaoPessoa > -1) {
-					Cliente pesoaSelecionada = listaClientes.get(posicaoPessoa);
+					Cliente pessoaSelecionada = listaClientes.get(posicaoPessoa);
 				}
 
 				if (posicaoPessoa > -1) {
@@ -157,6 +158,9 @@ private ArrayList<Cliente> listaClientes;
 		btnNewButton_2.setBounds(218, 214, 89, 23);
 		contentPane.add(btnNewButton_2);
 		};		
+		public void selecionarpessoa (Cliente pessoaSelecionada) {
+			this.pessoaSelecionada = pessoaSelecionada;
+		}
 	}
 
 

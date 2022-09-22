@@ -45,7 +45,7 @@ public class Alterar_Cliente extends JFrame {
 	 */
 	public Alterar_Cliente() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 310);
+		setBounds(100, 100, 582, 364);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -163,6 +163,15 @@ public class Alterar_Cliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(68, 227, 89, 23);
 		contentPane.add(btnFechar);
+		
+		JButton btnAlterar = new JButton("alterar");
+		btnAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnAlterar.setBounds(365, 229, 89, 23);
+		contentPane.add(btnAlterar);
 	}
 
 }
