@@ -7,8 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import controle.Conexao;
 import controle.ProdutoBD;
-import modelo.Conexao;
 import modelo.Produto;
 
 import javax.swing.JLabel;

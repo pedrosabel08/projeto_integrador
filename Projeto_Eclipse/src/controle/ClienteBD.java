@@ -15,13 +15,7 @@ public class ClienteBD {
 
 	private static Statement st;
 	public ClienteBD() {	
-		try {
-			conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_senhas", "root", "aluno");
-
-		}catch (SQLException e) {
-				System.out.println("Erro ao conectar a base de dados.");
-			
-		}
+		conexao = Conexao.faz_conexao();
 	}
 		public boolean inserirCliente(Cliente cliente) {
 
@@ -63,7 +57,7 @@ public class ClienteBD {
 			ps.setInt(2, cliente.getId());
 			ps.executeUpdate();
 
-			ps = conexao.prepareStatement("update Clientes set dataNasc=? where id = ?");
+			ps = conexao.prepareStatement("update Clientes set data_nascimento=? where id = ?");
 			ps.setString(1, cliente.getData_nascimento());
 			ps.setInt(2, cliente.getId());
 			ps.executeUpdate();

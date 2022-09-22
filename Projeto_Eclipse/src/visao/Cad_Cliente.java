@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -19,7 +20,9 @@ import controle.ClienteBD;
 import modelo.Cliente;
 
 public class Cad_Cliente extends JFrame {
-
+	
+	protected static final int posicaoPessoa = 0;
+	protected static final int pessoaSelecionada = 0;
 	private JPanel contentPane;
 	public JTextField txtNome;
 	public JTextField txtCPF;
@@ -49,8 +52,9 @@ public class Cad_Cliente extends JFrame {
 	 * Create the frame.
 	 */
 	public Cad_Cliente() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 430, 321);
+		setBounds(100, 100, 557, 360);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -156,6 +160,38 @@ public class Cad_Cliente extends JFrame {
 		});
 		btntabela.setBounds(164, 250, 89, 23);
 		contentPane.add(btntabela);
+		
+		JButton btnNewButton = new JButton("alterar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ClienteBD clientebd = new ClienteBD();
+				Lista_Clientes lc = new Lista_Clientes();	
+				lc.selecionarpessoa(clienteSelecionado);
+				Cliente cliente = listaClientes.get(pessoaSelecionada);
+
+				String nome = txtNome.getText();
+				String cpf = txtCPF.getText();
+				String rg = txtRG.getText();
+				String dataNasc = txtNasc.getText();
+				
+				cliente.setNome(nome);
+				cliente.setCPF(cpf);
+				cliente.setRG(rg);
+				cliente.setData_nascimento(dataNasc);
+						
+				
+				int result = clientebd.alterarClientes(cliente);
+			
+				listaClientes.set(result, cliente);
+				
+				txtNome.setText("");
+				txtCPF.setText("");
+				txtRG.setText("");
+				txtNasc.setText("");
+			}
+		});
+		btnNewButton.setBounds(401, 250, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 
 	
