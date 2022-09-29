@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class Cad_Produto extends JFrame {
+public class ManterProduto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
@@ -40,7 +40,7 @@ public class Cad_Produto extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Cad_Produto frame = new Cad_Produto();
+					ManterProduto frame = new ManterProduto();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,8 +51,9 @@ public class Cad_Produto extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @return 
 	 */
-	public Cad_Produto() {
+		public ManterProduto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 441, 300);
 		contentPane = new JPanel();
@@ -104,26 +105,26 @@ public class Cad_Produto extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//recebendo o que foi digitado:
-				String id = txtID.getText().trim();
-				String nome = txtNome.getText.trim();
-				String marca = txtMarca.getText.trim();
-				String tamanho = txtTamanho.getText.trim();
-				String cor = txtCor.getText().trim();
-				String preco = txtPreco.getText.trim();
+			//	String id = txtID.getText().trim();
+			//	String nome = txtNome.getText.trim();
+			//	String marca = txtMarca.getText.trim();
+			//	String tamanho = txtTamanho.getText.trim();
+			//	String cor = txtCor.getText().trim();
+			//	String preco = txtPreco.getText.trim();
 				
 
 				Produto c = new Produto();
 				
-				ProdutoBD bd = new ProdutoBD(Conexao.faz_conexao());
-				bd.salvar(produto);
+			//	ProdutoBD bd = new ProdutoBD(Conexao.faz_conexao());
+			//	bd.salvar(produto);
 				
 
-				c.setID(id);
-				c.setNome(nome);
-				c.setMarca(marca);
-				c.setTamanho(tamanho);
-				c.setCor(cor);
-				c.setPreco(preco);
+			//	c.setID(id);
+				//c.setNome(nome);
+			//	c.setMarca(marca);
+			//	c.setTamanho(tamanho);
+			//	c.setCor(cor);
+			//	c.setPreco(preco);
 
 				listaProdutos.add(c);
 				JOptionPane.showMessageDialog(null, "Cadastro de Produto realizado com sucesso!");

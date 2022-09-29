@@ -23,7 +23,7 @@ import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
-public class Tela_Login extends JFrame {
+public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUsuario;
@@ -36,7 +36,7 @@ public class Tela_Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tela_Login frame = new Tela_Login();
+					TelaLogin frame = new TelaLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class Tela_Login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Login() {
+	public TelaLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 434, 312);
 		contentPane = new JPanel();
@@ -99,7 +99,7 @@ public class Tela_Login extends JFrame {
 					
 					if(rs.next()) {
 						
-						Tela_Inicial exibir = new Tela_Inicial();
+						TelaInicial exibir = new TelaInicial();
 						exibir.setVisible(true);
 						
 						setVisible(false);
