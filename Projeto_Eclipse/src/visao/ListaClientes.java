@@ -26,6 +26,7 @@ public class ListaClientes extends JFrame {
 	private JButton btnNewButton;
 	private DefaultTableModel modelo;
 	private ArrayList<Cliente> listaClientes;
+	private Cliente pessoaSelecionada;
 
 	/**
 	 * Launch the application.
@@ -83,20 +84,17 @@ public class ListaClientes extends JFrame {
 		JButton btnNewButton_1 = new JButton("Selecionar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				int posicaoPessoa = table.getSelectedRow();
 				
 				if (posicaoPessoa > -1) {
 					Cliente pessoaSelecionada = listaClientes.get(posicaoPessoa);
-				}
-
-				if (posicaoPessoa > -1) {
-					ManterCliente x = new ManterCliente();
-					x.txtNome.setText(table.getValueAt(table.getSelectedRow(), 1).toString());
-					x.txtCPF.setText(table.getValueAt(table.getSelectedRow(), 2).toString());
-					x.txtNasc.setText(table.getValueAt(table.getSelectedRow(), 3).toString());
-					x.txtRG.setText(table.getValueAt(table.getSelectedRow(), 4).toString());
-					x.setVisible(true);
-				} else {
+					
+					if (posicaoPessoa > -1) {
+						ManterCliente x = new ManterCliente();
+						
+						x.setVisible(true);}
+				}else {
 
 					JOptionPane.showMessageDialog(null, "escolha uma linha na tabela");
 
@@ -104,7 +102,7 @@ public class ListaClientes extends JFrame {
 			}
 
 		});
-		btnNewButton_1.setBounds(119, 214, 89, 23);
+		btnNewButton_1.setBounds(146, 214, 89, 23);
 		contentPane.add(btnNewButton_1);
 
 		JButton btnNewButton_3 = new JButton("Cadastro");
@@ -115,12 +113,14 @@ public class ListaClientes extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnNewButton_3.setBounds(437, 214, 89, 23);
+		btnNewButton_3.setBounds(423, 214, 89, 23);
 		contentPane.add(btnNewButton_3);
 
 		JButton btnNewButton_2 = new JButton("Excluir");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int posicaoPessoa = table.getSelectedRow();
+				if (posicaoPessoa > -1) {
 				String a = (table.getValueAt(table.getSelectedRow(), 0).toString());
 				int b = Integer.parseInt(a);
 
@@ -131,10 +131,15 @@ public class ListaClientes extends JFrame {
 				bdCliente.removeCliente(cliente);
 
 				((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "escolha uma linha para deletar da tabela");
+				}
 			}
 		});
 		btnNewButton_2.setBounds(280, 214, 89, 23);
 		contentPane.add(btnNewButton_2);
 	};
+	
 
 }
