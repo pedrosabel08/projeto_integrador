@@ -8,12 +8,15 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
+
 import controle.ClienteBD;
 import modelo.Cliente;
 
@@ -26,7 +29,7 @@ public class ManterCliente extends JFrame {
 	public JTextField txtCPF;
 	public JTextField txtNasc;
 	public JTextField txtRG;
-	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+	public ArrayList<Cliente> listaClientes, ListaClientes;
 	private Cliente clienteSelecionado;
 	static Connection conexao;
 
@@ -52,7 +55,7 @@ public class ManterCliente extends JFrame {
 	public ManterCliente() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 557, 360);
+		setBounds(100, 100, 542, 352);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -98,7 +101,7 @@ public class ManterCliente extends JFrame {
 		contentPane.add(txtRG);
 		txtRG.setColumns(10);
 
-		JButton btnSalvar = new JButton("Cadastrar");
+		JButton btnSalvar = new JButton("Cadastro");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -128,7 +131,7 @@ public class ManterCliente extends JFrame {
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSalvar.setBounds(268, 248, 106, 23);
+		btnSalvar.setBounds(367, 248, 106, 23);
 		contentPane.add(btnSalvar);
 
 		JButton btnLimpar = new JButton("Limpar");
@@ -169,7 +172,10 @@ public class ManterCliente extends JFrame {
 				
 				ClienteBD clientebd = new ClienteBD();
 				
-				Cliente cliente = listaClientes.get(pessoaSelecionada);
+				Cliente cliente = new Cliente();
+				
+				cliente pessoaSelecionada= listaClientes.get(posicaoPessoa);
+				ListaClientes.selecionarPessoa(pessoaSelecionada);
 
 				String nome = txtNome.getText();
 				String cpf = txtCPF.getText();
@@ -189,10 +195,21 @@ public class ManterCliente extends JFrame {
 				txtCPF.setText("");
 				txtRG.setText("");
 				txtNasc.setText("");
+				
 			}
 		});
-		btnNewButton.setBounds(401, 250, 89, 23);
+		btnNewButton.setBounds(268, 248, 89, 23);
 		contentPane.add(btnNewButton);
 	}
-
+	
+	public void selecionarPessoa (Cliente pessoaSelecionada) {
+		this.clienteSelecionado = pessoaSelecionada;
+				
+		txtNome.setText(this.clienteSelecionado.getNome());
+		txtCPF.setText(this.clienteSelecionado.getCPF());
+		txtRG.setText(this.clienteSelecionado.getRG());
+		txtNasc.setText(this.clienteSelecionado.getData_nascimento());
+		
+		
+	}
 }
