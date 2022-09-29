@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Clientes` (
   `nome` VARCHAR(45) NULL,
   `cpf` VARCHAR(14) NULL,
   `rg` INT NULL,
-  `data_nascimento` DATE NULL ,
+  `data_nascimento` DATE NULL,
   PRIMARY KEY (`idClientes`))
 ENGINE = InnoDB;
 
@@ -75,13 +75,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `contato` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
   `Produtos_idProdutos` INT NOT NULL,
-  PRIMARY KEY (`idFornecedor`, `Produtos_idProdutos`),
-  INDEX `fk_Fornecedor_Produtos1_idx` (`Produtos_idProdutos` ASC),
-  CONSTRAINT `fk_Fornecedor_Produtos1`
-    FOREIGN KEY (`Produtos_idProdutos`)
-    REFERENCES `mydb`.`Produtos` (`idProdutos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idFornecedor`, `Produtos_idProdutos`))
 ENGINE = InnoDB;
 
 
@@ -89,7 +83,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Venda_has_Produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda_has_Produtos` (
-  `Venda_idVenda` INT NOT NULL auto_increment,
+  `Venda_idVenda` INT NOT NULL,
   `Produtos_idProdutos` INT NOT NULL,
   PRIMARY KEY (`Venda_idVenda`, `Produtos_idProdutos`),
   INDEX `fk_Venda_has_Produtos_Produtos1_idx` (`Produtos_idProdutos` ASC),
@@ -130,12 +124,6 @@ insert into Venda (idVenda, forma_pagamento, data) values (8, 'Á vista', "2021-
 insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-05-05");
 
 insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
-
-insert into Venda (idVenda, forma_pagamento, data) values (11, 'Á vista', "2022-03-15");
-
-insert into Venda (idVenda, forma_pagamento, data) values (12, 'A prazo', "2022-06-18");
-
-insert into Venda (idVenda, forma_pagamento, data) values (13, 'Á vista', "2022-04-23");
 
 
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
@@ -201,11 +189,6 @@ insert into Funcionario (idFuncionario, senha, nome) values (9, 'TWrLAhpTu', 'Ol
 
 insert into Funcionario (idFuncionario, senha, nome) values (10, 'T7N5AU0', 'Dario Kilsby');
 
-insert into Funcionario (idFuncionario, senha, nome) values (11, '12345', 'Pedro');
-
-insert into Funcionario (idFuncionario, senha, nome) values (12, '12345', 'Arthur');
-
-insert into Funcionario (idFuncionario, senha, nome) values (13, '12345', 'Eduardo');
 
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover', 1);
