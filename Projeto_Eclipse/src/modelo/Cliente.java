@@ -3,11 +3,10 @@ package modelo;
 public class Cliente {
 	private int id;
 	private String Nome;
-	private String CPF;
-	
+	private String CPF;	
 	private String RG;
 	private String data_nascimento;
-	private String Venda_idVenda;
+	
 	public int getId() {
 		return id;
 	}
@@ -38,18 +37,5 @@ public class Cliente {
 	public void setData_nascimento(String data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
-	public String getVenda_idVenda() {
-		return Venda_idVenda;
-	}
-	public void setVenda_idVenda(String venda_idVenda) {
-		Venda_idVenda = venda_idVenda;
-	}
-	
-	
-	
 
-	
-	
-	
-	
 }

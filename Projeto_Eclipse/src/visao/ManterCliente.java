@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +18,7 @@ import controle.ClienteBD;
 import modelo.Cliente;
 
 public class ManterCliente extends JFrame {
-	
+
 	protected static final int posicaoPessoa = 0;
 	protected static final int pessoaSelecionada = 0;
 	private JPanel contentPane;
@@ -49,7 +50,7 @@ public class ManterCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public ManterCliente() {
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 557, 360);
 		contentPane = new JPanel();
@@ -105,7 +106,7 @@ public class ManterCliente extends JFrame {
 				String cpf = txtCPF.getText();
 				String rg = txtRG.getText();
 				String dataNasc = txtNasc.getText();
-				
+
 				Cliente cliente = new Cliente();
 				cliente.setNome(nome);
 				cliente.setCPF(cpf);
@@ -113,13 +114,17 @@ public class ManterCliente extends JFrame {
 				cliente.setData_nascimento(dataNasc);
 
 				ClienteBD bdCliente = new ClienteBD();
-				bdCliente.inserirCliente(cliente);
-				
-				txtNome.setText("");
-				txtCPF.setText("");
-				txtRG.setText("");
-				txtNasc.setText("");
-				
+				boolean cadastrou = bdCliente.inserirCliente(cliente);
+
+				if (cadastrou == false) {
+					JOptionPane.showMessageDialog(null, "Erro. Cliente não cadastrado!");
+				} else {
+					txtNome.setText("");
+					txtCPF.setText("");
+					txtRG.setText("");
+					txtNasc.setText("");
+				}
+
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -144,7 +149,7 @@ public class ManterCliente extends JFrame {
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnFechar.setBounds(46, 248, 89, 23);
 		contentPane.add(btnFechar);
-		
+
 		JButton btntabela = new JButton("Tabela");
 		btntabela.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btntabela.addActionListener(new ActionListener() {
@@ -156,31 +161,30 @@ public class ManterCliente extends JFrame {
 		});
 		btntabela.setBounds(158, 248, 89, 23);
 		contentPane.add(btntabela);
-		
+
 		JButton btnNewButton = new JButton("Alterar");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				ClienteBD clientebd = new ClienteBD();
-				ListaClientes lc = new ListaClientes();	
-				lc.selecionarpessoa(clienteSelecionado);
+				
 				Cliente cliente = listaClientes.get(pessoaSelecionada);
 
 				String nome = txtNome.getText();
 				String cpf = txtCPF.getText();
 				String rg = txtRG.getText();
 				String dataNasc = txtNasc.getText();
-				
+
 				cliente.setNome(nome);
 				cliente.setCPF(cpf);
 				cliente.setRG(rg);
 				cliente.setData_nascimento(dataNasc);
-						
-				
+
 				int result = clientebd.alterarClientes(cliente);
-			
+
 				listaClientes.set(result, cliente);
-				
+
 				txtNome.setText("");
 				txtCPF.setText("");
 				txtRG.setText("");
@@ -191,7 +195,4 @@ public class ManterCliente extends JFrame {
 		contentPane.add(btnNewButton);
 	}
 
-	
-
-	
 }
