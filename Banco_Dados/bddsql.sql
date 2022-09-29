@@ -21,7 +21,7 @@ USE `mydb` ;
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
-  `idVenda` INT NOT NULL,
+  `idVenda` INT NOT NULL auto_increment,
   `forma_pagamento` VARCHAR(10) NULL,
   `valor` FLOAT NULL,
   `data` DATE NULL,
@@ -33,19 +33,12 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Clientes` (
-  `idClientes` INT NOT NULL,
+  `idClientes` INT NOT NULL auto_increment,
   `nome` VARCHAR(45) NULL,
   `cpf` VARCHAR(14) NULL,
   `rg` INT NULL,
-  `data_nascimento` DATE NULL,
-  `Venda_idVenda` INT NOT NULL,
-  PRIMARY KEY (`idClientes`),
-  INDEX `fk_Clientes_Venda1_idx` (`Venda_idVenda` ASC),
-  CONSTRAINT `fk_Clientes_Venda1`
-    FOREIGN KEY (`Venda_idVenda`)
-    REFERENCES `mydb`.`Venda` (`idVenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `data_nascimento` DATE NULL ,
+  PRIMARY KEY (`idClientes`))
 ENGINE = InnoDB;
 
 
@@ -56,14 +49,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
   `idFuncionario` INT NOT NULL auto_increment,
   `senha` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
-  `Venda_idVenda` INT NOT NULL,
-  PRIMARY KEY (`idFuncionario`),
-  INDEX `fk_Funcionario_Venda_idx` (`Venda_idVenda` ASC),
-  CONSTRAINT `fk_Funcionario_Venda`
-    FOREIGN KEY (`Venda_idVenda`)
-    REFERENCES `mydb`.`Venda` (`idVenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idFuncionario`))
 ENGINE = InnoDB;
 
 
@@ -71,7 +57,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Produtos` (
-  `idProdutos` INT NOT NULL,
+  `idProdutos` INT NOT NULL auto_increment,
   `nome` VARCHAR(45) NULL,
   `marca` VARCHAR(45) NULL,
   `tamanho` VARCHAR(15) NULL,
@@ -84,7 +70,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `idFornecedor` INT NOT NULL,
+  `idFornecedor` INT NOT NULL auto_increment,
   `cnpj` VARCHAR(45) NULL,
   `contato` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
@@ -103,7 +89,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Venda_has_Produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda_has_Produtos` (
-  `Venda_idVenda` INT NOT NULL,
+  `Venda_idVenda` INT NOT NULL auto_increment,
   `Produtos_idProdutos` INT NOT NULL,
   PRIMARY KEY (`Venda_idVenda`, `Produtos_idProdutos`),
   INDEX `fk_Venda_has_Produtos_Produtos1_idx` (`Produtos_idProdutos` ASC),
@@ -145,26 +131,32 @@ insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-
 
 insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
 
+insert into Venda (idVenda, forma_pagamento, data) values (11, 'Á vista', "2022-03-15");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29", 1);
+insert into Venda (idVenda, forma_pagamento, data) values (12, 'A prazo', "2022-06-18");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26", 2);
+insert into Venda (idVenda, forma_pagamento, data) values (13, 'Á vista', "2022-04-23");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27",3 );
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05", 4);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05", 5);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08", 6);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18", 7);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19", 8);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30", 9);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento, Venda_idVenda) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08", 10);
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18");
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19");
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30");
+
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
 
 
 insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet');
@@ -189,26 +181,31 @@ insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (10, 'Lyell 
 
 
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (1, 'Um3Wcbs6sUM', 'Morris Kolczynski', 1);
+insert into Funcionario (idFuncionario, senha, nome) values (1, 'Um3Wcbs6sUM', 'Morris Kolczynski');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (2, 'KzesyJSUSIL', 'Sara Rockhill', 2);
+insert into Funcionario (idFuncionario, senha, nome) values (2, 'KzesyJSUSIL', 'Sara Rockhill');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (3, 'M0MDfu0HqveC', 'Karolina Benard', 3);
+insert into Funcionario (idFuncionario, senha, nome) values (3, 'M0MDfu0HqveC', 'Karolina Benard');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (4, 'STdp4v', 'Chilton Atteridge', 4);
+insert into Funcionario (idFuncionario, senha, nome) values (4, 'STdp4v', 'Chilton Atteridge');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (5, 'xPseBD8p7', 'Dinnie Bauman', 5);
+insert into Funcionario (idFuncionario, senha, nome) values (5, 'xPseBD8p7', 'Dinnie Bauman');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (6, '2UHujULr', 'Babbie Baumert', 6);
+insert into Funcionario (idFuncionario, senha, nome) values (6, '2UHujULr', 'Babbie Baumert');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (7, 'cNI2Yh6', 'Ty Nutley', 7);
+insert into Funcionario (idFuncionario, senha, nome) values (7, 'cNI2Yh6', 'Ty Nutley');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (8, 'OZTcVP2', 'Allis Brandolini', 8);
+insert into Funcionario (idFuncionario, senha, nome) values (8, 'OZTcVP2', 'Allis Brandolini');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (9, 'TWrLAhpTu', 'Olivette Major', 9);
+insert into Funcionario (idFuncionario, senha, nome) values (9, 'TWrLAhpTu', 'Olivette Major');
 
-insert into Funcionario (idFuncionario, senha, nome, Venda_idVenda) values (10, 'T7N5AU0', 'Dario Kilsby', 10);
+insert into Funcionario (idFuncionario, senha, nome) values (10, 'T7N5AU0', 'Dario Kilsby');
 
+insert into Funcionario (idFuncionario, senha, nome) values (11, '12345', 'Pedro');
+
+insert into Funcionario (idFuncionario, senha, nome) values (12, '12345', 'Arthur');
+
+insert into Funcionario (idFuncionario, senha, nome) values (13, '12345', 'Eduardo');
 
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover', 1);
