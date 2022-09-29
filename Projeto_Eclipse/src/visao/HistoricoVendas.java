@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Historico_Vendas extends JFrame {
+public class HistoricoVendas extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -26,7 +26,7 @@ public class Historico_Vendas extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Historico_Vendas frame = new Historico_Vendas();
+					HistoricoVendas frame = new HistoricoVendas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class Historico_Vendas extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Historico_Vendas() {
+	public HistoricoVendas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

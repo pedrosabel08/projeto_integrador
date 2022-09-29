@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import modelo.Cliente;
-import visao.Cad_Cliente;
+import visao.ManterCliente;
 
 public class ClienteBD {
 	static Connection conexao;

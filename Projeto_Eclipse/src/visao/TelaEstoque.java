@@ -12,12 +12,15 @@ import javax.swing.JTable;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
+
+import modelo.Produto;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class Tela_Estoque extends JFrame {
+public class TelaEstoque extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -34,7 +37,7 @@ public class Tela_Estoque extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Estoque (ArrayList<Produto> listaProdutos, Cad_Produto cadastro_produtos) {
+	public TelaEstoque () {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 465, 310);
 		contentPane = new JPanel();
@@ -59,10 +62,10 @@ public class Tela_Estoque extends JFrame {
 				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço"
 			}
 		);
-		for(int i=0; i< listaProdutos.size(); i++) {
-			Tela_Estoque c = listaProdutos.get(i);
-			modelo.addRow(new Object[] {  c.getID(), c.getNome(), c.getMarca(), c.getTamanho(), c.getCor(), c.getPreco()  });
-		}
+		//for(int i=0; i< listaProdutos.size(); i++) {
+		//	Tela_Estoque c = listaProdutos.get(i);
+			//modelo.addRow(new Object[] {  c.getID(), c.getNome(), c.getMarca(), c.getTamanho(), c.getCor(), c.getPreco()  });
+		//}
 		table.setModel(modelo);
 		scrollPane.setViewportView(table);
 		
@@ -89,8 +92,8 @@ public class Tela_Estoque extends JFrame {
 		JButton btnNewButton = new JButton("Alterar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Alterar_Produto frame = new Alterar_Produto();
-				frame.setVisible(true);
+			//	Alterar_Produto frame = new Alterar_Produto();
+			//	frame.setVisible(true);
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -100,7 +103,7 @@ public class Tela_Estoque extends JFrame {
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cad_Produto frame = new Cad_Produto();
+				ManterProduto frame = new ManterProduto();
 				frame.setVisible(true);
 			}
 		});

@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Tela_Venda extends JFrame {
+public class TelaVenda extends JFrame {
 
 	private JPanel contentPane;
 
@@ -24,7 +24,7 @@ public class Tela_Venda extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tela_Venda frame = new Tela_Venda();
+					TelaVenda frame = new TelaVenda();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class Tela_Venda extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Venda() {
+	public TelaVenda() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

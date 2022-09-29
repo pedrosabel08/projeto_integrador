@@ -11,7 +11,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Tela_Inicial extends JFrame {
+public class TelaInicial extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +22,7 @@ public class Tela_Inicial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tela_Inicial frame = new Tela_Inicial();
+					TelaInicial frame = new TelaInicial();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class Tela_Inicial extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Inicial() {
+	public TelaInicial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 460, 280);
 		contentPane = new JPanel();
@@ -45,7 +45,7 @@ public class Tela_Inicial extends JFrame {
 		JButton btnCadastrarClientes = new JButton("Clientes");
 		btnCadastrarClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Lista_Clientes frame = new Lista_Clientes();
+				ListaClientes frame = new ListaClientes();
 				frame.setVisible(true);
 			}
 		});
@@ -56,7 +56,7 @@ public class Tela_Inicial extends JFrame {
 		JButton btnCadastrarProdutos = new JButton("Produtos");
 		btnCadastrarProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Estoque frame = new Tela_Estoque();
+				TelaEstoque frame = new TelaEstoque();
 				frame.setVisible(true);
 			}
 		});
@@ -67,7 +67,7 @@ public class Tela_Inicial extends JFrame {
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico de Vendas");
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Historico_Vendas frame = new Historico_Vendas();
+				HistoricoVendas frame = new HistoricoVendas();
 				frame.setVisible(true);
 			}
 		});
@@ -78,7 +78,7 @@ public class Tela_Inicial extends JFrame {
 		JButton btnRealizarVenda = new JButton("Realizar Venda");
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Venda frame = new Tela_Venda();
+				TelaVenda frame = new TelaVenda();
 				frame.setVisible(true);
 			}
 		});

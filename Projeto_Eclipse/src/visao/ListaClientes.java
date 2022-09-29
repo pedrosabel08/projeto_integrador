@@ -16,12 +16,11 @@ import java.awt.event.ActionEvent;
 
 import modelo.Cliente;
 import controle.ClienteBD;
-public class Lista_Clientes extends JFrame {
+public class ListaClientes extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
 	private JButton btnExcluir;
-	private JButton btnAlterar;
 	private JButton btnNewButton;
 private DefaultTableModel modelo;
 private ArrayList<Cliente> listaClientes;
@@ -33,7 +32,7 @@ private Cliente pessoaSelecionada;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Lista_Clientes frame = new Lista_Clientes();
+					ListaClientes frame = new ListaClientes();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +44,7 @@ private Cliente pessoaSelecionada;
 	/**
 	 * Create the frame.
 	 */
-	public Lista_Clientes() {
+	public ListaClientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 565, 300);
 		contentPane = new JPanel();
@@ -85,19 +84,6 @@ private Cliente pessoaSelecionada;
 		btnFechar.setBounds(20, 214, 88, 23);
 		contentPane.add(btnFechar);
 		
-		
-		btnAlterar = new JButton("Alterar");
-		btnAlterar.addActionListener(new ActionListener() {
-			Cad_Cliente frame = new Cad_Cliente();
-			public void actionPerformed(ActionEvent e) {
-						
-			}
-			
-
-			});
-		btnAlterar.setBounds(317, 214, 85, 23);
-		contentPane.add(btnAlterar);
-		
 		JButton btnNewButton_1 = new JButton("Selecionar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -108,7 +94,7 @@ private Cliente pessoaSelecionada;
 				}
 
 				if (posicaoPessoa > -1) {
-					Cad_Cliente x = new Cad_Cliente();
+					ManterCliente x = new ManterCliente();
 					x.txtNome.setText(table.getValueAt(table.getSelectedRow(), 1).toString());
 					x.txtCPF.setText(table.getValueAt(table.getSelectedRow(), 2).toString());
 					x.txtNasc.setText(table.getValueAt(table.getSelectedRow(), 3).toString());
@@ -126,18 +112,18 @@ private Cliente pessoaSelecionada;
 		btnNewButton_1.setBounds(119, 214, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_3 = new JButton("Cadastrar");
+		JButton btnNewButton_3 = new JButton("Cadastro");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cad_Cliente frame = new Cad_Cliente();
+				ManterCliente frame = new ManterCliente();
 				frame.setVisible(true);	
 				
-				Cad_Cliente cadclientes = new Cad_Cliente();
+				ManterCliente cadclientes = new ManterCliente();
 				cadclientes.setVisible(true);
 				setVisible(false);	
 			}
 		});
-		btnNewButton_3.setBounds(431, 214, 89, 23);
+		btnNewButton_3.setBounds(437, 214, 89, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_2 = new JButton("Excluir");
@@ -155,7 +141,7 @@ private Cliente pessoaSelecionada;
 				((DefaultTableModel) table.getModel()).removeRow(table.getSelectedRow());
 			}
 		});
-		btnNewButton_2.setBounds(218, 214, 89, 23);
+		btnNewButton_2.setBounds(280, 214, 89, 23);
 		contentPane.add(btnNewButton_2);
 		};		
 		public void selecionarpessoa (Cliente pessoaSelecionada) {

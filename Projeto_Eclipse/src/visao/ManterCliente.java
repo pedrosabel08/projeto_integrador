@@ -11,15 +11,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
-
 import controle.ClienteBD;
 import modelo.Cliente;
 
-public class Cad_Cliente extends JFrame {
+public class ManterCliente extends JFrame {
 	
 	protected static final int posicaoPessoa = 0;
 	protected static final int pessoaSelecionada = 0;
@@ -39,7 +36,7 @@ public class Cad_Cliente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Cad_Cliente frame = new Cad_Cliente();
+					ManterCliente frame = new ManterCliente();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +48,7 @@ public class Cad_Cliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Cad_Cliente() {
+	public ManterCliente() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 557, 360);
@@ -100,7 +97,7 @@ public class Cad_Cliente extends JFrame {
 		contentPane.add(txtRG);
 		txtRG.setColumns(10);
 
-		JButton btnSalvar = new JButton("Salvar");
+		JButton btnSalvar = new JButton("Cadastrar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -109,8 +106,6 @@ public class Cad_Cliente extends JFrame {
 				String rg = txtRG.getText();
 				String dataNasc = txtNasc.getText();
 				
-				// fazer validacao
-
 				Cliente cliente = new Cliente();
 				cliente.setNome(nome);
 				cliente.setCPF(cpf);
@@ -128,7 +123,7 @@ public class Cad_Cliente extends JFrame {
 			}
 		});
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSalvar.setBounds(285, 248, 89, 23);
+		btnSalvar.setBounds(268, 248, 106, 23);
 		contentPane.add(btnSalvar);
 
 		JButton btnLimpar = new JButton("Limpar");
@@ -147,25 +142,27 @@ public class Cad_Cliente extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFechar.setBounds(33, 248, 89, 23);
+		btnFechar.setBounds(46, 248, 89, 23);
 		contentPane.add(btnFechar);
 		
 		JButton btntabela = new JButton("Tabela");
+		btntabela.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btntabela.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Lista_Clientes lc = new Lista_Clientes();
+				ListaClientes lc = new ListaClientes();
 				lc.setVisible(true);
 				setVisible(false);
 			}
 		});
-		btntabela.setBounds(164, 250, 89, 23);
+		btntabela.setBounds(158, 248, 89, 23);
 		contentPane.add(btntabela);
 		
-		JButton btnNewButton = new JButton("alterar");
+		JButton btnNewButton = new JButton("Alterar");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ClienteBD clientebd = new ClienteBD();
-				Lista_Clientes lc = new Lista_Clientes();	
+				ListaClientes lc = new ListaClientes();	
 				lc.selecionarpessoa(clienteSelecionado);
 				Cliente cliente = listaClientes.get(pessoaSelecionada);
 
