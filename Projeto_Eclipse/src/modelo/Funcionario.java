@@ -3,6 +3,7 @@ package modelo;
 public class Funcionario {
 
 	private String nome, senha;
+	private int id;
 
 	public String getNome() {
 		return nome;
@@ -18,6 +19,14 @@ public class Funcionario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	
