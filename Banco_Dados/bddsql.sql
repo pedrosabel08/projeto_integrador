@@ -189,6 +189,9 @@ insert into Funcionario (idFuncionario, senha, nome) values (9, 'TWrLAhpTu', 'Ol
 
 insert into Funcionario (idFuncionario, senha, nome) values (10, 'T7N5AU0', 'Dario Kilsby');
 
+insert into Funcionario (idFuncionario, senha, nome) values (11, '12345', 'Pedro');
+
+insert into Funcionario (idFuncionario, senha, nome) values (12, '12345', 'Arthur');
 
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover', 1);
