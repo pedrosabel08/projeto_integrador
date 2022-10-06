@@ -7,102 +7,110 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import modelo.Cliente;
+import modelo.Funcionario;
 
 public class ClienteBD {
-	static Connection conexao;
-
-	private static Statement st;
-
-	public ClienteBD() {
-		conexao = Conexao.faz_conexao();
-	}
-
-	public boolean inserirCliente(Cliente cliente) {
-
+	Connection conn;
+	PreparedStatement stmt;
+	ResultSet rs;
+	ArrayList<Cliente> lista = new ArrayList<>();
+	
+	public void cadastrarCliente(Cliente cliente) {
+		String sql = "insert into clientes (nome,cpf,rg,data_nascimento) values (?,?,?,?)";
+		
+		conn = new Conexao().faz_conexao();
+		
 		try {
-
-			PreparedStatement ps = conexao.prepareStatement("insert into clientes (nome,cpf,rg,data_nascimento) values(?,?,?,?)");
-			ps.setString(1, cliente.getNome());
-			ps.setString(2, cliente.getCPF());
-			ps.setString(3, cliente.getRG());
-			ps.setString(4, cliente.getData_nascimento());
-			ps.executeUpdate();
-			return true;
-
-		} catch (SQLException e1) {
-			System.out.println(e1.getMessage());
+			
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getCPF());
+			stmt.setString(3, cliente.getRG());
+			stmt.setString(4, cliente.getData_nascimento());
+			
+			stmt.execute();
+			stmt.close();
+			
+			JOptionPane.showMessageDialog(null, "Cliente inserido com sucesso!");
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Erro no Banco de Dados!" + e);
 		}
-
-		return false;
-
+		
 	}
-
-	public int alterarClientes(Cliente cliente) {
+	public ArrayList <Cliente> pesquisarCliente(){
+		String sql = "select * from clientes";
+		
+		conn = new Conexao().faz_conexao();
+		
 		try {
-
-			PreparedStatement ps = conexao.prepareStatement("update Clientes set nome=? where id = ?");
-			ps.setString(1, cliente.getNome());
-			ps.setInt(2, cliente.getId());
-			ps.executeUpdate();
-
-			ps.executeUpdate();
-			ps = conexao.prepareStatement("update Clientes set cpf=? where id = ?");
-			ps.setString(1, cliente.getCPF());
-			ps.setInt(2, cliente.getId());
-			ps.executeUpdate();
-
-			ps = conexao.prepareStatement("update Clientes set rg=? where id = ?");
-			ps.setString(1, cliente.getRG());
-			ps.setInt(2, cliente.getId());
-			ps.executeUpdate();
-
-			ps = conexao.prepareStatement("update Clientes set data_nascimento=? where id = ?");
-			ps.setString(1, cliente.getData_nascimento());
-			ps.setInt(2, cliente.getId());
-			ps.executeUpdate();
-
-		} catch (SQLException e1) {
-
-			e1.printStackTrace();
-		}
-		return 0;
-	}
-
-	public ArrayList<Cliente> listarClientes() {
-		PreparedStatement ps;
-		ResultSet rs;
-		ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
-		try {
-			ps = conexao.prepareStatement("select * from Clientes order by nome");
-			rs = ps.executeQuery();
-			while (rs.next()) {
+			stmt =  conn.prepareStatement(sql);
+			rs = stmt.executeQuery();
+			
+			
+			while(rs.next()) {
 				Cliente cliente = new Cliente();
 				cliente.setId(rs.getInt("idClientes"));
 				cliente.setNome(rs.getString("nome"));
 				cliente.setCPF(rs.getString("cpf"));
-				cliente.setRG(rs.getString("RG"));
+				cliente.setRG(rs.getString("rg"));
 				cliente.setData_nascimento(rs.getString("data_nascimento"));
-				listaClientes.add(cliente);
+				
+				lista.add(cliente);
+				
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao pesquisar -> " + e);
 		}
-		return listaClientes;
+		return lista;
 	}
-
-	public int removeCliente(Cliente cliente) {
+	
+	public void alterarCliente(Cliente cliente) {
+		String sql = "update clientes set nome = ?, cpf = ?, rg = ?, data_nascimento = ? where idClientes = ?";
+		
+		conn = new Conexao().faz_conexao();
+		
 		try {
-
-			PreparedStatement ps = conexao.prepareStatement("delete from Clientes where id=?");
-			ps.setInt(1, cliente.getId());
-			return ps.executeUpdate();
-
-		} catch (SQLException e1) {
-			System.out.println("Erro ao conectar com base de dados.");
+			
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getCPF());
+			stmt.setString(3, cliente.getRG());
+			stmt.setString(4, cliente.getData_nascimento());
+			stmt.setInt(5, cliente.getId());
+			
+			stmt.execute();
+			stmt.close();
+			
+			JOptionPane.showMessageDialog(null,"Cliente alterado com sucesso!");
+			
+		} catch (SQLException e) {
+			
+			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao alterar -> " + e);
 		}
-		return 0;
+	}
+	public void excluirCliente(Cliente cliente) {
+		String sql = "delete from clientes where idClientes = ?";
 
+		conn = new Conexao().faz_conexao();
+		
+		try {
+			
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, cliente.getId());
+			
+			stmt.execute();
+			stmt.close();
+			
+			JOptionPane.showMessageDialog(null,"Cliente excluido com sucesso!");
+			
+		} catch (SQLException e) {
+			
+			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao excluir -> " + e);
+		}
 	}
 
 }

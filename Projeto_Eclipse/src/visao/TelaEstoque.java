@@ -102,8 +102,8 @@ public class TelaEstoque extends JFrame {
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ManterProduto frame = new ManterProduto();
-				frame.setVisible(true);
+				//ManterProduto frame = new ManterProduto();
+			//	frame.setVisible(true);
 			}
 		});
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
