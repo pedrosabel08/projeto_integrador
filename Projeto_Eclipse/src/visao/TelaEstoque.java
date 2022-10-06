@@ -102,7 +102,6 @@ public class TelaEstoque extends JFrame {
 		));
 		tabelaProduto.setBounds(220, 221, 155, -152);
 		scrollPane.setViewportView(tabelaProduto);
-		
 		JButton btnNewButton = new JButton("Pesquisar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
