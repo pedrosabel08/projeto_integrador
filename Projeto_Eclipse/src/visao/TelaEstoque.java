@@ -39,7 +39,7 @@ public class TelaEstoque extends JFrame {
 	 */
 	public TelaEstoque () {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 465, 310);
+		setBounds(100, 100, 640, 460);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -51,7 +51,7 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(lblItensEmEstoque);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(58, 62, 330, 131);
+		scrollPane.setBounds(59, 64, 329, 129);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -92,8 +92,7 @@ public class TelaEstoque extends JFrame {
 		JButton btnNewButton = new JButton("Alterar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	Alterar_Produto frame = new Alterar_Produto();
-			//	frame.setVisible(true);
+
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
