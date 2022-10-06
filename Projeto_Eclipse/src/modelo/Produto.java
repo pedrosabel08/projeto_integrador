@@ -1,13 +1,13 @@
 package modelo;
 public class Produto {
-	private String ID;
+	private int Id;
 	private String Nome, Marca, Tamanho, Cor;
 	private String preco;
-	public String getID() {
-		return ID;
+	public int getId() {
+		return Id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(int id) {
+		id = id;
 	}
 	public String getNome() {
 		return Nome;
