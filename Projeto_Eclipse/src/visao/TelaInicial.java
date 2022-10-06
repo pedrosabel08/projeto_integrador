@@ -45,7 +45,8 @@ public class TelaInicial extends JFrame {
 		JButton btnCadastrarClientes = new JButton("Clientes");
 		btnCadastrarClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ListaClientes frame = new ListaClientes();
+				setVisible(false);
+				FrameCliente frame = new FrameCliente();
 				frame.setVisible(true);
 			}
 		});
