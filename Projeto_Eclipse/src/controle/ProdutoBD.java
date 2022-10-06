@@ -17,8 +17,8 @@ public class ProdutoBD {
 	ResultSet rs;
 	ArrayList<Produto> lista = new ArrayList<>();
 	
-	public void cadastrarFuncionario(Produto produto) {
-		String sql = "insert into produtos (nome, marca, tamanho, cor) values (?,?)";
+	public void cadastrarProduto(Produto produto) {
+		String sql = "insert into produtos (nome, marca, tamanho, cor) values (?, ?, ?, ?)";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -33,7 +33,7 @@ public class ProdutoBD {
 			stmt.execute();
 			stmt.close();
 			
-			JOptionPane.showMessageDialog(null, "Funcionario inserido com sucesso!");
+			JOptionPane.showMessageDialog(null, "Produto inserido com sucesso!");
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Erro no Banco de Dados!" + e);
