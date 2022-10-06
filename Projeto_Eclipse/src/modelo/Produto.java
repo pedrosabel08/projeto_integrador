@@ -6,8 +6,8 @@ public class Produto {
 	public int getId() {
 		return Id;
 	}
-	public void setId(int id) {
-		id = id;
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 	public String getNome() {
 		return Nome;
