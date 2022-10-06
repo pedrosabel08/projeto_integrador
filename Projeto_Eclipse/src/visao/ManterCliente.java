@@ -174,7 +174,7 @@ public class ManterCliente extends JFrame {
 				
 				Cliente cliente = new Cliente();
 				
-				cliente pessoaSelecionada= listaClientes.get(posicaoPessoa);
+				cliente pessoaSelecionada = listaClientes.get(posicaoPessoa);
 				ListaClientes.selecionarPessoa(pessoaSelecionada);
 
 				String nome = txtNome.getText();

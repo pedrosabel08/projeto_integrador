@@ -78,7 +78,7 @@ public class ClienteBD {
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				Cliente cliente = new Cliente();
-				cliente.setId(rs.getInt("idCliente"));
+				cliente.setId(rs.getInt("idClientes"));
 				cliente.setNome(rs.getString("nome"));
 				cliente.setCPF(rs.getString("cpf"));
 				cliente.setRG(rs.getString("RG"));
