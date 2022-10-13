@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Produtos` (
   `marca` VARCHAR(45) NULL,
   `tamanho` VARCHAR(15) NULL,
   `cor` VARCHAR(45) NULL,
+  `preco` VARCHAR(45) NULL,
   PRIMARY KEY (`idProdutos`))
 ENGINE = InnoDB;
 
@@ -147,25 +148,25 @@ insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Br
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
 
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet', 35);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet', 20);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod', 28);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal', 45);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange', 39);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red', 64);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red', 97);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine', 12);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue', 62);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple');
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple', 34);
 
 
 

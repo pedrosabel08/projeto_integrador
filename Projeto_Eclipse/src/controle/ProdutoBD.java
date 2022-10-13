@@ -18,7 +18,7 @@ public class ProdutoBD {
 	ArrayList<Produto> lista = new ArrayList<>();
 	
 	public void cadastrarProduto(Produto produto) {
-		String sql = "insert into produtos (nome, marca, tamanho, cor) values (?, ?, ?, ?)";
+		String sql = "insert into produtos (nome, marca, tamanho, cor, preco) values (?, ?, ?, ?, ?)";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -29,6 +29,7 @@ public class ProdutoBD {
 			stmt.setString(2, produto.getMarca());
 			stmt.setString(3, produto.getTamanho());
 			stmt.setString(4, produto.getCor());
+			stmt.setString(5, produto.getPreco());
 			
 			stmt.execute();
 			stmt.close();
@@ -57,6 +58,7 @@ public class ProdutoBD {
 				produto.setMarca(rs.getString("marca"));
 				produto.setTamanho(rs.getString("tamanho"));
 				produto.setCor(rs.getString("cor"));
+				produto.setPreco(rs.getString("preco"));
 				
 				lista.add(produto);
 				
@@ -68,7 +70,7 @@ public class ProdutoBD {
 	}
 	
 	public void alterarProduto(Produto produto) {
-		String sql = "update produtos set nome = ?, marca = ?, tamanho = ?, cor = ? where idProdutos = ?";
+		String sql = "update produtos set nome = ?, marca = ?, tamanho = ?, cor = ?, preco = ? where idProdutos = ?";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -79,7 +81,9 @@ public class ProdutoBD {
 			stmt.setString(2, produto.getMarca());
 			stmt.setString(3, produto.getTamanho());
 			stmt.setString(4, produto.getCor());
-			stmt.setInt(5, produto.getId());
+			stmt.setString(5, produto.getPreco());
+			stmt.setInt(6, produto.getId());
+			
 			
 			stmt.execute();
 			stmt.close();
