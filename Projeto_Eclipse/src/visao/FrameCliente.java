@@ -186,6 +186,8 @@ public class FrameCliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				TelaInicial inicio = new TelaInicial();
+				setVisible(false);
+				inicio.setLocationRelativeTo(null);
 				inicio.setVisible(true);
 			}
 		});

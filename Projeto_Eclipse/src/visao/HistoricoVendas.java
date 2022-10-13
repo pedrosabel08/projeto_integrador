@@ -27,6 +27,7 @@ public class HistoricoVendas extends JFrame {
 			public void run() {
 				try {
 					HistoricoVendas frame = new HistoricoVendas();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

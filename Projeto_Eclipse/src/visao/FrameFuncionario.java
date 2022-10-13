@@ -36,6 +36,7 @@ public class FrameFuncionario extends JFrame {
 			public void run() {
 				try {
 					FrameFuncionario frame = new FrameFuncionario();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +50,7 @@ public class FrameFuncionario extends JFrame {
 	 */
 	public FrameFuncionario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 509);
+		setBounds(100, 100, 505, 552);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -86,7 +87,7 @@ public class FrameFuncionario extends JFrame {
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(204, 42, 254, 395);
+		scrollPane.setBounds(204, 42, 254, 446);
 		contentPane.add(scrollPane);
 		
 		tabelaFuncionario = new JTable();
@@ -158,6 +159,18 @@ public class FrameFuncionario extends JFrame {
 		});
 		btnNewButton_4.setBounds(47, 427, 89, 23);
 		contentPane.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Fechar");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				TelaInicial inicio = new TelaInicial();
+				inicio.setLocationRelativeTo(null);
+				inicio.setVisible(true);
+			}
+		});
+		btnNewButton_5.setBounds(47, 465, 89, 23);
+		contentPane.add(btnNewButton_5);
 		
 	}
 	
