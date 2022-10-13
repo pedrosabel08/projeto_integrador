@@ -83,7 +83,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(47, 257, 89, 23);
+		btnCadastrar.setBounds(47, 257, 95, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -117,7 +117,7 @@ public class FrameFuncionario extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(47, 291, 89, 23);
+		btnNewButton.setBounds(47, 291, 95, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
@@ -126,7 +126,7 @@ public class FrameFuncionario extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(47, 325, 89, 23);
+		btnNewButton_1.setBounds(47, 325, 95, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -135,7 +135,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(47, 359, 89, 23);
+		btnNewButton_2.setBounds(47, 359, 95, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -146,7 +146,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_3.setBounds(47, 393, 89, 23);
+		btnNewButton_3.setBounds(47, 393, 95, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -157,7 +157,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();	
 			}
 		});
-		btnNewButton_4.setBounds(47, 427, 89, 23);
+		btnNewButton_4.setBounds(47, 427, 95, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
@@ -169,7 +169,7 @@ public class FrameFuncionario extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_5.setBounds(47, 465, 89, 23);
+		btnNewButton_5.setBounds(47, 465, 95, 23);
 		contentPane.add(btnNewButton_5);
 		
 	}

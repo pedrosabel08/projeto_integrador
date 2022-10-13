@@ -192,7 +192,7 @@ public class TelaEstoque extends JFrame {
 			}
 		});
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton_5.setBounds(662, 430, 89, 23);
+		btnNewButton_5.setBounds(652, 430, 99, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JLabel lblNewLabel_3 = new JLabel("Preço:");
