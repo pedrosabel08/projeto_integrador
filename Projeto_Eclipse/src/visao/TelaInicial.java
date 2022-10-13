@@ -23,6 +23,7 @@ public class TelaInicial extends JFrame {
 			public void run() {
 				try {
 					TelaInicial frame = new TelaInicial();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +37,7 @@ public class TelaInicial extends JFrame {
 	 */
 	public TelaInicial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 460, 280);
+		setBounds(100, 100, 487, 280);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -47,6 +48,7 @@ public class TelaInicial extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				FrameCliente frame = new FrameCliente();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
@@ -57,34 +59,38 @@ public class TelaInicial extends JFrame {
 		JButton btnCadastrarProdutos = new JButton("Produtos");
 		btnCadastrarProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				TelaEstoque frame = new TelaEstoque();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnCadastrarProdutos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCadastrarProdutos.setBounds(242, 32, 165, 23);
+		btnCadastrarProdutos.setBounds(276, 32, 167, 23);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico de Vendas");
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HistoricoVendas frame = new HistoricoVendas();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnHistricoDeVendas.setBounds(242, 178, 165, 23);
+		btnHistricoDeVendas.setBounds(276, 109, 167, 23);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("Realizar Venda");
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaVenda frame = new TelaVenda();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnRealizarVenda.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRealizarVenda.setBounds(131, 108, 165, 23);
+		btnRealizarVenda.setBounds(44, 109, 151, 23);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
@@ -94,8 +100,21 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(44, 178, 151, 23);
+		btnNewButton.setBounds(276, 186, 167, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Funcion\u00E1rios");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				FrameFuncionario func = new FrameFuncionario();
+				func.setLocationRelativeTo(null);
+				func.setVisible(true);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(44, 186, 151, 23);
+		contentPane.add(btnNewButton_1);
 	}
 
 }

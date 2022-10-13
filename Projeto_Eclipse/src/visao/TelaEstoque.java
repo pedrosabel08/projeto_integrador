@@ -39,6 +39,7 @@ public class TelaEstoque extends JFrame {
 			public void run() {
 				try {
 					TelaEstoque frame = new TelaEstoque();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +53,7 @@ public class TelaEstoque extends JFrame {
 	 */
 	public TelaEstoque() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 600);
+		setBounds(100, 100, 685, 460);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -60,20 +61,20 @@ public class TelaEstoque extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setBounds(47, 94, 46, 14);
+		lblNewLabel.setBounds(47, 132, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(47, 121, 86, 20);
+		txtNome.setBounds(47, 157, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Marca:");
-		lblNewLabel_1.setBounds(47, 152, 46, 14);
+		lblNewLabel_1.setBounds(47, 188, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(47, 177, 86, 20);
+		txtMarca.setBounds(47, 213, 86, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
@@ -85,11 +86,11 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(47, 357, 89, 23);
+		btnCadastrar.setBounds(129, 372, 100, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(204, 11, 275, 395);
+		scrollPane.setBounds(178, 57, 464, 288);
 		contentPane.add(scrollPane);
 		
 		tabelaProduto = new JTable();
@@ -108,7 +109,7 @@ public class TelaEstoque extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(47, 391, 89, 23);
+		btnNewButton.setBounds(19, 372, 100, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
@@ -117,7 +118,7 @@ public class TelaEstoque extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(47, 425, 89, 23);
+		btnNewButton_1.setBounds(239, 372, 106, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -126,7 +127,7 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(47, 459, 89, 23);
+		btnNewButton_2.setBounds(553, 372, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -137,7 +138,7 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_3.setBounds(47, 493, 89, 23);
+		btnNewButton_3.setBounds(355, 372, 89, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -146,45 +147,49 @@ public class TelaEstoque extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton_4.setBounds(47, 527, 89, 23);
+		btnNewButton_4.setBounds(454, 372, 89, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
-		lblTamanho.setBounds(47, 208, 63, 14);
+		lblTamanho.setBounds(47, 244, 63, 14);
 		contentPane.add(lblTamanho);
 		
 		txtTamanho = new JTextField();
 		txtTamanho.setColumns(10);
-		txtTamanho.setBounds(47, 233, 86, 20);
+		txtTamanho.setBounds(47, 269, 86, 20);
 		contentPane.add(txtTamanho);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cor:");
-		lblNewLabel_2.setBounds(47, 264, 46, 14);
+		lblNewLabel_2.setBounds(47, 300, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		txtCor = new JTextField();
 		txtCor.setColumns(10);
-		txtCor.setBounds(47, 289, 86, 20);
+		txtCor.setBounds(47, 325, 86, 20);
 		contentPane.add(txtCor);
 		
 		txtID = new JTextField();
 		txtID.setEnabled(false);
 		txtID.setColumns(10);
-		txtID.setBounds(47, 63, 86, 20);
+		txtID.setBounds(47, 101, 86, 20);
 		contentPane.add(txtID);
 		
 		JLabel lblId = new JLabel("ID:");
-		lblId.setBounds(47, 35, 46, 14);
+		lblId.setBounds(47, 76, 46, 14);
 		contentPane.add(lblId);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
+				setVisible(false);
+				TelaInicial inicio = new TelaInicial();
+				inicio.setLocationRelativeTo(null);
+				inicio.setVisible(true);
+				
 			}
 		});
-		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnNewButton_5.setBounds(247, 459, 153, 57);
+		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton_5.setBounds(565, 23, 77, 23);
 		contentPane.add(btnNewButton_5);
 		
 	}

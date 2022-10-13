@@ -37,6 +37,7 @@ public class TelaLogin extends JFrame {
 			public void run() {
 				try {
 					TelaLogin frame = new TelaLogin();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -100,6 +101,7 @@ public class TelaLogin extends JFrame {
 					if(rs.next()) {
 						
 						TelaInicial exibir = new TelaInicial();
+						exibir.setLocationRelativeTo(null);
 						exibir.setVisible(true);
 						
 						setVisible(false);
