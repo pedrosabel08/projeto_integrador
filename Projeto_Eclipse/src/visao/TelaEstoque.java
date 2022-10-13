@@ -30,6 +30,7 @@ public class TelaEstoque extends JFrame {
 	private JTextField txtTamanho;
 	private JTextField txtCor;
 	private JTextField txtID;
+	private JTextField txtPreco;
 
 	/**
 	 * Launch the application.
@@ -53,7 +54,7 @@ public class TelaEstoque extends JFrame {
 	 */
 	public TelaEstoque() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 685, 460);
+		setBounds(100, 100, 800, 520);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -61,20 +62,20 @@ public class TelaEstoque extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setBounds(47, 132, 46, 14);
+		lblNewLabel.setBounds(19, 79, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(47, 157, 86, 20);
+		txtNome.setBounds(19, 104, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Marca:");
-		lblNewLabel_1.setBounds(47, 188, 46, 14);
+		lblNewLabel_1.setBounds(19, 135, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(47, 213, 86, 20);
+		txtMarca.setBounds(19, 160, 86, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
@@ -86,11 +87,11 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(129, 372, 100, 23);
+		btnCadastrar.setBounds(129, 430, 100, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(178, 57, 464, 288);
+		scrollPane.setBounds(178, 57, 573, 350);
 		contentPane.add(scrollPane);
 		
 		tabelaProduto = new JTable();
@@ -98,7 +99,7 @@ public class TelaEstoque extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Nome", "Marca", "Tamanho", "Cor"
+				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço"
 			}
 		));
 		tabelaProduto.setBounds(220, 221, 155, -152);
@@ -109,7 +110,7 @@ public class TelaEstoque extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(19, 372, 100, 23);
+		btnNewButton.setBounds(19, 430, 100, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
@@ -118,7 +119,7 @@ public class TelaEstoque extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(239, 372, 106, 23);
+		btnNewButton_1.setBounds(239, 430, 106, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -127,7 +128,7 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(553, 372, 89, 23);
+		btnNewButton_2.setBounds(553, 430, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -138,44 +139,46 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_3.setBounds(355, 372, 89, 23);
+		btnNewButton_3.setBounds(355, 430, 89, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				excluirProduto();
 				listarValores();
+			
 			}
 		});
-		btnNewButton_4.setBounds(454, 372, 89, 23);
+		btnNewButton_4.setBounds(454, 430, 89, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
-		lblTamanho.setBounds(47, 244, 63, 14);
+		lblTamanho.setBounds(19, 191, 63, 14);
 		contentPane.add(lblTamanho);
 		
 		txtTamanho = new JTextField();
 		txtTamanho.setColumns(10);
-		txtTamanho.setBounds(47, 269, 86, 20);
+		txtTamanho.setBounds(19, 216, 86, 20);
 		contentPane.add(txtTamanho);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cor:");
-		lblNewLabel_2.setBounds(47, 300, 46, 14);
+		lblNewLabel_2.setBounds(19, 247, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		txtCor = new JTextField();
 		txtCor.setColumns(10);
-		txtCor.setBounds(47, 325, 86, 20);
+		txtCor.setBounds(19, 272, 86, 20);
 		contentPane.add(txtCor);
 		
 		txtID = new JTextField();
 		txtID.setEnabled(false);
 		txtID.setColumns(10);
-		txtID.setBounds(47, 101, 86, 20);
+		txtID.setBounds(19, 48, 86, 20);
 		contentPane.add(txtID);
 		
 		JLabel lblId = new JLabel("ID:");
-		lblId.setBounds(47, 76, 46, 14);
+		lblId.setBounds(19, 23, 46, 14);
 		contentPane.add(lblId);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
@@ -189,8 +192,17 @@ public class TelaEstoque extends JFrame {
 			}
 		});
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton_5.setBounds(565, 23, 77, 23);
+		btnNewButton_5.setBounds(662, 430, 89, 23);
 		contentPane.add(btnNewButton_5);
+		
+		JLabel lblNewLabel_3 = new JLabel("Preço:");
+		lblNewLabel_3.setBounds(19, 303, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		txtPreco = new JTextField();
+		txtPreco.setColumns(10);
+		txtPreco.setBounds(19, 328, 86, 20);
+		contentPane.add(txtPreco);
 		
 	}
 	
@@ -202,21 +214,24 @@ public class TelaEstoque extends JFrame {
 		txtMarca.setText(tabelaProduto.getModel().getValueAt(setar, 2).toString());
 		txtTamanho.setText(tabelaProduto.getModel().getValueAt(setar, 3).toString());
 		txtCor.setText(tabelaProduto.getModel().getValueAt(setar, 4).toString());
+		txtPreco.setText(tabelaProduto.getModel().getValueAt(setar, 5).toString());
 	}
 	
 	private void CadastrarProduto() {
-		String nome, marca, tamanho, cor;
+		String nome, marca, tamanho, cor, preco;
 		
 		nome = txtNome.getText();
 		marca = txtMarca.getText();
 		tamanho = txtTamanho.getText();
 		cor = txtCor.getText();
+		preco = txtPreco.getText();
 		
 		Produto produto = new Produto();
 		produto.setNome(nome);
 		produto.setMarca(marca);
 		produto.setTamanho(tamanho);
 		produto.setCor(cor);
+		produto.setPreco(preco);
 		
 		ProdutoBD produtoBD = new ProdutoBD();
 		produtoBD.cadastrarProduto(produto);
@@ -227,17 +242,19 @@ public class TelaEstoque extends JFrame {
 		txtMarca.setText("");
 		txtTamanho.setText("");
 		txtCor.setText("");
+		txtPreco.setText("");
 		txtNome.requestFocus();
 	}
 	private void AlterarProduto() {
 		int id;
-		String nome, marca, tamanho, cor;
+		String nome, marca, tamanho, cor, preco;
 		
 		id = Integer.parseInt(txtID.getText());
 		nome = txtNome.getText();
 		marca = txtMarca.getText();
 		tamanho = txtTamanho.getText();
 		cor = txtCor.getText();
+		preco = txtPreco.getText();
 		
 		Produto produto = new Produto();
 		produto.setId(id);
@@ -245,6 +262,7 @@ public class TelaEstoque extends JFrame {
 		produto.setMarca(marca);
 		produto.setTamanho(tamanho);
 		produto.setCor(cor);
+		produto.setPreco(preco);
 		
 		ProdutoBD produtoBD = new ProdutoBD();
 		produtoBD.alterarProduto(produto);
@@ -275,7 +293,8 @@ public class TelaEstoque extends JFrame {
 						lista.get(num).getNome(),
 						lista.get(num).getMarca(),
 						lista.get(num).getTamanho(),
-						lista.get(num).getCor()
+						lista.get(num).getCor(),
+						lista.get(num).getPreco()
 				});
 			}
 			
