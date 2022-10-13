@@ -1,6 +1,6 @@
 package modelo;
 public class Produto {
-	private int Id;
+	private int Id, quantidade;
 	private String Nome, Marca, Tamanho, Cor;
 	private String preco;
 	public int getId() {
@@ -39,5 +39,11 @@ public class Produto {
 	public void setPreco(String preco) {
 		this.preco = preco;
 	}
-	
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 }
