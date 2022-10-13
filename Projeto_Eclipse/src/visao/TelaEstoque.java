@@ -206,7 +206,7 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(txtPreco);
 		
 		JLabel lblNewLabel_4 = new JLabel("Quantidade:");
-		lblNewLabel_4.setBounds(19, 364, 63, 14);
+		lblNewLabel_4.setBounds(19, 364, 86, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		txtQuantidade = new JTextField();
