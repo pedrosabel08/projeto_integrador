@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import modelo.Produto;
-import modelo.Produto;
 
 public class ProdutoBD {
 
@@ -120,30 +119,9 @@ public class ProdutoBD {
 			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao excluir -> " + e);
 		}
 	}
-	public Produto listarqtdID(Produto produto) {
-		PreparedStatement ps;
-		ResultSet rs;
-		Produto quantidadeID = null;
-		try {
-			ps = conn.prepareStatement("select quantidade from produtos where idProdutos = ? ");
-			ps.setInt(1, produto.getId());
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				quantidadeID = new Produto();
-				
-				quantidadeID.setQuantidade(rs.getInt("quantidade"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return quantidadeID;
-	}
 	public Produto diminuirEstoque(Produto produto) {
 
 		try {
-
-
 			PreparedStatement ps = conn.prepareStatement("update produtos set quantidade=? where idProdutos = ?");
 			ps.setInt(1, produto.getQuantidade());
 			ps.setInt(2, produto.getId());
@@ -156,20 +134,39 @@ public class ProdutoBD {
 		return null;
 	}
 	
-	public Produto listarProdutosID(Produto produto) {
-		PreparedStatement ps;
-		ResultSet rs;
-		Produto prod = null;
+	public Produto listarqtdID(Produto produto) {
+		Produto quantidadeID = new Produto();
+		String sql = "select quantidade from produtos where idProdutos = ? ";
+		
+		conn = new Conexao().faz_conexao();
 		try {
-			ps = conn.prepareStatement("select * from produtos where  idProduto = ? ");
-			ps.setInt(1, produto.getId());
-			rs = ps.executeQuery();
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, produto.getId());
+			rs = stmt.executeQuery();
 			while (rs.next()) {
-				prod = new Produto();
+				
+				quantidadeID.setQuantidade(rs.getInt("quantidade"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return quantidadeID;
+	}
+	public Produto listarProdutosID(Produto produto) {
+		Produto prod = new Produto();
+		String sql = "select * from produtos where idProdutos = ? ";
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, produto.getId());
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				
 				prod.setId(rs.getInt("idProdutos"));
+				prod.setCor(rs.getString("nome"));
+				prod.setTamanho(rs.getString("marca"));
+				prod.setMarca(rs.getString("tamanho"));
 				prod.setCor(rs.getString("cor"));
-				prod.setTamanho(rs.getString("tamanho"));
-				prod.setMarca(rs.getString("marca"));
 				prod.setPreco(rs.getString("preco"));
 				prod.setQuantidade(rs.getInt("quantidade"));
 			}

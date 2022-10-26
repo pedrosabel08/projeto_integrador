@@ -49,7 +49,7 @@ public class TelaVenda extends JFrame {
 	Produto p1 = new Produto();
 	Funcionario f = new Funcionario();
 	Cliente c = new Cliente();
-	private JTable tbCarrinho;
+	public JTable tbCarrinho;
 
 	/**
 	 * Launch the application.
@@ -82,7 +82,7 @@ public class TelaVenda extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Funcionário:");
+		JLabel lblNewLabel = new JLabel("Funcionario:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNewLabel.setBounds(10, 11, 102, 37);
 		contentPane.add(lblNewLabel);
@@ -157,7 +157,7 @@ public class TelaVenda extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Nome", "preço"
+				"ID", "Nome", "Preco"
 			}
 		));
 		scrollPane.setViewportView(tbCarrinho);
@@ -205,7 +205,7 @@ public class TelaVenda extends JFrame {
 		txtNomeProd.setBounds(52, 311, 166, 20);
 		contentPane.add(txtNomeProd);
 		
-		JLabel lblNewLabel_2_2_1 = new JLabel("Preço (R$):");
+		JLabel lblNewLabel_2_2_1 = new JLabel("Preco (R$):");
 		lblNewLabel_2_2_1.setBounds(10, 342, 79, 14);
 		contentPane.add(lblNewLabel_2_2_1);
 		
@@ -230,19 +230,19 @@ public class TelaVenda extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				 produtoBD = new ProdutoBD();
 				 p1 = new Produto();
-				String ID= txtIDProd.getText();
+				String id = txtIDProd.getText();
 				
-				p1.setId(Integer.valueOf(ID));
+				p1.setId(Integer.valueOf(id));
 				p1 = produtoBD.listarProdutosID(p1);
 				 
 					String nome = p1.getNome();
 					String preco = p1.getPreco();
 					txtNomeProd.setText(nome);
-					txtPreco.setText(String.valueOf(preco));
+					txtPreco.setText(preco);
 			    
 			}
 		});
-		btnNewButton.setBounds(581, 52, 43, 23);
+		btnNewButton.setBounds(581, 52, 63, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnAdicionar = new JButton("Adicionar");
@@ -251,7 +251,7 @@ public class TelaVenda extends JFrame {
 				
 				produtoBD = new ProdutoBD();
 				Produto p = new Produto();
-				String id= txtIDProd.getText();
+				String id = txtIDProd.getText();
 				
 				p.setId(Integer.valueOf(id));
 				p = produtoBD.listarqtdID(p);
@@ -276,8 +276,6 @@ public class TelaVenda extends JFrame {
 					}
 					btnAdicionar.setEnabled(false);
 					
-					
-					
 					p.setQuantidade(total);
 					p.setId(Integer.valueOf(id));
 					p = produtoBD.diminuirEstoque(p);
@@ -289,12 +287,12 @@ public class TelaVenda extends JFrame {
 				}
 				double somaTotal=0;
 				
-			    for(int i=0; i<model.getRowCount();i++)
-			        somaTotal += Double.parseDouble(model.getValueAt(i, 2).toString());
+			    for(int i=0; i<model.getRowCount();i++) {
+			        somaTotal = Double.parseDouble(model.getValueAt(i, 2).toString());
 			    txtTotal.setText(String.valueOf(somaTotal));
 			    
 			    txtQtd.setText("");
-				
+			    }
 			}
 			
 		});
@@ -302,13 +300,7 @@ public class TelaVenda extends JFrame {
 		btnAdicionar.setBackground(new Color(240, 240, 240));
 		btnAdicionar.setBounds(733, 230, 105, 23);
 		contentPane.add(btnAdicionar);
-		
-		
-		
-		
-		
-		
-		
+				
 		JLabel lblCarrinhoDeCompras = new JLabel("Carrinho de Compras");
 		lblCarrinhoDeCompras.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblCarrinhoDeCompras.setBounds(338, 220, 200, 37);
