@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
-import visao.TelaEstoque;
-import modelo.Produto;
+
+import modelo.Funcionario;
 import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
@@ -20,15 +20,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
 
-import controle.ProdutoBD;
-import visao.TelaVenda;
+import controle.FuncionarioBD;
 
-public class TabelaProduto extends JFrame {
+public class TabelaFuncionario extends JFrame {
 	
 	static Connection conexao;
 	private JPanel contentPane;
-	private JTable tbProduto;
-	private ArrayList<Produto> pesquisarProduto;
+	private JTable tbFuncionario;
+	private ArrayList<Funcionario> listaFuncionarios;
 	private DefaultTableModel modelo;
 	protected static final int posicaoPessoa = 0;
 
@@ -40,8 +39,8 @@ public class TabelaProduto extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TabelaProduto(TelaVenda tv ){
-
+	public TabelaFuncionario(TelaVenda tv ){
+		
 		
 			System.out.println(conexao);
 			
@@ -59,30 +58,30 @@ public class TabelaProduto extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		panel.add(scrollPane);
 		
-		tbProduto = new JTable();
-		tbProduto.setModel(new DefaultTableModel(
+		tbFuncionario = new JTable();
+		tbFuncionario.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
-					"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço", "Quantidade"
+				"ID", "Login"
 			}
 			
 		));
-		scrollPane.setViewportView(tbProduto);
-		ProdutoBD produtoBD = new ProdutoBD();
-		pesquisarProduto = produtoBD.pesquisarProduto();
+		scrollPane.setViewportView(tbFuncionario);
+		FuncionarioBD funcionarioBD = new FuncionarioBD();
+		listaFuncionarios = funcionarioBD.pesquisarFuncionario();
 		
-		tbProduto.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] {"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço", "Quantidade"}));
-		scrollPane.setViewportView(tbProduto);
+		tbFuncionario.setModel(new DefaultTableModel(new Object[][] {},
+				new String[] { "ID", "Login"}));
+		scrollPane.setViewportView(tbFuncionario);
 
-		modelo = (DefaultTableModel) tbProduto.getModel();
-		for (int i = 0; i < pesquisarProduto.size(); i++) {
-			Produto p = pesquisarProduto.get(i);
-		modelo.addRow(new Object[] { p.getId(), p.getNome(),  p.getMarca(), p.getTamanho(), p.getCor(), p.getPreco(), p.getQuantidade() });
+		modelo = (DefaultTableModel) tbFuncionario.getModel();
+		for (int i = 0; i < listaFuncionarios.size(); i++) {
+			Funcionario p = listaFuncionarios.get(i);
+		modelo.addRow(new Object[] { p.getId(), p.getNome()});
 
 		}
-		tbProduto.setModel(modelo);
+		tbFuncionario.setModel(modelo);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -90,14 +89,14 @@ public class TabelaProduto extends JFrame {
 		JButton btnNewButton = new JButton("Selecionar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-int posicaoPessoa = tbProduto.getSelectedRow();
+				int posicaoPessoa = tbFuncionario.getSelectedRow();
 				
 				if(posicaoPessoa > -1) {
 					
 					
-					tv.txtIDProd.setText(tbProduto.getValueAt(tbProduto.getSelectedRow(), 0).toString());
-					tv.txtNomeProd.setText(tbProduto.getValueAt(tbProduto.getSelectedRow(), 1).toString());
-					tv.txtPreco.setText(tbProduto.getValueAt(tbProduto.getSelectedRow(), 5).toString());
+					tv.txtIDFunc.setText(tbFuncionario.getValueAt(tbFuncionario.getSelectedRow(), 0).toString());
+					tv.txtNomeFunc.setText(tbFuncionario.getValueAt(tbFuncionario.getSelectedRow(), 1).toString());
+					
 					tv.setVisible(true);
 					setVisible(false);				
 					}else {
