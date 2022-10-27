@@ -62,8 +62,6 @@ public class TabelaProduto extends JFrame {
 		ProdutoBD produtoBD = new ProdutoBD();
 		listaProdutos = produtoBD.pesquisarProduto();
 
-		tbProduto.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { "ID", "Nome", "Marca", "Tamanho", "Cor", "Preço", "Quantidade" }));
 		scrollPane.setViewportView(tbProduto);
 
 		modelo = (DefaultTableModel) tbProduto.getModel();
