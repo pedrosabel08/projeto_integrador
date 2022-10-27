@@ -14,7 +14,7 @@ public class VendaBD {
 	static Connection conn;
 
 	public VendaBD() {
-		conn = Conexao.faz_conexao();
+		conn = new Conexao().faz_conexao();
 	}
 	
 	public ArrayList<Venda> buscarVenda() {
@@ -29,10 +29,7 @@ public class VendaBD {
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
-			    venda.setCadastro(rs.getInt("id_doCliente"));
-			    venda.setUsuario(rs.getInt("id_doUsuario"));
-			    venda.setProduto(rs.getInt("id_doProduto"));
-			    venda.setValor(rs.getDouble("preco"));
+			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
 	     }
@@ -49,13 +46,10 @@ public class VendaBD {
 
 		try {
 			
-			  PreparedStatement ps = conn.prepareStatement("insert into venda (idVenda, preco , data) values(?,?,?)");
-			
-			ps.setInt(1,v.getCadastro());
-			ps.setInt(2,v.getUsuario());
-			ps.setInt(3,v.getProduto());
-			ps.setDouble(4,v.getValor());
-			ps.setString(5,v.getData());
+			  PreparedStatement ps = conn.prepareStatement("insert into venda ( valor , data) values(?,?)");
+		
+			ps.setDouble(1,v.getValor());
+			ps.setString(2,v.getData());
 			
 			ps.executeUpdate();
 		

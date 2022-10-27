@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,10 +21,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.ProdutoBD;
-
+import controle.VendaBD;
 import modelo.Cliente;
 import modelo.Funcionario;
 import modelo.Produto;
+import modelo.Venda;
 
 public class TelaVenda extends JFrame {
 
@@ -86,6 +89,7 @@ public class TelaVenda extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	String teste;
 	public TelaVenda() {
 
 		TelaVenda tv = this;
@@ -299,18 +303,50 @@ public class TelaVenda extends JFrame {
 		lblCarrinhoDeCompras.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblCarrinhoDeCompras.setBounds(338, 220, 200, 37);
 		contentPane.add(lblCarrinhoDeCompras);
-
+		
+		JButton btnExcluir = new JButton("Excluir");
 		JButton btnSelecionar = new JButton("Selecionar");
 		btnSelecionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				int posicaoPessoa = tbCarrinho.getSelectedRow();
+				
+				 if(posicaoPessoa > -1) {
+					btnExcluir.setEnabled(true);
+					 teste = tbCarrinho.getValueAt(tbCarrinho.getSelectedRow(), 0).toString();
+						
+				}else {
+					JOptionPane.showMessageDialog(null,"escolha uma linha na tabela");
+					}
 			}
 		});
 		btnSelecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnSelecionar.setBounds(338, 403, 102, 23);
 		contentPane.add(btnSelecionar);
 
-		JButton btnExcluir = new JButton("Excluir");
+		
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+((DefaultTableModel) tbCarrinho.getModel()).removeRow(tbCarrinho.getSelectedRow());
+			
+				
+				Produto Cp1 = new Produto();
+				String id= (teste);
+				
+				Cp1.setId(Integer.valueOf(id));
+				Cp1 = produtoBD.listarProdutosID(Cp1);
+				int total = Cp1.getQuantidade() + 1;
+				
+				 Cp1.setQuantidade(total);
+				 Cp1.setId(Integer.valueOf(id));
+				 Cp1 = produtoBD.diminuirEstoque(Cp1);
+				
+				double somaTotal=0;
+			    for(int i=0; i<model.getRowCount();i++)
+			        somaTotal += Double.parseDouble(model.getValueAt(i, 2).toString());
+			    lblNewLabel_1.setText(String.valueOf(somaTotal));
+			    btnExcluir.setEnabled(false);
+			}
+		});
 		btnExcluir.setEnabled(false);
 		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnExcluir.setBounds(450, 403, 102, 23);
@@ -329,6 +365,30 @@ public class TelaVenda extends JFrame {
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				 for(int i=0; i<model.getRowCount();i++) { 
+					 String id_cadastro = txtIDCliente.getText();
+						String id_usuario = txtIDFunc.getText();
+						String id_produto = (tbCarrinho.getValueAt(tbCarrinho.getAutoResizeMode(), 0).toString());
+						String preco = (tbCarrinho.getValueAt(tbCarrinho.getAutoResizeMode(), 2).toString());
+						DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				        String h =(dtf5.format(LocalDateTime.now()));
+				  
+						Venda venda = new Venda();
+						
+						    venda.setCadastro(Integer.valueOf(id_cadastro));
+						    venda.setUsuario(Integer.valueOf(id_usuario));
+						    venda.setProduto(Integer.valueOf(id_produto));
+						    venda.setValor(Double.valueOf(preco));
+						    venda.setData(h);
+						
+
+						
+						VendaBD bdVenda = new VendaBD();
+						bdVenda.buscarVenda();
+				  }
+				  while(tbCarrinho.getModel().getRowCount()>0){
+						 ((DefaultTableModel) tbCarrinho.getModel()).removeRow(0);
+					}
 			}
 		});
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 13));
