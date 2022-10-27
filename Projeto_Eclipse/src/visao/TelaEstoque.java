@@ -244,7 +244,7 @@ public class TelaEstoque extends JFrame {
 		produto.setMarca(marca);
 		produto.setTamanho(tamanho);
 		produto.setCor(cor);
-		produto.setPreco(preco);
+		produto.setPreco(Double.valueOf(preco));
 		produto.setQuantidade(quantidade);
 		
 		ProdutoBD produtoBD = new ProdutoBD();
@@ -278,7 +278,7 @@ public class TelaEstoque extends JFrame {
 		produto.setMarca(marca);
 		produto.setTamanho(tamanho);
 		produto.setCor(cor);
-		produto.setPreco(preco);
+		produto.setPreco(Double.valueOf(preco));
 		produto.setQuantidade(quantidade);
 		
 		ProdutoBD produtoBD = new ProdutoBD();

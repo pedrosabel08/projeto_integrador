@@ -2,7 +2,7 @@ package modelo;
 public class Produto {
 	private int Id, quantidade;
 	private String Nome, Marca, Tamanho, Cor;
-	private String preco;
+	private Double preco;
 	public int getId() {
 		return Id;
 	}
@@ -33,10 +33,10 @@ public class Produto {
 	public void setCor(String cor) {
 		Cor = cor;
 	}
-	public String getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(String preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 	public int getQuantidade() {
