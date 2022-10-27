@@ -290,7 +290,6 @@ public class TelaVenda extends JFrame {
 		    for(int i=0; i<model.getRowCount();i++)
 		        somaTotal += Double.parseDouble(model.getValueAt(i, 2).toString());
 		    txtTotal.setText(String.valueOf(somaTotal));
-
 			}
 		
 		});
@@ -381,14 +380,15 @@ public class TelaVenda extends JFrame {
 						    venda.setValor(Double.valueOf(preco));
 						    venda.setData(h);
 						
-
-						
 						VendaBD bdVenda = new VendaBD();
-						bdVenda.buscarVenda();
+						bdVenda.inserirVenda(venda);
+
 				  }
 				  while(tbCarrinho.getModel().getRowCount()>0){
 						 ((DefaultTableModel) tbCarrinho.getModel()).removeRow(0);
 					}
+				    txtTotal.setText("");
+				    txtQtd.setText("");
 			}
 		});
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 13));

@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL auto_increment,
   `forma_pagamento` VARCHAR(10) NULL,
   `valor` FLOAT NULL,
-  `data` VARCHAR(50) NULL,
+  `data` DATE NULL,
   PRIMARY KEY (`idVenda`))
 ENGINE = InnoDB;
 
@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Produtos` (
   `marca` VARCHAR(45) NULL,
   `tamanho` VARCHAR(15) NULL,
   `cor` VARCHAR(45) NULL,
-  `preco` double NULL,
-  `quantidade` int NULL,
+  `preco` VARCHAR(45) NULL,
+  `quantidade` int NOT NULL,
   PRIMARY KEY (`idProdutos`))
 ENGINE = InnoDB;
 
@@ -107,25 +107,25 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (1, 'Á vista',34, "2022-08-02");
+insert into Venda (idVenda, forma_pagamento, data) values (1, 'Á vista', "2022-08-02");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (2, 'A prazo',62, "2022-05-07");
+insert into Venda (idVenda, forma_pagamento, data) values (2, 'A prazo', "2022-05-07");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (3, 'Á vista',73, "2021-05-11");
+insert into Venda (idVenda, forma_pagamento, data) values (3, 'Á vista', "2021-05-11");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (4, 'Á vista',123, "2022-02-04");
+insert into Venda (idVenda, forma_pagamento, data) values (4, 'Á vista', "2022-02-04");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (5, 'A prazo',482, "2021-08-23");
+insert into Venda (idVenda, forma_pagamento, data) values (5, 'A prazo', "2021-08-23");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (6, 'Á vista',435, "2022-02-16");
+insert into Venda (idVenda, forma_pagamento, data) values (6, 'Á vista', "2022-02-16");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (7, 'A prazo',85, "2022-07-18");
+insert into Venda (idVenda, forma_pagamento, data) values (7, 'A prazo', "2022-07-18");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (8, 'Á vista',192, "2021-09-17");
+insert into Venda (idVenda, forma_pagamento, data) values (8, 'Á vista', "2021-09-17");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (9, 'Á vista',326, "2022-05-05");
+insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-05-05");
 
-insert into Venda (idVenda, forma_pagamento, valor, data) values (10, 'Á vista',125, "2022-01-31");
+insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
 
 
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
@@ -149,25 +149,25 @@ insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Br
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
 
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet', 35, 2);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet', '35', 92);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet', 20, 3);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet', '20', 23);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod', 28, 1);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod', '28', 73);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal', 45, 3);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal', '45', 25);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange', 39, 5);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange', '39', 84);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red', 64, 3);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red', '64', 123);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red', 97, 2);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red', '97', 73);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine', 12, 1);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine', '12', 62);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue', 62, 3);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue', '62', 47);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple', 34, 4);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple', '34', 93);
 
 
 

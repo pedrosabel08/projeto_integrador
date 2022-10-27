@@ -10,31 +10,25 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import modelo.Venda;
+import controle.VendaBD;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+
 
 public class HistoricoVendas extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
-
+	private JTable tbVendas;
+	private DefaultTableModel modelo;
+	private ArrayList<Venda> listaVendas;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HistoricoVendas frame = new HistoricoVendas();
-					frame.setLocationRelativeTo(null);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -56,16 +50,23 @@ public class HistoricoVendas extends JFrame {
 		scrollPane.setBounds(80, 70, 271, 131);
 		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		tbVendas = new JTable();
+		tbVendas.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
-				"Nome", "Marca", "Valor"
+				"ID", "Valor", "Data"
 			}
 		));
-		scrollPane.setViewportView(table);
+		scrollPane.setViewportView(tbVendas);
 		
+		modelo = (DefaultTableModel) tbVendas.getModel();
+		for (int i = 0; i < listaVendas.size(); i++) {
+			Venda v = listaVendas.get(i);
+			modelo.addRow(new Object[] { v.getId(), v.getValor(), v.getData() });
+
+		}
+		tbVendas.setModel(modelo);
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
