@@ -29,7 +29,7 @@ public class ProdutoBD {
 			stmt.setString(2, produto.getMarca());
 			stmt.setString(3, produto.getTamanho());
 			stmt.setString(4, produto.getCor());
-			stmt.setString(5, produto.getPreco());
+			stmt.setDouble(5, produto.getPreco());
 			stmt.setInt(6, produto.getQuantidade());
 			
 			
@@ -60,7 +60,7 @@ public class ProdutoBD {
 				produto.setMarca(rs.getString("marca"));
 				produto.setTamanho(rs.getString("tamanho"));
 				produto.setCor(rs.getString("cor"));
-				produto.setPreco(rs.getString("preco"));
+				produto.setPreco(rs.getDouble("preco"));
 				produto.setQuantidade(rs.getInt("quantidade"));
 				
 				lista.add(produto);
@@ -84,7 +84,7 @@ public class ProdutoBD {
 			stmt.setString(2, produto.getMarca());
 			stmt.setString(3, produto.getTamanho());
 			stmt.setString(4, produto.getCor());
-			stmt.setString(5, produto.getPreco());
+			stmt.setDouble(5, produto.getPreco());
 			stmt.setInt(6, produto.getQuantidade());
 			stmt.setInt(7, produto.getId());
 			
@@ -167,7 +167,7 @@ public class ProdutoBD {
 				prod.setTamanho(rs.getString("marca"));
 				prod.setMarca(rs.getString("tamanho"));
 				prod.setCor(rs.getString("cor"));
-				prod.setPreco(rs.getString("preco"));
+				prod.setPreco(rs.getDouble("preco"));
 				prod.setQuantidade(rs.getInt("quantidade"));
 			}
 		} catch (SQLException e) {
