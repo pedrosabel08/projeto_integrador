@@ -37,7 +37,7 @@ public class TelaInicial extends JFrame {
 	 */
 	public TelaInicial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 487, 280);
+		setBounds(100, 100, 490, 320);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -66,7 +66,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnCadastrarProdutos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCadastrarProdutos.setBounds(276, 32, 167, 23);
+		btnCadastrarProdutos.setBounds(276, 32, 151, 23);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico de Vendas");
@@ -78,7 +78,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnHistricoDeVendas.setBounds(276, 109, 167, 23);
+		btnHistricoDeVendas.setBounds(44, 168, 151, 23);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("Realizar Venda");
@@ -90,7 +90,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnRealizarVenda.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRealizarVenda.setBounds(44, 109, 151, 23);
+		btnRealizarVenda.setBounds(276, 168, 151, 23);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
@@ -100,7 +100,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(276, 186, 167, 23);
+		btnNewButton.setBounds(153, 232, 167, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Funcion\u00E1rios");
@@ -113,8 +113,21 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(44, 186, 151, 23);
+		btnNewButton_1.setBounds(44, 109, 151, 23);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Fornecedor");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				FrameFornecedor frame = new FrameFornecedor();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_2.setBounds(276, 109, 151, 23);
+		contentPane.add(btnNewButton_2);
 	}
 
 }
