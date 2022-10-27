@@ -18,6 +18,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import controle.ProdutoBD;
+
 import modelo.Cliente;
 import modelo.Funcionario;
 import modelo.Produto;
@@ -79,6 +81,7 @@ public class TelaVenda extends JFrame {
 		this.txtNomeProd.setText(produto.getNome());
 		this.txtPreco.setText(String.valueOf(produto.getPreco()));
 	}
+	ProdutoBD produtoBD = new ProdutoBD();
 
 	/**
 	 * Create the frame.
@@ -237,7 +240,18 @@ public class TelaVenda extends JFrame {
 		JButton btnAdicionar = new JButton("Adicionar");
 		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				produtoBD = new ProdutoBD();
+				Produto Cp1 = new Produto();
+				String id= txtIDProd.getText();
+				
+				Cp1.setId(Integer.valueOf(id));
+				Cp1 = produtoBD.listarqtdID(Cp1);
+				
+				int quantidade1 = Cp1.getQuantidade();
+				String quantidadeVendido = txtQtd.getText();
+				int quantidadeVendida = Integer.valueOf(quantidadeVendido);
+				int total =quantidade1 - quantidadeVendida;
+				if(quantidade1 >= quantidadeVendida) {	
 				String qtdProdutos = txtQtd.getText();
 				if (qtdProdutos.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Nenhuma quantidade inserida!");
@@ -247,7 +261,7 @@ public class TelaVenda extends JFrame {
 					Integer qtd = Integer.valueOf(qtdProdutos);
 
 					if (produtoSelecionado != null) {
-						for (int i = 0; i <= qtd; i++) {
+						for (int i = 0; i < qtd; i++) {
 							model.addRow(new Object[] { produtoSelecionado.getId(), produtoSelecionado.getNome(),
 									produtoSelecionado.getPreco() });
 
@@ -258,9 +272,23 @@ public class TelaVenda extends JFrame {
 						JOptionPane.showMessageDialog(null, "Nenhum produto selecionado!");
 					}
 				}
+				Cp1.setQuantidade(total);
+				Cp1.setId(Integer.valueOf(id));
+				Cp1 = produtoBD.diminuirEstoque(Cp1);
+				
+			
+		}else
+			if(quantidadeVendida > quantidade1) {
+				JOptionPane.showMessageDialog(null, "estoque insuficiente");
+			}
+			double somaTotal=0;
+			
+		    for(int i=0; i<model.getRowCount();i++)
+		        somaTotal += Double.parseDouble(model.getValueAt(i, 2).toString());
+		    txtTotal.setText(String.valueOf(somaTotal));
 
 			}
-
+		
 		});
 		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnAdicionar.setBackground(new Color(240, 240, 240));
@@ -300,7 +328,7 @@ public class TelaVenda extends JFrame {
 		JButton btnFinalizar = new JButton("Finalizar");
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 			}
 		});
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 13));
