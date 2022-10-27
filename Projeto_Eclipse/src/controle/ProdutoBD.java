@@ -12,7 +12,7 @@ import modelo.Produto;
 
 public class ProdutoBD {
 
-	Connection conn;
+	static Connection conn;
 	PreparedStatement stmt;
 	ResultSet rs;
 	ArrayList<Produto> lista = new ArrayList<>();
