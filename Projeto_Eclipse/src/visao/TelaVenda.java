@@ -364,7 +364,7 @@ public class TelaVenda extends JFrame {
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				 for(int i=0; i<model.getRowCount();i++) { 
+				 for(int i=0; i < model.getRowCount();i++) { 
 					 String id_cadastro = txtIDCliente.getText();
 						String id_usuario = txtIDFunc.getText();
 						String id_produto = (tbCarrinho.getValueAt(tbCarrinho.getAutoResizeMode(), 0).toString());
@@ -394,6 +394,17 @@ public class TelaVenda extends JFrame {
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnFinalizar.setBounds(338, 456, 102, 23);
 		contentPane.add(btnFinalizar);
+		
+		JButton btnFechar = new JButton("Fechar");
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				
+			}
+		});
+		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnFechar.setBounds(777, 457, 102, 23);
+		contentPane.add(btnFechar);
 
 	}
 }

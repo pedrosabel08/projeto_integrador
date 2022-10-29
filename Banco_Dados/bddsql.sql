@@ -22,8 +22,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL auto_increment,
-  `forma_pagamento` VARCHAR(10) NULL,
-  `valor` FLOAT NULL,
+  `valor` DOUBLE NULL,
   `data` DATE NULL,
   PRIMARY KEY (`idVenda`))
 ENGINE = InnoDB;
@@ -107,25 +106,25 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-insert into Venda (idVenda, forma_pagamento, data) values (1, 'Á vista', "2022-08-02");
+insert into Venda (idVenda, valor, data) values (1, 35 , "2022-08-02");
 
-insert into Venda (idVenda, forma_pagamento, data) values (2, 'A prazo', "2022-05-07");
+insert into Venda (idVenda, valor, data) values (2, 68 ,  "2022-05-07");
 
-insert into Venda (idVenda, forma_pagamento, data) values (3, 'Á vista', "2021-05-11");
+insert into Venda (idVenda, valor, data) values (3, 51, "2021-05-11");
 
-insert into Venda (idVenda, forma_pagamento, data) values (4, 'Á vista', "2022-02-04");
+insert into Venda (idVenda, valor, data) values (4, 39, "2022-02-04");
 
-insert into Venda (idVenda, forma_pagamento, data) values (5, 'A prazo', "2021-08-23");
+insert into Venda (idVenda, valor, data) values (5, 42, "2021-08-23");
 
-insert into Venda (idVenda, forma_pagamento, data) values (6, 'Á vista', "2022-02-16");
+insert into Venda (idVenda, valor, data) values (6, 25, "2022-02-16");
 
-insert into Venda (idVenda, forma_pagamento, data) values (7, 'A prazo', "2022-07-18");
+insert into Venda (idVenda, valor, data) values (7, 94, "2022-07-18");
 
-insert into Venda (idVenda, forma_pagamento, data) values (8, 'Á vista', "2021-09-17");
+insert into Venda (idVenda, valor, data) values (8, 49,  "2021-09-17");
 
-insert into Venda (idVenda, forma_pagamento, data) values (9, 'Á vista', "2022-05-05");
+insert into Venda (idVenda, valor, data) values (9, 36, "2022-05-05");
 
-insert into Venda (idVenda, forma_pagamento, data) values (10, 'Á vista', "2022-01-31");
+insert into Venda (idVenda, valor, data) values (10, 72, "2022-01-31");
 
 
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
