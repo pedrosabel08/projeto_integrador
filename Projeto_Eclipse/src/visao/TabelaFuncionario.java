@@ -37,8 +37,6 @@ public class TabelaFuncionario extends JFrame {
 	 */
 	public TabelaFuncionario(TelaVenda tv) {
 
-		System.out.println(conexao);
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
