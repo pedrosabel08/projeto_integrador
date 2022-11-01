@@ -69,7 +69,7 @@ public class TelaInicial extends JFrame {
 		btnCadastrarProdutos.setBounds(276, 32, 151, 23);
 		contentPane.add(btnCadastrarProdutos);
 		
-		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico de Vendas");
+		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico");
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HistoricoVendas frame = new HistoricoVendas();
@@ -113,7 +113,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(44, 109, 151, 23);
+		btnNewButton_1.setBounds(44, 98, 151, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Fornecedor");
@@ -126,7 +126,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton_2.setBounds(276, 109, 151, 23);
+		btnNewButton_2.setBounds(276, 98, 151, 23);
 		contentPane.add(btnNewButton_2);
 	}
 
