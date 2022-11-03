@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 
-public class HistoricoVendas extends JFrame {
+public class HistVendas extends JFrame {
 
 	private JPanel contentPane;
 	private JTable tbVendas;
@@ -35,7 +35,7 @@ public class HistoricoVendas extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HistoricoVendas(TelaVenda tv) {
+	public HistVendas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
