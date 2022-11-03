@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 
 import modelo.Venda;
 
@@ -25,11 +26,12 @@ public class VendaBD {
 	    
 	    
 		try {
-			ps = conn.prepareStatement ("select * from venda");
+			ps = conn.prepareStatement ("select idVenda, produtos.nome, valor, data from venda inner join produtos on venda.idVenda = produtos.idProdutos;");
 			rs = ps.executeQuery();
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
+			    venda.setProduto(rs.getString("produtos.nome"));
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
@@ -43,13 +45,10 @@ public class VendaBD {
 	}
 	
 	public int inserirVenda(Venda v) {
-		
-		
-
+		PreparedStatement ps;
 		try {
 			
-			  PreparedStatement ps = conn.prepareStatement("insert into venda ( valor , data) values(?,?)");
-		
+			ps = conn.prepareStatement("insert into venda ( valor , data) values(?,?)");
 			ps.setDouble(1,v.getValor());
 			ps.setString(2,v.getData());
 			
