@@ -75,8 +75,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `cnpj` VARCHAR(45) NULL,
   `contato` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
-  `Produtos_idProdutos` INT NOT NULL,
-  PRIMARY KEY (`idFornecedor`, `Produtos_idProdutos`))
+  PRIMARY KEY (`idFornecedor`))
 ENGINE = InnoDB;
 
 
@@ -195,24 +194,24 @@ insert into Funcionario (idFuncionario, senha, nome) values (11, '12345', 'Pedro
 insert into Funcionario (idFuncionario, senha, nome) values (12, '12345', 'Arthur');
 
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover', 1);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (2, '95.322.810/0001-70', '(394) 1551540', 'Karleen Brewett', 2);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (2, '95.322.810/0001-70', '(394) 1551540', 'Karleen Brewett');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (3, '73.224.259/0001-90', '(877) 6633184', 'Samuele Acom', 3);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (3, '73.224.259/0001-90', '(877) 6633184', 'Samuele Acom');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (4, '69.427.339/0001-75', '(912) 3697795', 'Kristian Dawes', 4);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (4, '69.427.339/0001-75', '(912) 3697795', 'Kristian Dawes');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (5, '17.627.024/0001-78', '(562) 4676405', 'Tadd Oakman', 5);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (5, '17.627.024/0001-78', '(562) 4676405', 'Tadd Oakman');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (6, '80.107.368/0001-92', '(956) 2395462', 'Edgard Domange', 6);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (6, '80.107.368/0001-92', '(956) 2395462', 'Edgard Domange');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (7, '25.854.123/0001-10', '(215) 3104716', 'Karil Hearons', 7);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (7, '25.854.123/0001-10', '(215) 3104716', 'Karil Hearons');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (8, '14.459.938/0001-89', '(949) 9319835', 'Kiley Cloake', 8);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (8, '14.459.938/0001-89', '(949) 9319835', 'Kiley Cloake');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (9, '85.825.878/0001-19', '(975) 5537978', 'Linet Furley', 9);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9, '85.825.878/0001-19', '(975) 5537978', 'Linet Furley');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome, Produtos_idProdutos) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde', 10);
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde');
 
 
