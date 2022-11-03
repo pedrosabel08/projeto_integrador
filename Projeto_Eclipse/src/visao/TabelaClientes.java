@@ -22,6 +22,9 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.ClienteBD;
 import controle.FuncionarioBD;
+import java.awt.SystemColor;
+import java.awt.Font;
+import javax.swing.UIManager;
 
 public class TabelaClientes extends JFrame {
 
@@ -45,11 +48,13 @@ public class TabelaClientes extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
+		contentPane.setLayout(null);
 
 		JPanel panel = new JPanel();
+		panel.setBounds(5, 5, 424, 125);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -74,14 +79,11 @@ public class TabelaClientes extends JFrame {
 
 		}
 		tbCliente.setModel(modelo);
-
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-
-		JButton btnNewButton = new JButton("Selecionar");
-		btnNewButton.addActionListener(new ActionListener() {
+		
+		JButton btnNewButton_1 = new JButton("Selecionar");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				int linha = tbCliente.getSelectedRow();
 				int idCliente = (int) tbCliente.getValueAt(linha, 0);
 
@@ -98,9 +100,11 @@ public class TabelaClientes extends JFrame {
 					JOptionPane.showMessageDialog(null, "escolha uma linha na tabela");
 				}
 			}
-
 		});
-		panel_1.add(btnNewButton);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton_1.setBackground(SystemColor.controlShadow);
+		btnNewButton_1.setBounds(137, 180, 148, 36);
+		contentPane.add(btnNewButton_1);
 	}
 
 }

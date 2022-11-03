@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import java.awt.SystemColor;
 import java.awt.Color;
+import javax.swing.UIManager;
 
 public class TelaLogin extends JFrame {
 
@@ -56,39 +57,42 @@ public class TelaLogin extends JFrame {
 		setBounds(100, 100, 500, 385);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(0, 0, 0));
-		contentPane.setBackground(SystemColor.control);
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(61, 62, 66, 32);
+		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblUsuario.setBounds(47, 62, 80, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBackground(new Color(255, 255, 255));
-		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblSenha.setBounds(61, 152, 88, 37);
+		lblSenha.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblSenha.setBounds(47, 152, 102, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
+		txtUsuario.setBackground(Color.WHITE);
 		txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtUsuario.setBounds(159, 65, 230, 30);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		JButton btnFechar = new JButton("Fechar");
+		btnFechar.setBackground(UIManager.getColor("Button.shadow"));
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnFechar.setBounds(61, 257, 118, 37);
 		contentPane.add(btnFechar);
 		
 		JButton btnContinuar = new JButton("Continuar");
+		btnContinuar.setBackground(UIManager.getColor("Button.shadow"));
 		btnContinuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -132,11 +136,12 @@ public class TelaLogin extends JFrame {
 				
 			}
 		});
-		btnContinuar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnContinuar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnContinuar.setBounds(319, 257, 118, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
+		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtSenha.setBounds(159, 157, 230, 30);
 		contentPane.add(txtSenha);

@@ -1,5 +1,6 @@
 package visao;
 
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +17,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.FuncionarioBD;
+import modelo.Cliente;
 import modelo.Funcionario;
+import javax.swing.UIManager;
 
 public class TabelaFuncionario extends JFrame {
 
@@ -40,11 +43,13 @@ public class TabelaFuncionario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
+		contentPane.setLayout(null);
 
 		JPanel panel = new JPanel();
+		panel.setBounds(5, 5, 424, 125);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -69,14 +74,11 @@ public class TabelaFuncionario extends JFrame {
 
 		}
 		tbFuncionario.setModel(modelo);
-
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-
+		
 		JButton btnNewButton = new JButton("Selecionar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				int linha = tbFuncionario.getSelectedRow();
 				int idFuncionario = (int) tbFuncionario.getValueAt(linha, 0);
 
@@ -85,7 +87,6 @@ public class TabelaFuncionario extends JFrame {
 						funcionarioSelecionado = funcionario;
 					}
 				}
-
 				if (linha > -1) {
 
 					tv.setFuncionarioSelecionado(funcionarioSelecionado);
@@ -94,9 +95,12 @@ public class TabelaFuncionario extends JFrame {
 					JOptionPane.showMessageDialog(null, "escolha uma linha na tabela");
 				}
 			}
-
+			
 		});
-		panel_1.add(btnNewButton);
+		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(133, 172, 148, 36);
+		contentPane.add(btnNewButton);
 	}
 
 }

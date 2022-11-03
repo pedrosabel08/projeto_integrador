@@ -22,6 +22,10 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class FrameCliente extends JFrame {
 
@@ -54,15 +58,16 @@ public class FrameCliente extends JFrame {
 	 */
 	public FrameCliente() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 672, 440);
+		setBounds(100, 100, 830, 540);
 		ContentPane = new JPanel();
+		ContentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		ContentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(ContentPane);
 		ContentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 39, 618, 200);
+		scrollPane.setBounds(74, 39, 624, 302);
 		ContentPane.add(scrollPane);
 		
 		tabelaCliente = new JTable();
@@ -75,62 +80,86 @@ public class FrameCliente extends JFrame {
 		));
 		scrollPane.setViewportView(tabelaCliente);
 		
-		JLabel lblNewLabel = new JLabel("ID");
-		lblNewLabel.setBounds(20, 250, 46, 14);
+		JLabel lblNewLabel = new JLabel("ID:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(74, 352, 86, 14);
 		ContentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Nome");
-		lblNewLabel_1.setBounds(140, 250, 46, 14);
+		JLabel lblNewLabel_1 = new JLabel("Nome:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(200, 352, 86, 14);
 		ContentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("CPF");
-		lblNewLabel_2.setBounds(265, 250, 46, 14);
+		JLabel lblNewLabel_2 = new JLabel("CPF:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(327, 352, 86, 14);
 		ContentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("RG");
-		lblNewLabel_3.setBounds(381, 250, 46, 14);
+		JLabel lblNewLabel_3 = new JLabel("RG:");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(459, 352, 86, 14);
 		ContentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Data de Nascimento");
-		lblNewLabel_4.setBounds(484, 250, 104, 14);
+		JLabel lblNewLabel_4 = new JLabel("Data de Nascimento:");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setBounds(569, 352, 129, 14);
 		ContentPane.add(lblNewLabel_4);
 		
 		txtID = new JTextField();
+		txtID.setBackground(Color.WHITE);
+		txtID.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtID.setEnabled(false);
-		txtID.setBounds(20, 280, 86, 20);
+		txtID.setBounds(74, 382, 86, 20);
 		ContentPane.add(txtID);
 		txtID.setColumns(10);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(140, 280, 86, 20);
+		txtNome.setBackground(Color.WHITE);
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setBounds(200, 382, 86, 20);
 		ContentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtCPF = new JTextField();
-		txtCPF.setBounds(258, 280, 86, 20);
+		txtCPF.setBackground(Color.WHITE);
+		txtCPF.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtCPF.setBounds(327, 382, 86, 20);
 		ContentPane.add(txtCPF);
 		txtCPF.setColumns(10);
 		
 		txtRG = new JTextField();
-		txtRG.setBounds(372, 280, 86, 20);
+		txtRG.setBackground(Color.WHITE);
+		txtRG.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtRG.setBounds(459, 382, 86, 20);
 		ContentPane.add(txtRG);
 		txtRG.setColumns(10);
 		
 		txtNasc = new JTextField();
-		txtNasc.setBounds(484, 280, 86, 20);
+		txtNasc.setBackground(Color.WHITE);
+		txtNasc.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNasc.setBounds(586, 382, 86, 20);
 		ContentPane.add(txtNasc);
 		txtNasc.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Pesquisar");
+		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(10, 353, 96, 23);
+		btnNewButton.setBounds(44, 454, 96, 23);
 		ContentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cadastrar");
+		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarCliente();
@@ -138,19 +167,23 @@ public class FrameCliente extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_1.setBounds(116, 353, 104, 23);
+		btnNewButton_1.setBounds(150, 454, 104, 23);
 		ContentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Selecionar");
+		btnNewButton_2.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(230, 353, 103, 23);
+		btnNewButton_2.setBounds(264, 454, 103, 23);
 		ContentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
+		btnNewButton_3.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AlterarCliente();
@@ -158,10 +191,12 @@ public class FrameCliente extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_3.setBounds(341, 353, 96, 23);
+		btnNewButton_3.setBounds(375, 454, 96, 23);
 		ContentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
+		btnNewButton_4.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluirCliente();
@@ -169,19 +204,23 @@ public class FrameCliente extends JFrame {
 				LimparCampos();	
 			}
 		});
-		btnNewButton_4.setBounds(447, 353, 96, 23);
+		btnNewButton_4.setBounds(481, 454, 96, 23);
 		ContentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Limpar");
+		btnNewButton_5.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
 			}
 		});
-		btnNewButton_5.setBounds(549, 353, 89, 23);
+		btnNewButton_5.setBounds(583, 454, 89, 23);
 		ContentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Fechar");
+		btnNewButton_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_6.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -191,7 +230,7 @@ public class FrameCliente extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_6.setBounds(549, 11, 89, 23);
+		btnNewButton_6.setBounds(682, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
 	}
 	private void SelecionarCampos() {

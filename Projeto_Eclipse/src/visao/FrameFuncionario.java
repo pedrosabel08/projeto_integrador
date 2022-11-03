@@ -19,6 +19,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.UIManager;
+import java.awt.Font;
+import java.awt.Color;
 
 public class FrameFuncionario extends JFrame {
 
@@ -50,32 +53,40 @@ public class FrameFuncionario extends JFrame {
 	 */
 	public FrameFuncionario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 552);
+		setBounds(100, 100, 830, 540);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setBounds(50, 133, 46, 14);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(297, 347, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(50, 158, 86, 20);
+		txtNome.setBackground(Color.WHITE);
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setBounds(353, 344, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha:");
-		lblNewLabel_1.setBounds(50, 189, 46, 14);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(498, 347, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txtSenha = new JTextField();
-		txtSenha.setBounds(50, 214, 86, 20);
+		txtSenha.setBackground(Color.WHITE);
+		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtSenha.setBounds(554, 344, 86, 20);
 		contentPane.add(txtSenha);
 		txtSenha.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarFuncionario();
@@ -83,11 +94,11 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(47, 257, 95, 23);
+		btnCadastrar.setBounds(10, 419, 108, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(204, 42, 254, 446);
+		scrollPane.setBounds(128, 86, 512, 231);
 		contentPane.add(scrollPane);
 		
 		tabelaFuncionario = new JTable();
@@ -102,43 +113,50 @@ public class FrameFuncionario extends JFrame {
 		scrollPane.setViewportView(tabelaFuncionario);
 		
 		txtID = new JTextField();
+		txtID.setBackground(Color.WHITE);
+		txtID.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtID.setEnabled(false);
-		txtID.setBounds(50, 102, 86, 20);
+		txtID.setBounds(158, 344, 86, 20);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("ID");
-		lblNewLabel_2.setBounds(50, 77, 46, 14);
+		JLabel lblNewLabel_2 = new JLabel("ID:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_2.setBounds(128, 347, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("Pesquisar");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(47, 291, 95, 23);
+		btnNewButton.setBounds(128, 419, 108, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(47, 325, 95, 23);
+		btnNewButton_1.setBounds(246, 419, 108, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(47, 359, 95, 23);
+		btnNewButton_2.setBounds(364, 419, 108, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AlterarFuncionario();
@@ -146,10 +164,11 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_3.setBounds(47, 393, 95, 23);
+		btnNewButton_3.setBounds(482, 419, 108, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
+		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluirFuncionario();
@@ -157,10 +176,11 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();	
 			}
 		});
-		btnNewButton_4.setBounds(47, 427, 95, 23);
+		btnNewButton_4.setBounds(600, 419, 86, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
+		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -169,7 +189,7 @@ public class FrameFuncionario extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_5.setBounds(47, 465, 95, 23);
+		btnNewButton_5.setBounds(696, 419, 95, 23);
 		contentPane.add(btnNewButton_5);
 		
 	}

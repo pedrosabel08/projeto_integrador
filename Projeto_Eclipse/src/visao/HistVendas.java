@@ -20,6 +20,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
+import javax.swing.SwingConstants;
 
 
 public class HistVendas extends JFrame {
@@ -39,13 +41,15 @@ public class HistVendas extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblHistricoDeVendas = new JLabel("Hist\u00F3rico de Vendas");
-		lblHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblHistricoDeVendas.setBounds(144, 11, 174, 14);
+		lblHistricoDeVendas.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblHistricoDeVendas.setBounds(25, 11, 378, 14);
 		contentPane.add(lblHistricoDeVendas);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -72,6 +76,7 @@ public class HistVendas extends JFrame {
 		}
 		tbVendas.setModel(modelo);
 		JButton btnFechar = new JButton("Fechar");
+		btnFechar.setBackground(UIManager.getColor("Button.shadow"));
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
