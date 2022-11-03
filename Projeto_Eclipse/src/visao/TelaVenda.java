@@ -423,7 +423,7 @@ public class TelaVenda extends JFrame {
 						
 						    venda.setCadastro(Integer.valueOf(id_cadastro));
 						    venda.setUsuario(Integer.valueOf(id_usuario));
-						    venda.setProduto(Integer.valueOf(id_produto));
+						    venda.setProduto(id_produto);
 						    venda.setValor(Double.valueOf(preco));
 						    venda.setData(h);
 						
@@ -436,8 +436,10 @@ public class TelaVenda extends JFrame {
 					}
 				    txtTotal.setText("");
 				    txtQtd.setText("");
-				
+				    
+				    JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!");
 			}
+			
 		});
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnFinalizar.setBounds(338, 456, 214, 55);

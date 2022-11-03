@@ -61,7 +61,7 @@ public class HistoricoVendas extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Valor", "Data"
+				"ID","Nome", "Valor", "Data"
 			}
 		));
 		scrollPane.setViewportView(tbVendas);
@@ -71,7 +71,7 @@ public class HistoricoVendas extends JFrame {
 		modelo = (DefaultTableModel) tbVendas.getModel();
 		for (int i = 0; i < listaVendas.size(); i++) {
 			Venda v = listaVendas.get(i);
-			modelo.addRow(new Object[] { v.getId(), v.getValor(), v.getData() });
+			modelo.addRow(new Object[] { v.getId(), v.getProduto(), v.getValor(), v.getData() });
 
 		}
 		tbVendas.setModel(modelo);

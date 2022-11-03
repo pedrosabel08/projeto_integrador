@@ -22,9 +22,13 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL auto_increment,
+  `nome` varchar (45) null,
   `valor` DOUBLE NULL,
   `data` DATE NULL,
-  PRIMARY KEY (`idVenda`))
+  PRIMARY KEY (`idVenda`),
+    CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
+    FOREIGN KEY (`idVenda`)
+    REFERENCES `mydb`.`Produtos` (`idProdutos`))
 ENGINE = InnoDB;
 
 
@@ -82,23 +86,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Venda_has_Produtos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Venda_has_Produtos` (
-  `Venda_idVenda` INT NOT NULL,
-  `Produtos_idProdutos` INT NOT NULL,
-  PRIMARY KEY (`Venda_idVenda`, `Produtos_idProdutos`),
-  INDEX `fk_Venda_has_Produtos_Produtos1_idx` (`Produtos_idProdutos` ASC),
-  INDEX `fk_Venda_has_Produtos_Venda1_idx` (`Venda_idVenda` ASC),
-  CONSTRAINT `fk_Venda_has_Produtos_Venda1`
-    FOREIGN KEY (`Venda_idVenda`)
-    REFERENCES `mydb`.`Venda` (`idVenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
-    FOREIGN KEY (`Produtos_idProdutos`)
-    REFERENCES `mydb`.`Produtos` (`idProdutos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -215,3 +203,4 @@ insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9, '85.825.87
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (10, '33.958.886/0001-30', '(384) 8330538', 'Rhiamon Kinde');
 
 
+ 
