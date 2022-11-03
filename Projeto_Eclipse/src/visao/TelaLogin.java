@@ -22,6 +22,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class TelaLogin extends JFrame {
 
@@ -51,24 +53,28 @@ public class TelaLogin extends JFrame {
 	 */
 	public TelaLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 434, 312);
+		setBounds(100, 100, 500, 385);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(0, 0, 0));
+		contentPane.setBackground(SystemColor.control);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(61, 63, 66, 20);
+		lblUsuario.setBounds(61, 62, 66, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setBackground(new Color(255, 255, 255));
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblSenha.setBounds(61, 152, 64, 14);
+		lblSenha.setBounds(61, 152, 88, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(159, 65, 178, 20);
+		txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtUsuario.setBounds(159, 65, 230, 30);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -79,7 +85,7 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFechar.setBounds(61, 216, 89, 23);
+		btnFechar.setBounds(61, 257, 118, 37);
 		contentPane.add(btnFechar);
 		
 		JButton btnContinuar = new JButton("Continuar");
@@ -127,11 +133,12 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnContinuar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnContinuar.setBounds(236, 216, 101, 23);
+		btnContinuar.setBounds(319, 257, 118, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
-		txtSenha.setBounds(159, 151, 178, 20);
+		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtSenha.setBounds(159, 157, 230, 30);
 		contentPane.add(txtSenha);
 	}
 }
