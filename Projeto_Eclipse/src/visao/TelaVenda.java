@@ -16,9 +16,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.RowFilter;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.text.TableView.TableRow;
 
 import controle.ProdutoBD;
 import controle.VendaBD;
@@ -118,6 +121,17 @@ public class TelaVenda extends JFrame {
 		contentPane.add(txtIDFunc);
 		txtIDFunc.setColumns(10);
 
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(338, 272, 500, 120);
+		contentPane.add(scrollPane);
+		tbCarrinho = new JTable();
+		DefaultTableModel model = new DefaultTableModel(new Object[][] {}, new String[] { "ID", "Nome", "Preco" });
+		model.addRow(new Object[ ]{"0", "0", "0" });
+		model.addRow(new Object[ ]{"0", "0", "0" });
+		
+		tbCarrinho.setModel(model);
+		scrollPane.setViewportView(tbCarrinho);
+		
 		JButton btnPesquisarFunc = new JButton("Pesquisar");
 		btnPesquisarFunc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -169,14 +183,9 @@ public class TelaVenda extends JFrame {
 		JLabel lblNewLabel_2_1 = new JLabel("Nome:");
 		lblNewLabel_2_1.setBounds(492, 98, 46, 14);
 		contentPane.add(lblNewLabel_2_1);
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(338, 272, 500, 120);
-		contentPane.add(scrollPane);
+		
 
-		tbCarrinho = new JTable();
-		DefaultTableModel model = new DefaultTableModel(new Object[][] {}, new String[] { "ID", "Nome", "Preco" });
-		tbCarrinho.setModel(model);
-		scrollPane.setViewportView(tbCarrinho);
+		
 
 		txtNomeCliente = new JTextField();
 		txtNomeCliente.setEditable(false);
@@ -364,7 +373,7 @@ public class TelaVenda extends JFrame {
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				 for(int i=0; i < model.getRowCount();i++) { 
+				 for(int i=0; i < model.getRowCount()-2;i++) { 
 					 String id_cadastro = txtIDCliente.getText();
 						String id_usuario = txtIDFunc.getText();
 						String id_produto = (tbCarrinho.getValueAt(tbCarrinho.getAutoResizeMode(), 0).toString());
@@ -389,6 +398,9 @@ public class TelaVenda extends JFrame {
 					}
 				    txtTotal.setText("");
 				    txtQtd.setText("");
+				    model.addRow(new Object[ ]{"0", "0", "0" });
+					model.addRow(new Object[ ]{"0", "0", "0" });
+				
 			}
 		});
 		btnFinalizar.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -406,5 +418,5 @@ public class TelaVenda extends JFrame {
 		btnFechar.setBounds(777, 457, 102, 23);
 		contentPane.add(btnFechar);
 
-	}
-}
+	}	
+    }
