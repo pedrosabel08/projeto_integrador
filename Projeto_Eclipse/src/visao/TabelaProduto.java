@@ -16,7 +16,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.ProdutoBD;
+import modelo.Funcionario;
 import modelo.Produto;
+import java.awt.Font;
+import javax.swing.UIManager;
 
 public class TabelaProduto extends JFrame {
 
@@ -40,15 +43,18 @@ public class TabelaProduto extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
+		contentPane.setLayout(null);
 
 		JPanel panel = new JPanel();
+		panel.setBounds(5, 5, 424, 125);
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(1, 0, 0, 0));
+		panel.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 0, 424, 125);
 		panel.add(scrollPane);
 
 		tbProduto = new JTable();
@@ -70,33 +76,31 @@ public class TabelaProduto extends JFrame {
 
 		}
 		tbProduto.setModel(modelo);
-
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-
+		
 		JButton btnNewButton = new JButton("Selecionar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				int linha = tbProduto.getSelectedRow();
 				int idProduto = (int) tbProduto.getValueAt(linha, 0);
 
 				for (Produto produto : listaProdutos) {
-					if (idProduto == produto.getId()) {
+					if (produto.getId() == idProduto) {
 						produtoSelecionado = produto;
 					}
 				}
-
 				if (linha > -1) {
+
 					tv.setProdutoSelecionado(produtoSelecionado);
 					dispose();
 				} else {
 					JOptionPane.showMessageDialog(null, "escolha uma linha na tabela");
 				}
 			}
-
 		});
-		panel_1.add(btnNewButton);
+		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(133, 172, 148, 36);
+		contentPane.add(btnNewButton);
 	}
-
 }

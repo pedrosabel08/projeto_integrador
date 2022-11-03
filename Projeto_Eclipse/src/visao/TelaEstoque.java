@@ -20,6 +20,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.SwingConstants;
 
 public class TelaEstoque extends JFrame {
 
@@ -57,30 +59,39 @@ public class TelaEstoque extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setBounds(19, 79, 46, 14);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(139, 364, 86, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(19, 104, 86, 20);
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setBounds(139, 389, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Marca:");
-		lblNewLabel_1.setBounds(19, 135, 46, 14);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(235, 364, 86, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(19, 160, 86, 20);
+		txtMarca.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtMarca.setBounds(235, 389, 86, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnCadastrar.setBackground(UIManager.getColor("Button.shadow"));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarProduto();
@@ -92,7 +103,7 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(178, 57, 573, 350);
+		scrollPane.setBounds(43, 11, 662, 325);
 		contentPane.add(scrollPane);
 		
 		tabelaProduto = new JTable();
@@ -106,6 +117,8 @@ public class TelaEstoque extends JFrame {
 		tabelaProduto.setBounds(220, 221, 155, -152);
 		scrollPane.setViewportView(tabelaProduto);
 		JButton btnNewButton = new JButton("Pesquisar");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listarValores();
@@ -115,6 +128,8 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
@@ -124,6 +139,8 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_2.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
@@ -133,6 +150,8 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_3.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AlterarProduto();
@@ -144,6 +163,8 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
+		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_4.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluirProduto();
@@ -155,34 +176,44 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
-		lblTamanho.setBounds(19, 191, 63, 14);
+		lblTamanho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTamanho.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblTamanho.setBounds(331, 364, 86, 14);
 		contentPane.add(lblTamanho);
 		
 		txtTamanho = new JTextField();
+		txtTamanho.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtTamanho.setColumns(10);
-		txtTamanho.setBounds(19, 216, 86, 20);
+		txtTamanho.setBounds(331, 389, 86, 20);
 		contentPane.add(txtTamanho);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cor:");
-		lblNewLabel_2.setBounds(19, 247, 46, 14);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_2.setBounds(427, 364, 86, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		txtCor = new JTextField();
+		txtCor.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtCor.setColumns(10);
-		txtCor.setBounds(19, 272, 86, 20);
+		txtCor.setBounds(427, 389, 86, 20);
 		contentPane.add(txtCor);
 		
 		txtID = new JTextField();
+		txtID.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtID.setEnabled(false);
 		txtID.setColumns(10);
-		txtID.setBounds(19, 48, 86, 20);
+		txtID.setBounds(43, 389, 86, 20);
 		contentPane.add(txtID);
 		
 		JLabel lblId = new JLabel("ID:");
-		lblId.setBounds(19, 23, 46, 14);
+		lblId.setHorizontalAlignment(SwingConstants.CENTER);
+		lblId.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblId.setBounds(43, 364, 86, 14);
 		contentPane.add(lblId);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
+		btnNewButton_5.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -192,26 +223,32 @@ public class TelaEstoque extends JFrame {
 				
 			}
 		});
-		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_5.setBounds(662, 450, 89, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JLabel lblNewLabel_3 = new JLabel("Preço:");
-		lblNewLabel_3.setBounds(19, 303, 46, 14);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_3.setBounds(523, 364, 86, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		txtPreco = new JTextField();
+		txtPreco.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtPreco.setColumns(10);
-		txtPreco.setBounds(19, 328, 86, 20);
+		txtPreco.setBounds(523, 389, 86, 20);
 		contentPane.add(txtPreco);
 		
 		JLabel lblNewLabel_4 = new JLabel("Quantidade:");
-		lblNewLabel_4.setBounds(19, 364, 86, 14);
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_4.setBounds(619, 364, 86, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		txtQuantidade = new JTextField();
+		txtQuantidade.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtQuantidade.setColumns(10);
-		txtQuantidade.setBounds(19, 389, 86, 20);
+		txtQuantidade.setBounds(619, 389, 86, 20);
 		contentPane.add(txtQuantidade);
 		
 	}
