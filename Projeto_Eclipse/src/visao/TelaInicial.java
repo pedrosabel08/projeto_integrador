@@ -72,7 +72,7 @@ public class TelaInicial extends JFrame {
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico");
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HistoricoVendas frame = new HistoricoVendas();
+				HistVendas frame = new HistVendas();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
