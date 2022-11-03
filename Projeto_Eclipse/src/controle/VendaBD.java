@@ -12,7 +12,8 @@ import modelo.Venda;
 
 public class VendaBD {
 	static Connection conn;
-
+	ArrayList<Venda> listarVenda = new ArrayList<>();
+	
 	public VendaBD() {
 		conn = new Conexao().faz_conexao();
 	}
@@ -21,7 +22,7 @@ public class VendaBD {
 
 		PreparedStatement ps;
 	    ResultSet rs;
-	    ArrayList<Venda> listarVenda = new ArrayList<Venda>();
+	    
 	    
 		try {
 			ps = conn.prepareStatement ("select * from venda");
@@ -32,6 +33,7 @@ public class VendaBD {
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
+			    listarVenda.add(venda);
 	     }
 		} catch (SQLException e) {
 			

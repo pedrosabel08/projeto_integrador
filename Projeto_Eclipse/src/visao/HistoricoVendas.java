@@ -6,13 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import modelo.Venda;
 import controle.VendaBD;
+import modelo.Venda;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -59,6 +61,8 @@ public class HistoricoVendas extends JFrame {
 			}
 		));
 		scrollPane.setViewportView(tbVendas);
+		VendaBD vendaBD = new VendaBD();
+		listaVendas = vendaBD.buscarVenda();
 		
 		modelo = (DefaultTableModel) tbVendas.getModel();
 		for (int i = 0; i < listaVendas.size(); i++) {
@@ -77,5 +81,5 @@ public class HistoricoVendas extends JFrame {
 		btnFechar.setBounds(171, 212, 89, 23);
 		contentPane.add(btnFechar);
 	}
-
+	
 }
