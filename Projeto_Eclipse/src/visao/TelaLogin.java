@@ -7,20 +7,29 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
+import javax.swing.table.DefaultTableModel;
 
 import controle.Conexao;
+import controle.VendaBD;
+import modelo.Venda;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import java.awt.SystemColor;
@@ -130,10 +139,7 @@ public class TelaLogin extends JFrame {
 					
 				} catch (SQLException e1) {
 					e1.printStackTrace();
-				}
-				
-				
-				
+				}	
 				
 			}
 		});

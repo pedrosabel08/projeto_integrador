@@ -90,10 +90,11 @@ public class TelaInicial extends JFrame {
 		btnRealizarVenda.setBackground(UIManager.getColor("Button.shadow"));
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				TelaVenda frame = new TelaVenda();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
-			}
+							}
 		});
 		btnRealizarVenda.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnRealizarVenda.setBounds(276, 168, 151, 23);
