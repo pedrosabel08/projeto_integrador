@@ -159,9 +159,14 @@ public class FrameFuncionario extends JFrame {
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaFuncionario.getSelectedRowCount() > 0) {
 				AlterarFuncionario();
 				listarValores();
 				LimparCampos();
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
+				}
 			}
 		});
 		btnNewButton_3.setBounds(482, 419, 108, 23);
@@ -171,9 +176,14 @@ public class FrameFuncionario extends JFrame {
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaFuncionario.getSelectedRowCount() > 0) {
 				excluirFuncionario();
 				listarValores();
 				LimparCampos();	
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
+				}
 			}
 		});
 		btnNewButton_4.setBounds(600, 419, 86, 23);
@@ -195,11 +205,17 @@ public class FrameFuncionario extends JFrame {
 	}
 	
 	private void SelecionarCampos() {
+		if(tabelaFuncionario.getSelectedRowCount() > 0) {
+
 		int setar = tabelaFuncionario.getSelectedRow();
 		
 		txtID.setText(tabelaFuncionario.getModel().getValueAt(setar, 0).toString());
 		txtNome.setText(tabelaFuncionario.getModel().getValueAt(setar, 1).toString());
 		txtSenha.setText(tabelaFuncionario.getModel().getValueAt(setar, 2).toString());
+	}
+		else {
+			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
+		}
 	}
 	
 	private void CadastrarFuncionario() {
