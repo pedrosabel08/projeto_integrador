@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 
 public class HistVendas extends JFrame {
@@ -57,6 +59,7 @@ public class HistVendas extends JFrame {
 		contentPane.add(scrollPane);
 		
 		tbVendas = new JTable();
+		tbVendas.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		tbVendas.setModel(new DefaultTableModel(
 			new Object[][] {
 			},

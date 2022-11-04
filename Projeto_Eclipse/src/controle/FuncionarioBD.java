@@ -34,7 +34,7 @@ public class FuncionarioBD {
 			JOptionPane.showMessageDialog(null, "Funcionario inserido com sucesso!");
 			
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Erro no Banco de Dados!" + e);
+			JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar");
 		}
 		
 	}
