@@ -22,9 +22,13 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL auto_increment,
+  `idProdutos` INT,
   `valor` DOUBLE NULL,
   `data` DATE NULL,
-  PRIMARY KEY (`idVenda`))
+  PRIMARY KEY (`idVenda`),
+   CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
+    FOREIGN KEY (`idProdutos`)
+    REFERENCES `mydb`.`Produtos` (`idProdutos`))
 ENGINE = InnoDB;
 
 
@@ -88,6 +92,8 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
 
 
 

@@ -423,7 +423,7 @@ public class TelaVenda extends JFrame {
 						
 						    venda.setCadastro(Integer.valueOf(id_cadastro));
 						    venda.setUsuario(Integer.valueOf(id_usuario));
-						    venda.setProduto(id_produto);
+						    venda.setProduto(Integer.valueOf(id_produto));
 						    venda.setValor(Double.valueOf(preco));
 						    venda.setData(h);
 						
