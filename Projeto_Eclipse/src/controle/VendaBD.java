@@ -56,7 +56,7 @@ public class VendaBD {
 			
 			}catch(SQLException e1)
 			{
-				System.out.println("Erro ao conectar ï¿½ base de dados.");
+				System.out.println("Erro ao conectar a base de dados.");
 			}
 	return 0;
 }

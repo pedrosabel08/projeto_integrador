@@ -111,7 +111,7 @@ public class TelaEstoque extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preço", "Quantidade"
+				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preco", "Quantidade"
 			}
 		));
 		tabelaProduto.setBounds(220, 221, 155, -152);

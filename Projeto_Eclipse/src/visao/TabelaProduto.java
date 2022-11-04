@@ -59,7 +59,7 @@ public class TabelaProduto extends JFrame {
 
 		tbProduto = new JTable();
 		tbProduto.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { "ID", "Nome", "Marca", "Tamanho", "Cor", "Preço", "Quantidade" }
+				new String[] { "ID", "Nome", "Marca", "Tamanho", "Cor", "Preco", "Quantidade" }
 
 		));
 		scrollPane.setViewportView(tbProduto);

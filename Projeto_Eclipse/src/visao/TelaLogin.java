@@ -120,7 +120,7 @@ public class TelaLogin extends JFrame {
 						
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Esse usuário não existe");
+						JOptionPane.showMessageDialog(null, "Esse usuario nao existe");
 					}
 					
 					stmt.close();

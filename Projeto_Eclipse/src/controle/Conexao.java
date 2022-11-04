@@ -12,7 +12,7 @@ public class Conexao {
 			conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "aluno");
 
 		} catch (SQLException e) {
-			System.out.println("Erro ao conectar ï¿½ base de dados.");
+			System.out.println("Erro ao conectar a base de dados.");
 		}
 		return conexao;
 	}
