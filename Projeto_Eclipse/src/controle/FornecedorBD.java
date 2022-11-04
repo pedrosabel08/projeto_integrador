@@ -35,7 +35,7 @@ public class FornecedorBD {
 			JOptionPane.showMessageDialog(null, "Fornecedor inserido com sucesso!");
 			
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Erro no Banco de Dados!" + e);
+			JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar!");
 		}
 		
 	}
