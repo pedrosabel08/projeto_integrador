@@ -154,9 +154,14 @@ public class TelaEstoque extends JFrame {
 		btnNewButton_3.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaProduto.getSelectedRowCount() > 0) {
 				AlterarProduto();
 				listarValores();
 				LimparCampos();
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
+				}
 			}
 		});
 		btnNewButton_3.setBounds(365, 450, 89, 23);
@@ -167,9 +172,13 @@ public class TelaEstoque extends JFrame {
 		btnNewButton_4.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaProduto.getSelectedRowCount() > 0) {
 				excluirProduto();
 				listarValores();
-			
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
+				}
 			}
 		});
 		btnNewButton_4.setBounds(464, 450, 89, 23);
@@ -254,6 +263,8 @@ public class TelaEstoque extends JFrame {
 	}
 	
 	private void SelecionarCampos() {
+		if(tabelaProduto.getSelectedRowCount() > 0) {
+
 		int setar = tabelaProduto.getSelectedRow();
 		
 		txtID.setText(tabelaProduto.getModel().getValueAt(setar, 0).toString());
@@ -263,6 +274,10 @@ public class TelaEstoque extends JFrame {
 		txtCor.setText(tabelaProduto.getModel().getValueAt(setar, 4).toString());
 		txtPreco.setText(tabelaProduto.getModel().getValueAt(setar, 5).toString());
 		txtQuantidade.setText(tabelaProduto.getModel().getValueAt(setar, 6).toString());
+	}
+		else {
+			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
+		}
 	}
 	
 	private void CadastrarProduto() {
