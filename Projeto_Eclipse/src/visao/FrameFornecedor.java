@@ -24,6 +24,7 @@ import javax.swing.UIManager;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class FrameFornecedor extends JFrame {
 
@@ -55,6 +56,7 @@ public class FrameFornecedor extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameFornecedor() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameFornecedor.class.getResource("/Imagens/Fornecedor.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 830, 540);
 		contentPane = new JPanel();
