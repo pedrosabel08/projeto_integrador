@@ -42,6 +42,7 @@ public class FrameFornecedor extends JFrame {
 			public void run() {
 				try {
 					FrameFornecedor frame = new FrameFornecedor();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -166,9 +167,14 @@ public class FrameFornecedor extends JFrame {
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				AlterarFornecedor();
 				listarValores();
 				LimparCampos();
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
+				}
 			}
 		});
 		btnNewButton_3.setBounds(371, 419, 102, 23);
@@ -178,9 +184,14 @@ public class FrameFornecedor extends JFrame {
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				excluirFornecedor();
 				listarValores();
 				LimparCampos();	
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
+				}
 			}
 		});
 		btnNewButton_4.setBounds(483, 419, 101, 23);
@@ -211,12 +222,18 @@ public class FrameFornecedor extends JFrame {
 	}
 	
 	private void SelecionarCampos() {
+		
+		if(tabelaFornecedor.getSelectedRowCount() > 0) {
 		int setar = tabelaFornecedor.getSelectedRow();
 		
 		txtID.setText(tabelaFornecedor.getModel().getValueAt(setar, 0).toString());
 		txtNome.setText(tabelaFornecedor.getModel().getValueAt(setar, 1).toString());
 		txtCNPJ.setText(tabelaFornecedor.getModel().getValueAt(setar, 2).toString());
 		txtContato.setText(tabelaFornecedor.getModel().getValueAt(setar, 3).toString());
+	}
+		else {
+			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
+		}
 	}
 	
 	private void CadastrarFornecedor() {
