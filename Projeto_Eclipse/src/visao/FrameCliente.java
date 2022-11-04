@@ -45,6 +45,7 @@ public class FrameCliente extends JFrame {
 			public void run() {
 				try {
 					FrameCliente frame = new FrameCliente();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -186,9 +187,15 @@ public class FrameCliente extends JFrame {
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				if(tabelaCliente.getSelectedRowCount() > 0) {
 				AlterarCliente();
 				listarValores();
 				LimparCampos();
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
+				}
 			}
 		});
 		btnNewButton_3.setBounds(375, 454, 96, 23);
@@ -199,9 +206,14 @@ public class FrameCliente extends JFrame {
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tabelaCliente.getSelectedRowCount() > 0) {
 				excluirCliente();
 				listarValores();
 				LimparCampos();	
+				}
+				else {
+				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
+				}
 			}
 		});
 		btnNewButton_4.setBounds(481, 454, 96, 23);
@@ -234,6 +246,9 @@ public class FrameCliente extends JFrame {
 		ContentPane.add(btnNewButton_6);
 	}
 	private void SelecionarCampos() {
+		
+		if(tabelaCliente.getSelectedRowCount() > 0) {
+
 		int setar = tabelaCliente.getSelectedRow();
 		
 		txtID.setText(tabelaCliente.getModel().getValueAt(setar, 0).toString());
@@ -241,6 +256,10 @@ public class FrameCliente extends JFrame {
 		txtCPF.setText(tabelaCliente.getModel().getValueAt(setar, 2).toString());
 		txtRG.setText(tabelaCliente.getModel().getValueAt(setar, 3).toString());
 		txtNasc.setText(tabelaCliente.getModel().getValueAt(setar, 4).toString());
+	}
+		else {
+			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
+		}
 	}
 	
 	private void CadastrarCliente() {
