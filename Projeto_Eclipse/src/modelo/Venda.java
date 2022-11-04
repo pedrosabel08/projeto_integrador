@@ -8,7 +8,7 @@ public class Venda {
 	private String data;
 	private int cadastro;
 	private int usuario;
-	private String produto;
+	private int produto;
 	
 	public int getId() {
 		return id;
@@ -47,10 +47,10 @@ public class Venda {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public String getProduto() {
+	public int getProduto() {
 		return produto;
 	}
-	public void setProduto(String produto) {
+	public void setProduto(int produto) {
 		this.produto = produto;
 	}
 	

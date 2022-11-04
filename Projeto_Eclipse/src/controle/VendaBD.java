@@ -26,11 +26,12 @@ public class VendaBD {
 	    
 	    
 		try {
-			ps = conn.prepareStatement ("select * from venda");
+			ps = conn.prepareStatement ("select * from venda inner join produtos on venda.idVenda = produtos.idProdutos;");
 			rs = ps.executeQuery();
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
+			    venda.setProduto(rs.getInt("idProdutos"));
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
@@ -47,9 +48,10 @@ public class VendaBD {
 		PreparedStatement ps;
 		try {
 			
-			ps = conn.prepareStatement("insert into venda (valor , data) values(?,?)");
-			ps.setDouble(1,v.getValor());
-			ps.setString(2,v.getData());
+			ps = conn.prepareStatement("insert into venda (idProdutos, valor , data) values(?,?,?)");
+			ps.setInt(1, v.getProduto());
+			ps.setDouble(2,v.getValor());
+			ps.setString(3,v.getData());
 			
 			ps.executeUpdate();
 		
