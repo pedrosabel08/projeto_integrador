@@ -26,6 +26,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class FrameCliente extends JFrame {
 
@@ -58,6 +59,7 @@ public class FrameCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameCliente() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameCliente.class.getResource("/Imagens/Cliente.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 830, 540);
 		ContentPane = new JPanel();

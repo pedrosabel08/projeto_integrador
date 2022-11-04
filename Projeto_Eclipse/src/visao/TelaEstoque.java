@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 import javax.swing.UIManager;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class TelaEstoque extends JFrame {
 
@@ -56,6 +57,7 @@ public class TelaEstoque extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaEstoque() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(TelaEstoque.class.getResource("/Imagens/produtos.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();

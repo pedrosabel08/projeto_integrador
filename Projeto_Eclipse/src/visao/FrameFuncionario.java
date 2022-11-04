@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.UIManager;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class FrameFuncionario extends JFrame {
 
@@ -52,6 +53,7 @@ public class FrameFuncionario extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameFuncionario() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameFuncionario.class.getResource("/Imagens/Funcionario.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 830, 540);
 		contentPane = new JPanel();
