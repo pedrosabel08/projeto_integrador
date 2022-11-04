@@ -37,7 +37,7 @@ public class ClienteBD {
 			JOptionPane.showMessageDialog(null, "Cliente inserido com sucesso!");
 			
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Erro no Banco de Dados!" + e);
+			JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar!");
 		}
 		
 	}
