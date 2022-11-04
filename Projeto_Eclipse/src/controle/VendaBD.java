@@ -26,12 +26,12 @@ public class VendaBD {
 	    
 	    
 		try {
-			ps = conn.prepareStatement ("select * from venda inner join produtos on venda.idVenda = produtos.idProdutos;");
+			ps = conn.prepareStatement ("select idVenda, produtos.nome, valor, data from venda inner join produtos on venda.idProdutos = produtos.idProdutos;");
 			rs = ps.executeQuery();
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
-			    venda.setProduto(rs.getInt("idProdutos"));
+			    venda.setProduto(rs.getInt("nome"));
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
@@ -58,7 +58,7 @@ public class VendaBD {
 			
 			}catch(SQLException e1)
 			{
-				System.out.println("Erro ao conectar a base de dados.");
+				System.out.println("Erro ao conectar ao banco de dados");
 			}
 	return 0;
 }
