@@ -71,7 +71,7 @@ public class HistoricoVendas extends JFrame {
 		modelo = (DefaultTableModel) tbVendas.getModel();
 		for (int i = 0; i < listaVendas.size(); i++) {
 			Venda v = listaVendas.get(i);
-			modelo.addRow(new Object[] { v.getId(),v.getProduto(), v.getValor(), v.getData() });
+			modelo.addRow(new Object[] { v.getId(),v.getNome_produto(), v.getValor(), v.getData() });
 
 		}
 		tbVendas.setModel(modelo);
