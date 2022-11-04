@@ -9,6 +9,7 @@ public class Venda {
 	private int cadastro;
 	private int usuario;
 	private int produto;
+	private String nome_produto;
 	
 	public int getId() {
 		return id;
@@ -52,6 +53,12 @@ public class Venda {
 	}
 	public void setProduto(int produto) {
 		this.produto = produto;
+	}
+	public String getNome_produto() {
+		return nome_produto;
+	}
+	public void setNome_produto(String nome_produto) {
+		this.nome_produto = nome_produto;
 	}
 	
 

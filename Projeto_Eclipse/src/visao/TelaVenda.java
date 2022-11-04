@@ -411,7 +411,7 @@ public class TelaVenda extends JFrame {
 		contentPane.add(txtTotal);
 		txtTotal.setColumns(10);
 
-		JButton btnFinalizar = new JButton("Finalizar");
+		JButton btnFinalizar = new JButton("Finalizar (Enter)");
 		btnFinalizar.setBackground(UIManager.getColor("Button.shadow"));
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -456,6 +456,7 @@ public class TelaVenda extends JFrame {
     					String id_cadastro = txtIDCliente.getText();
     					String id_usuario = txtIDFunc.getText();
     					String id_produto = (tbCarrinho.getValueAt(i, 0).toString());
+    					String nome_produto = (tbCarrinho.getValueAt(i,1).toString());
     					String preco = (tbCarrinho.getValueAt(i, 2).toString());
     					DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     					String h =(dtf5.format(LocalDateTime.now()));
@@ -465,6 +466,7 @@ public class TelaVenda extends JFrame {
     					venda.setCadastro(Integer.valueOf(id_cadastro));
     					venda.setUsuario(Integer.valueOf(id_usuario));
     					venda.setProduto(Integer.valueOf(id_produto));
+    					venda.setNome_produto(nome_produto);
     					venda.setValor(Double.valueOf(preco));
     					venda.setData(h);
 

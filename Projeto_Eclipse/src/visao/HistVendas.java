@@ -59,7 +59,6 @@ public class HistVendas extends JFrame {
 		contentPane.add(scrollPane);
 		
 		tbVendas = new JTable();
-		tbVendas.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		tbVendas.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -74,7 +73,7 @@ public class HistVendas extends JFrame {
 		modelo = (DefaultTableModel) tbVendas.getModel();
 		for (int i = 0; i < listaVendas.size(); i++) {
 			Venda v = listaVendas.get(i);
-			modelo.addRow(new Object[] { v.getId(),v.getProduto(), v.getValor(), v.getData() });
+			modelo.addRow(new Object[] { v.getId(),v.getNome_produto(), v.getValor(), v.getData() });
 
 		}
 		tbVendas.setModel(modelo);

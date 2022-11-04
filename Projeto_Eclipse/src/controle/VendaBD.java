@@ -24,14 +24,14 @@ public class VendaBD {
 		PreparedStatement ps;
 	    ResultSet rs;
 	    
-	    
+	     
 		try {
 			ps = conn.prepareStatement ("select idVenda, produtos.nome, valor, data from venda inner join produtos on venda.idProdutos = produtos.idProdutos;");
 			rs = ps.executeQuery();
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
-			    venda.setProduto(rs.getInt("nome"));
+			    venda.setNome_produto(rs.getString("produtos.nome"));
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
