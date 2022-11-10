@@ -1,11 +1,13 @@
 package modelo;
 
+import java.util.Date;
+
 public class Cliente {
 	private int id;
 	private String Nome;
 	private String CPF;	
 	private String RG;
-	private String data_nascimento;
+	private Date data_nascimento;
 	
 	public int getId() {
 		return id;
@@ -31,10 +33,10 @@ public class Cliente {
 	public void setRG(String rG) {
 		RG = rG;
 	}
-	public String getData_nascimento() {
+	public Date getData_nascimento() {
 		return data_nascimento;
 	}
-	public void setData_nascimento(String data_nascimento) {
+	public void setData_nascimento(Date data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
 
