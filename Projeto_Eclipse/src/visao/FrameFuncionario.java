@@ -65,25 +65,25 @@ public class FrameFuncionario extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
 		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel.setBounds(297, 347, 46, 14);
+		lblNewLabel.setBounds(327, 347, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
 		txtNome.setBackground(Color.WHITE);
 		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtNome.setBounds(353, 344, 86, 20);
+		txtNome.setBounds(383, 344, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha:");
 		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_1.setBounds(498, 347, 46, 14);
+		lblNewLabel_1.setBounds(512, 347, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txtSenha = new JTextField();
 		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtSenha.setBounds(554, 344, 86, 20);
+		txtSenha.setBounds(568, 344, 86, 20);
 		contentPane.add(txtSenha);
 		txtSenha.setColumns(10);
 		
@@ -100,7 +100,7 @@ public class FrameFuncionario extends JFrame {
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(128, 86, 512, 231);
+		scrollPane.setBounds(142, 85, 512, 231);
 		contentPane.add(scrollPane);
 		
 		tabelaFuncionario = new JTable();
@@ -119,13 +119,13 @@ public class FrameFuncionario extends JFrame {
 		txtID.setBackground(Color.WHITE);
 		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtID.setEnabled(false);
-		txtID.setBounds(158, 344, 86, 20);
+		txtID.setBounds(184, 344, 86, 20);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("ID:");
 		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_2.setBounds(128, 347, 46, 14);
+		lblNewLabel_2.setBounds(140, 347, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("Pesquisar");
@@ -204,6 +204,11 @@ public class FrameFuncionario extends JFrame {
 		});
 		btnNewButton_5.setBounds(696, 419, 95, 23);
 		contentPane.add(btnNewButton_5);
+		
+		JLabel lblNewLabel_3 = new JLabel("Tela de Funcionários");
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_3.setBounds(336, 34, 136, 14);
+		contentPane.add(lblNewLabel_3);
 		
 	}
 	

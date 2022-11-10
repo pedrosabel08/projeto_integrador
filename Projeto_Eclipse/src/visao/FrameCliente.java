@@ -247,6 +247,11 @@ public class FrameCliente extends JFrame {
 		});
 		btnNewButton_6.setBounds(682, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
+		
+		JLabel lblNewLabel_5 = new JLabel("Tela de Clientes");
+		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(359, 11, 112, 14);
+		ContentPane.add(lblNewLabel_5);
 	}
 	private void SelecionarCampos() {
 		

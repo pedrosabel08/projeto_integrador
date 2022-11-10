@@ -105,7 +105,7 @@ public class TelaEstoque extends JFrame {
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(43, 11, 662, 325);
+		scrollPane.setBounds(57, 50, 662, 303);
 		contentPane.add(scrollPane);
 		
 		tabelaProduto = new JTable();
@@ -262,6 +262,11 @@ public class TelaEstoque extends JFrame {
 		txtQuantidade.setColumns(10);
 		txtQuantidade.setBounds(619, 389, 86, 20);
 		contentPane.add(txtQuantidade);
+		
+		JLabel lblNewLabel_5 = new JLabel("Tela de Produtos");
+		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(334, 21, 120, 14);
+		contentPane.add(lblNewLabel_5);
 		
 	}
 	

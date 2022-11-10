@@ -52,7 +52,7 @@ public class HistoricoVendas extends JFrame {
 		JLabel lblHistricoDeVendas = new JLabel("Hist\u00F3rico de Vendas");
 		lblHistricoDeVendas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblHistricoDeVendas.setBounds(25, 11, 378, 14);
+		lblHistricoDeVendas.setBounds(93, 11, 378, 14);
 		contentPane.add(lblHistricoDeVendas);
 		
 		JScrollPane scrollPane = new JScrollPane();

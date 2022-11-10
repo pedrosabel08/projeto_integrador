@@ -221,6 +221,11 @@ public class FrameFornecedor extends JFrame {
 		});
 		btnNewButton_6.setBounds(693, 420, 89, 23);
 		contentPane.add(btnNewButton_6);
+		
+		JLabel lblNewLabel_4 = new JLabel("Tela de Fornecedores");
+		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_4.setBounds(336, 31, 135, 14);
+		contentPane.add(lblNewLabel_4);
 	}
 	
 	private void SelecionarCampos() {
