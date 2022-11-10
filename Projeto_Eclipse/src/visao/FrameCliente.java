@@ -32,6 +32,9 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JFormattedTextField;
+import java.awt.Window.Type;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
 
 public class FrameCliente extends JFrame {
 	private JPanel ContentPane;
@@ -67,7 +70,7 @@ public class FrameCliente extends JFrame {
 		setBounds(100, 100, 830, 540);
 		ContentPane = new JPanel();
 		ContentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
-		ContentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		ContentPane.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Cadastro de Cliente", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
 
 		setContentPane(ContentPane);
 		ContentPane.setLayout(null);
@@ -155,7 +158,7 @@ public class FrameCliente extends JFrame {
 		
 		MaskFormatter maskRG;
 		try {
-			maskRG = new MaskFormatter("#.###.###");
+			maskRG = new MaskFormatter("##.###.###-#");
 			maskRG.install(txtRG);
 		} catch (ParseException e1) {
 			
@@ -267,17 +270,8 @@ public class FrameCliente extends JFrame {
 		});
 		btnNewButton_6.setBounds(682, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
-		
-<<<<<<< Updated upstream
-		JLabel lblNewLabel_5 = new JLabel("Tela de Clientes");
-		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
-		lblNewLabel_5.setBounds(359, 11, 112, 14);
-		ContentPane.add(lblNewLabel_5);
-=======
+				
 
-		
-
->>>>>>> Stashed changes
 	}
 	private void SelecionarCampos() {
 		

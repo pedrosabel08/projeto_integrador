@@ -102,29 +102,25 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '441.319.330-04', '34.087.029-1', "1976-07-29");
 
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (2, 'Gib Cragoe', '408.227.200-35', '30.732.433-3', "1991-03-26");
 
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (3, 'Brandi Lidden', '660.524.420-69', '46.335.287-7', "1966-03-27");
 
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (4, 'Jolee Barrett', '775.716.280-75', '13.854.527-3', "1978-05-05");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (1, 'Emelyne Partleton', '35203765121111', 3843298, "1976-07-29");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (5, 'Nedi Dugood', '216.569.730-14', '31.938.349-0', "1965-07-05");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (2, 'Gib Cragoe', '92566136892222', 4343846, "1991-03-26");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (6, 'Gordie Mazonowicz', '440.825.790-79', '33.099.294-6', "1990-08-08");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (3, 'Brandi Lidden', '91482753443333', 1576831, "1966-03-27");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (7, 'Leesa Elsby', '824.040.660-21', '37.706.974-7', "1995-12-18");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (4, 'Jolee Barrett', '1846893240444', 2000487, "1978-05-05");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (8, 'Rosemaria Howbrook', '713.569.540-22', '12.209.062-7', "1971-01-19");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (5, 'Nedi Dugood', '20270209855555', 91816708, "1965-07-05");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Brendon Baynton', '754.641.750-32', '19.623.572-8', "1976-11-30");
 
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (6, 'Gordie Mazonowicz', '16205353516666', 1623514, "1990-08-08");
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (7, 'Leesa Elsby', '0110854497777', 4395857, "1995-12-18");
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (8, 'Rosemaria Howbrook', '40400122678888', 4990844, "1971-01-19");
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Brendon Baynton', '04000013819999', 3693552, "1976-11-30");
-
-insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
+insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '237.106.760-10', '26.971.984-2', "1974-10-08");
 
 
 insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Camisa', 'Hering', 'S', 'Violet', '35', 92);

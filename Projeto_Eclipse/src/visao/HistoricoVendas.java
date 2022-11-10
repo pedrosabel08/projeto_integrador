@@ -24,6 +24,7 @@ import javax.swing.UIManager;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.Color;
+import javax.swing.border.TitledBorder;
 
 
 public class HistoricoVendas extends JFrame {
@@ -45,18 +46,14 @@ public class HistoricoVendas extends JFrame {
 		setBounds(100, 100, 580, 370);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new TitledBorder(null, "Historico de Vendas", TitledBorder.CENTER, TitledBorder.TOP, null, null));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblHistricoDeVendas = new JLabel("Hist\u00F3rico de Vendas");
 		lblHistricoDeVendas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 16));
-<<<<<<< Updated upstream
-		lblHistricoDeVendas.setBounds(93, 11, 378, 14);
-=======
-		lblHistricoDeVendas.setBounds(25, 11, 507, 14);
->>>>>>> Stashed changes
+
 		contentPane.add(lblHistricoDeVendas);
 		
 		JScrollPane scrollPane = new JScrollPane();
