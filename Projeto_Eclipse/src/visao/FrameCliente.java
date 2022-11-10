@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import controle.ClienteBD;
 import controle.FuncionarioBD;
@@ -21,23 +22,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.JFormattedTextField;
 
 public class FrameCliente extends JFrame {
-
 	private JPanel ContentPane;
 	private JTable tabelaCliente;
 	private JTextField txtID;
 	private JTextField txtNome;
-	private JTextField txtCPF;
-	private JTextField txtRG;
-	private JTextField txtNasc;
-
+	private JFormattedTextField txtCPF;
+	private JFormattedTextField txtRG;
+	private JFormattedTextField txtDataNasc;
 	/**
 	 * Launch the application.
 	 */
@@ -122,6 +125,10 @@ public class FrameCliente extends JFrame {
 		ContentPane.add(txtID);
 		txtID.setColumns(10);
 		
+		txtCPF = new JFormattedTextField();
+		txtCPF.setBounds(337, 383, 76, 20);
+		ContentPane.add(txtCPF);
+		
 		txtNome = new JTextField();
 		txtNome.setBackground(Color.WHITE);
 		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -129,27 +136,40 @@ public class FrameCliente extends JFrame {
 		ContentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
-		txtCPF = new JTextField();
-		txtCPF.setBackground(Color.WHITE);
-		txtCPF.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtCPF.setBounds(327, 382, 86, 20);
-		ContentPane.add(txtCPF);
-		txtCPF.setColumns(10);
-		
-		txtRG = new JTextField();
-		txtRG.setBackground(Color.WHITE);
-		txtRG.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtRG.setBounds(459, 382, 86, 20);
+		txtRG = new JFormattedTextField();
+		txtRG.setBounds(459, 383, 86, 20);
 		ContentPane.add(txtRG);
-		txtRG.setColumns(10);
 		
-		txtNasc = new JTextField();
-		txtNasc.setBackground(Color.WHITE);
-		txtNasc.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtNasc.setBounds(586, 382, 86, 20);
-		ContentPane.add(txtNasc);
-		txtNasc.setColumns(10);
+		txtDataNasc = new JFormattedTextField();
+		txtDataNasc.setBounds(569, 383, 129, 20);
+		ContentPane.add(txtDataNasc);
 		
+		MaskFormatter maskCPF;
+		try {
+			maskCPF = new MaskFormatter("###.###.###-##");
+			maskCPF.install(txtCPF);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
+		
+		MaskFormatter maskRG;
+		try {
+			maskRG = new MaskFormatter("#.###.###");
+			maskRG.install(txtRG);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
+        
+		MaskFormatter maskDataNasc;
+		try {
+			maskDataNasc = new MaskFormatter("##/##/####");
+			maskDataNasc.install(txtDataNasc);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
 		JButton btnNewButton = new JButton("Pesquisar");
 		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -248,10 +268,16 @@ public class FrameCliente extends JFrame {
 		btnNewButton_6.setBounds(682, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
 		
+<<<<<<< Updated upstream
 		JLabel lblNewLabel_5 = new JLabel("Tela de Clientes");
 		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
 		lblNewLabel_5.setBounds(359, 11, 112, 14);
 		ContentPane.add(lblNewLabel_5);
+=======
+
+		
+
+>>>>>>> Stashed changes
 	}
 	private void SelecionarCampos() {
 		
@@ -263,7 +289,7 @@ public class FrameCliente extends JFrame {
 		txtNome.setText(tabelaCliente.getModel().getValueAt(setar, 1).toString());
 		txtCPF.setText(tabelaCliente.getModel().getValueAt(setar, 2).toString());
 		txtRG.setText(tabelaCliente.getModel().getValueAt(setar, 3).toString());
-		txtNasc.setText(tabelaCliente.getModel().getValueAt(setar, 4).toString());
+		txtDataNasc.setText(tabelaCliente.getModel().getValueAt(setar, 4).toString());
 	}
 		else {
 			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
@@ -273,16 +299,22 @@ public class FrameCliente extends JFrame {
 	private void CadastrarCliente() {
 		String nome, cpf, rg, nasc;
 		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		nome = txtNome.getText();
 		cpf = txtCPF.getText();
 		rg = txtRG.getText();
-		nasc = txtNasc.getText();
+		nasc = txtDataNasc.getText();
 		
 		Cliente cliente = new Cliente();
 		cliente.setNome(nome);
 		cliente.setCPF(cpf);
 		cliente.setRG(rg);
-		cliente.setData_nascimento(nasc);
+		try {
+			cliente.setData_nascimento(formatter.parse(nasc));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		ClienteBD clienteBD = new ClienteBD();
 		clienteBD.cadastrarCliente(cliente);
@@ -292,25 +324,31 @@ public class FrameCliente extends JFrame {
 		txtNome.setText("");
 		txtCPF.setText("");
 		txtRG.setText("");
-		txtNasc.setText("");
+		txtDataNasc.setText("");
 		txtNome.requestFocus();
 	}
 	private void AlterarCliente() {
 		int id;
 		String nome, cpf, rg, nasc;
 		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		id = Integer.parseInt(txtID.getText());
 		nome = txtNome.getText();
 		cpf = txtCPF.getText();
 		rg = txtRG.getText();
-		nasc = txtNasc.getText();
+		nasc = txtDataNasc.getText();
 		
 		Cliente cliente = new Cliente();
 		cliente.setId(id);
 		cliente.setNome(nome);
 		cliente.setCPF(cpf);
 		cliente.setRG(rg);
-		cliente.setData_nascimento(nasc);
+		try {
+			cliente.setData_nascimento(formatter.parse(nasc));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		ClienteBD clienteBD = new ClienteBD();
 		clienteBD.alterarCliente(cliente);
@@ -334,19 +372,21 @@ public class FrameCliente extends JFrame {
 			model.setNumRows(0);
 			
 			ArrayList<Cliente> lista = clienteBD.pesquisarCliente();
-			
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			for(int num = 0 ; num < lista.size() ; num ++) {
 				model.addRow(new Object [] {
 						lista.get(num).getId(),
 						lista.get(num).getNome(),
 						lista.get(num).getCPF(),
 						lista.get(num).getRG(),
-						lista.get(num).getData_nascimento()
+						dateFormat.format(lista.get(num).getData_nascimento())
+					
 						
 				});
 			}
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
 		}
 	}

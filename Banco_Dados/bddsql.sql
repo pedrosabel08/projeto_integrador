@@ -46,8 +46,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Clientes` (
   `idClientes` INT NOT NULL auto_increment,
   `nome` VARCHAR(45) NULL,
-  `cpf` VARCHAR(14) NULL,
-  `rg` INT NULL,
+  `cpf` VARCHAR(45) NULL,
+  `rg` VARCHAR(45) NULL,
   `data_nascimento` DATE NULL,
   PRIMARY KEY (`idClientes`))
 ENGINE = InnoDB;
@@ -127,51 +127,34 @@ insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Br
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '20014421490000', 5953373, "1974-10-08");
 
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Ricca Girke', 'health mart allergy relief', 'S', 'Violet', '35', 92);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Camisa', 'Hering', 'S', 'Violet', '35', 92);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (2, 'Creight Mila', 'shoprite ni-calm', 'L', 'Violet', '20', 23);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (2, 'Calça', 'Off-White', 'L', 'Violet', '20', 23);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (3, 'Devan Lichtfoth', 'Dr. Jart Shimmering Beauty Balm', 'M', 'Goldenrod', '28', 73);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (3, 'Camiseta', 'Supreme', 'M', 'Goldenrod', '28', 73);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (4, 'Gaylor Antal', 'Chelidonium Homaccord', 'XS', 'Teal', '45', 25);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (4, 'Cinto', 'Off-White', 'G', 'Teal', '45', 25);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (5, 'Beltran Dearness', 'Perphenazine', '3XL', 'Orange', '39', 84);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (5, 'Regata', 'Nike', '3XL', 'Orange', '39', 84);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (6, 'Ignacius McAusland', 'BLUE ACME SLEEVE FIRST AID', 'M', 'Red', '64', 123);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (6, 'Camisa Polo', 'Lacoste', 'M', 'Preta', '64', 123);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (7, 'Alano Glew', 'Donepezil Hydrochloride', '3XL', 'Red', '97', 73);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (7, 'Bermuda', 'Cyclone', 'GG', 'Red', '97', 73);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (8, 'Livvy Noirel', 'Up and Up Acetaminophen', 'M', 'Aquamarine', '12', 62);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (8, 'Shorts', 'Adidas', 'M', 'Aquamarine', '12', 62);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (9, 'Nancey Cork', 'Aspirin', 'M', 'Blue', '62', 47);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (9, 'Jaqueta', 'Riachuelo', 'M', 'Blue', '62', 47);
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (10, 'Lyell Brennon', 'ProFormance Series Foam', '2XL', 'Purple', '34', 93);
+insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (10, 'Moletom', 'Grizzly', 'G', 'Purple', '34', 93);
 
 
 
-insert into Funcionario (idFuncionario, senha, nome) values (1, 'Um3Wcbs6sUM', 'Morris Kolczynski');
 
-insert into Funcionario (idFuncionario, senha, nome) values (2, 'KzesyJSUSIL', 'Sara Rockhill');
+insert into Funcionario (idFuncionario, senha, nome) values (1, '12345', 'Pedro');
 
-insert into Funcionario (idFuncionario, senha, nome) values (3, 'M0MDfu0HqveC', 'Karolina Benard');
+insert into Funcionario (idFuncionario, senha, nome) values (2, '12345', 'Arthur');
 
-insert into Funcionario (idFuncionario, senha, nome) values (4, 'STdp4v', 'Chilton Atteridge');
-
-insert into Funcionario (idFuncionario, senha, nome) values (5, 'xPseBD8p7', 'Dinnie Bauman');
-
-insert into Funcionario (idFuncionario, senha, nome) values (6, '2UHujULr', 'Babbie Baumert');
-
-insert into Funcionario (idFuncionario, senha, nome) values (7, 'cNI2Yh6', 'Ty Nutley');
-
-insert into Funcionario (idFuncionario, senha, nome) values (8, 'OZTcVP2', 'Allis Brandolini');
-
-insert into Funcionario (idFuncionario, senha, nome) values (9, 'TWrLAhpTu', 'Olivette Major');
-
-insert into Funcionario (idFuncionario, senha, nome) values (10, 'T7N5AU0', 'Dario Kilsby');
-
-insert into Funcionario (idFuncionario, senha, nome) values (11, '12345', 'Pedro');
-
-insert into Funcionario (idFuncionario, senha, nome) values (12, '12345', 'Arthur');
+insert into Funcionario (idFuncionario, senha, nome) values (3, '12345', 'Eduardo');
 
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (1, '47.474.698/0001-40', '(930) 8396815', 'Burk Plover');

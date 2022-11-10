@@ -52,7 +52,11 @@ public class HistoricoVendas extends JFrame {
 		JLabel lblHistricoDeVendas = new JLabel("Hist\u00F3rico de Vendas");
 		lblHistricoDeVendas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 16));
+<<<<<<< Updated upstream
 		lblHistricoDeVendas.setBounds(93, 11, 378, 14);
+=======
+		lblHistricoDeVendas.setBounds(25, 11, 507, 14);
+>>>>>>> Stashed changes
 		contentPane.add(lblHistricoDeVendas);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -88,7 +92,7 @@ public class HistoricoVendas extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnFechar.setBounds(25, 247, 121, 49);
+		btnFechar.setBounds(44, 256, 102, 30);
 		contentPane.add(btnFechar);
 		
 		JLabel lblNewLabel_4 = new JLabel("Valor Total:");
@@ -105,7 +109,8 @@ public class HistoricoVendas extends JFrame {
 		contentPane.add(txtTotal);
 		
 		JButton btnTotal = new JButton("Total");
-		btnTotal.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnTotal.setBackground(UIManager.getColor("Button.shadow"));
+		btnTotal.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnTotal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double somaTotal=0;
@@ -115,7 +120,7 @@ public class HistoricoVendas extends JFrame {
 				txtTotal.setText(String.valueOf(somaTotal));
 			}
 		});
-		btnTotal.setBounds(156, 263, 89, 23);
+		btnTotal.setBounds(156, 256, 102, 30);
 		contentPane.add(btnTotal);
 	}
 }

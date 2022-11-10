@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -29,7 +31,9 @@ public class ClienteBD {
 			stmt.setString(1, cliente.getNome());
 			stmt.setString(2, cliente.getCPF());
 			stmt.setString(3, cliente.getRG());
-			stmt.setString(4, cliente.getData_nascimento());
+			
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			stmt.setString(4, dateFormat.format(cliente.getData_nascimento()));
 			
 			stmt.execute();
 			stmt.close();
@@ -57,7 +61,8 @@ public class ClienteBD {
 				cliente.setNome(rs.getString("nome"));
 				cliente.setCPF(rs.getString("cpf"));
 				cliente.setRG(rs.getString("rg"));
-				cliente.setData_nascimento(rs.getString("data_nascimento"));
+				DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				cliente.setData_nascimento(rs.getDate("data_nascimento"));
 				
 				lista.add(cliente);
 				
@@ -79,7 +84,8 @@ public class ClienteBD {
 			stmt.setString(1, cliente.getNome());
 			stmt.setString(2, cliente.getCPF());
 			stmt.setString(3, cliente.getRG());
-			stmt.setString(4, cliente.getData_nascimento());
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			stmt.setString(4, dateFormat.format(cliente.getData_nascimento()));
 			stmt.setInt(5, cliente.getId());
 			
 			stmt.execute();
