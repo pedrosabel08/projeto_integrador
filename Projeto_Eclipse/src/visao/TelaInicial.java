@@ -55,7 +55,7 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarClientes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnCadastrarClientes.setBounds(44, 32, 151, 23);
 		contentPane.add(btnCadastrarClientes);
 		
@@ -69,7 +69,7 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarProdutos.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnCadastrarProdutos.setBounds(276, 32, 151, 23);
 		contentPane.add(btnCadastrarProdutos);
 		
@@ -82,7 +82,7 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnHistricoDeVendas.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnHistricoDeVendas.setBounds(44, 168, 151, 23);
 		contentPane.add(btnHistricoDeVendas);
 		
@@ -96,13 +96,13 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 							}
 		});
-		btnRealizarVenda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnRealizarVenda.setBounds(276, 168, 151, 23);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
 		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -121,7 +121,7 @@ public class TelaInicial extends JFrame {
 				func.setVisible(true);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(44, 98, 151, 23);
 		contentPane.add(btnNewButton_1);
 		
@@ -135,7 +135,7 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		btnNewButton_2.setBounds(276, 98, 151, 23);
 		contentPane.add(btnNewButton_2);
 	}
