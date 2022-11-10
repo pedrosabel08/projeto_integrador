@@ -58,6 +58,7 @@ public class TabelaProduto extends JFrame {
 		panel.add(scrollPane);
 
 		tbProduto = new JTable();
+		tbProduto.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		tbProduto.setModel(new DefaultTableModel(new Object[][] {},
 				new String[] { "ID", "Nome", "Marca", "Tamanho", "Cor", "Preco", "Quantidade" }
 
@@ -99,7 +100,7 @@ public class TabelaProduto extends JFrame {
 			}
 		});
 		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		btnNewButton.setBounds(133, 172, 148, 36);
 		contentPane.add(btnNewButton);
 	}

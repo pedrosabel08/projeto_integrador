@@ -23,12 +23,20 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL auto_increment,
   `idProdutos` INT,
+  `idClientes` INT,
+  `idFuncionario` INT,
   `valor` DOUBLE NULL,
   `data` DATE NULL,
   PRIMARY KEY (`idVenda`),
    CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
     FOREIGN KEY (`idProdutos`)
-    REFERENCES `mydb`.`Produtos` (`idProdutos`))
+    REFERENCES `mydb`.`Clientes` (`idClientes`),
+       CONSTRAINT `fk_Venda_Clientes`
+    FOREIGN KEY (`idClientes`)
+    REFERENCES `mydb`.`Funcionario` (`idFuncionario`),
+           CONSTRAINT `fk_Venda_Funcionario`
+    FOREIGN KEY (`idFuncionario`)
+    REFERENCES `mydb`.`Funcionario` (`idFuncionario`))
 ENGINE = InnoDB;
 
 

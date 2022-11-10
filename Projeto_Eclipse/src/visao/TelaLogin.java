@@ -73,19 +73,19 @@ public class TelaLogin extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
-		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblUsuario.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
 		lblUsuario.setBounds(47, 62, 80, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBackground(new Color(255, 255, 255));
-		lblSenha.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblSenha.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
 		lblSenha.setBounds(47, 152, 102, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setBackground(Color.WHITE);
-		txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtUsuario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
 		txtUsuario.setBounds(159, 65, 230, 30);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
@@ -97,7 +97,7 @@ public class TelaLogin extends JFrame {
 				dispose();
 			}
 		});
-		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnFechar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		btnFechar.setBounds(61, 257, 118, 37);
 		contentPane.add(btnFechar);
 		
@@ -143,13 +143,13 @@ public class TelaLogin extends JFrame {
 				
 			}
 		});
-		btnContinuar.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnContinuar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		btnContinuar.setBounds(319, 257, 118, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
 		txtSenha.setBackground(Color.WHITE);
-		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
 		txtSenha.setBounds(159, 157, 230, 30);
 		contentPane.add(txtSenha);
 	}

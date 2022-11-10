@@ -24,14 +24,15 @@ public class VendaBD {
 		PreparedStatement ps;
 	    ResultSet rs;
 	    
-	     
 		try {
-			ps = conn.prepareStatement ("select idVenda, produtos.nome, valor, data from venda inner join produtos on venda.idProdutos = produtos.idProdutos;");
+			ps = conn.prepareStatement ("select idVenda, p.nome, c.nome, f.nome, valor, data from venda v inner join produtos p on v.idProdutos = p.idProdutos inner join clientes c on v.idClientes = c.idClientes inner join funcionario f on v.idFuncionario = f.idFuncionario;");
 			rs = ps.executeQuery();
 			while( rs.next() ){
 				Venda venda = new Venda();
 			    venda.setId(rs.getInt("idVenda"));
-			    venda.setNome_produto(rs.getString("produtos.nome"));
+			    venda.setNome_produto(rs.getString("p.nome"));
+			    venda.setNome_cliente(rs.getString("c.nome"));
+			    venda.setNome_func(rs.getString("f.nome"));
 			    venda.setValor(rs.getDouble("valor"));
 			    venda.setData(rs.getString("data"));
 		    	
@@ -48,10 +49,12 @@ public class VendaBD {
 		PreparedStatement ps;
 		try {
 			
-			ps = conn.prepareStatement("insert into venda (idProdutos, valor , data) values(?,?,?)");
+			ps = conn.prepareStatement("insert into venda (idProdutos, idClientes, idFuncionario, valor , data) values(?,?,?,?,?)");
 			ps.setInt(1, v.getProduto());
-			ps.setDouble(2,v.getValor());
-			ps.setString(3,v.getData());
+			ps.setInt(2, v.getCliente());
+			ps.setInt(3, v.getFuncionario());
+			ps.setDouble(4,v.getValor());
+			ps.setString(5,v.getData());
 			
 			ps.executeUpdate();
 		

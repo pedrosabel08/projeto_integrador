@@ -7,9 +7,12 @@ public class Venda {
 	private double valor;
 	private String data;
 	private int cadastro;
-	private int usuario;
+	private int funcionario;
 	private int produto;
+	private int cliente;
 	private String nome_produto;
+	private String nome_cliente;
+	private String nome_func;
 	
 	public int getId() {
 		return id;
@@ -36,11 +39,11 @@ public class Venda {
 	public void setCadastro(int cadastro) {
 		this.cadastro = cadastro;
 	}
-	public int getUsuario() {
-		return usuario;
+	public int getFuncionario() {
+		return funcionario;
 	}
-	public void setUsuario(int usuario) {
-		this.usuario = usuario;
+	public void setFuncionario(int funcionario) {
+		this.funcionario = funcionario;
 	}
 	public double getValor() {
 		return valor;
@@ -59,6 +62,24 @@ public class Venda {
 	}
 	public void setNome_produto(String nome_produto) {
 		this.nome_produto = nome_produto;
+	}
+	public String getNome_cliente() {
+		return nome_cliente;
+	}
+	public void setNome_cliente(String nome_cliente) {
+		this.nome_cliente = nome_cliente;
+	}
+	public int getCliente() {
+		return cliente;
+	}
+	public void setCliente(int cliente) {
+		this.cliente = cliente;
+	}
+	public String getNome_func() {
+		return nome_func;
+	}
+	public void setNome_func(String nome_func) {
+		this.nome_func = nome_func;
 	}
 	
 

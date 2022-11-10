@@ -62,6 +62,7 @@ public class TabelaClientes extends JFrame {
 		panel.add(scrollPane);
 
 		tbCliente = new JTable();
+		tbCliente.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		tbCliente.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "ID", "Nome", "CPF" }
 
 		));
@@ -101,7 +102,7 @@ public class TabelaClientes extends JFrame {
 				}
 			}
 		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_1.setBounds(137, 180, 148, 36);
 		contentPane.add(btnNewButton_1);

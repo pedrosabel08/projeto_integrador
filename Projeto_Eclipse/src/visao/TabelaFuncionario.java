@@ -57,6 +57,7 @@ public class TabelaFuncionario extends JFrame {
 		panel.add(scrollPane);
 
 		tbFuncionario = new JTable();
+		tbFuncionario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		tbFuncionario.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "ID", "Login" }
 
 		));
@@ -98,7 +99,7 @@ public class TabelaFuncionario extends JFrame {
 			
 		});
 		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
 		btnNewButton.setBounds(133, 172, 148, 36);
 		contentPane.add(btnNewButton);
 	}

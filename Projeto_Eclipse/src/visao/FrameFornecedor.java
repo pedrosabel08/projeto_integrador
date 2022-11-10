@@ -82,31 +82,31 @@ public class FrameFornecedor extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("ID:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel.setBounds(67, 347, 83, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel_1.setBounds(192, 347, 158, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("CNPJ:");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel_2.setBounds(413, 347, 165, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Contato:");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel_3.setBounds(623, 347, 117, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		txtID = new JTextField();
 		txtID.setBackground(Color.WHITE);
-		txtID.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtID.setEnabled(false);
 		txtID.setBounds(64, 372, 86, 20);
 		contentPane.add(txtID);
@@ -114,27 +114,27 @@ public class FrameFornecedor extends JFrame {
 		
 		txtNome = new JTextField();
 		txtNome.setBackground(Color.WHITE);
-		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtNome.setBounds(192, 372, 158, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtCNPJ = new JTextField();
 		txtCNPJ.setBackground(Color.WHITE);
-		txtCNPJ.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtCNPJ.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtCNPJ.setBounds(413, 372, 165, 20);
 		contentPane.add(txtCNPJ);
 		txtCNPJ.setColumns(10);
 		
 		txtContato = new JTextField();
 		txtContato.setBackground(Color.WHITE);
-		txtContato.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtContato.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtContato.setBounds(623, 372, 117, 20);
 		contentPane.add(txtContato);
 		txtContato.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarFornecedor();
@@ -146,7 +146,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Pesquisar");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listarValores();
@@ -156,7 +156,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Selecionar");
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
@@ -166,7 +166,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
@@ -183,7 +183,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
-		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
@@ -200,7 +200,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Limpar");
-		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
@@ -210,7 +210,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Fechar");
-		btnNewButton_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_6.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
