@@ -153,7 +153,7 @@ public class TelaVenda extends JFrame {
 			}
 		});
 		btnPesquisarFunc.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnPesquisarFunc.setBounds(142, 54, 89, 23);
+		btnPesquisarFunc.setBounds(142, 54, 102, 23);
 		contentPane.add(btnPesquisarFunc);
 
 		JLabel lblNewLabel_2 = new JLabel("Nome:");
@@ -165,7 +165,7 @@ public class TelaVenda extends JFrame {
 		txtNomeFunc.setBackground(Color.WHITE);
 		txtNomeFunc.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtNomeFunc.setEditable(false);
-		txtNomeFunc.setBounds(79, 98, 152, 20);
+		txtNomeFunc.setBounds(79, 98, 165, 20);
 		contentPane.add(txtNomeFunc);
 		txtNomeFunc.setColumns(10);
 
@@ -197,7 +197,7 @@ public class TelaVenda extends JFrame {
 			}
 		});
 		btnPesquisarCliente.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnPesquisarCliente.setBounds(142, 375, 89, 23);
+		btnPesquisarCliente.setBounds(142, 375, 102, 23);
 		contentPane.add(btnPesquisarCliente);
 
 		JLabel lblNewLabel_2_1 = new JLabel("Nome:");
@@ -212,7 +212,7 @@ public class TelaVenda extends JFrame {
 		txtNomeCliente.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtNomeCliente.setEditable(false);
 		txtNomeCliente.setColumns(10);
-		txtNomeCliente.setBounds(79, 419, 152, 20);
+		txtNomeCliente.setBounds(79, 419, 165, 20);
 		contentPane.add(txtNomeCliente);
 
 		JLabel lblProdutos = new JLabel("Produtos:");
@@ -243,7 +243,7 @@ public class TelaVenda extends JFrame {
 			}
 		});
 		btnPesquisarProd.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnPesquisarProd.setBounds(142, 201, 89, 23);
+		btnPesquisarProd.setBounds(142, 201, 102, 23);
 		contentPane.add(btnPesquisarProd);
 
 		JLabel lblNewLabel_2_2 = new JLabel("Nome:");
@@ -256,7 +256,7 @@ public class TelaVenda extends JFrame {
 		txtNomeProd.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtNomeProd.setEditable(false);
 		txtNomeProd.setColumns(10);
-		txtNomeProd.setBounds(79, 244, 152, 20);
+		txtNomeProd.setBounds(79, 244, 165, 20);
 		contentPane.add(txtNomeProd);
 
 		JLabel lblNewLabel_2_2_1 = new JLabel("Preco (R$):");
@@ -269,7 +269,7 @@ public class TelaVenda extends JFrame {
 		txtPreco.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		txtPreco.setEditable(false);
 		txtPreco.setColumns(10);
-		txtPreco.setBounds(112, 272, 119, 20);
+		txtPreco.setBounds(112, 272, 132, 20);
 		contentPane.add(txtPreco);
 
 		JLabel lblNewLabel_3 = new JLabel("Quantidade:");

@@ -101,12 +101,14 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(139, 450, 100, 23);
+		btnCadastrar.setBounds(75, 448, 100, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(57, 50, 662, 303);
 		contentPane.add(scrollPane);
+		
+		
 		
 		tabelaProduto = new JTable();
 		tabelaProduto.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -119,16 +121,30 @@ public class TelaEstoque extends JFrame {
 		));
 		tabelaProduto.setBounds(220, 221, 155, -152);
 		scrollPane.setViewportView(tabelaProduto);
-		JButton btnNewButton = new JButton("Pesquisar");
-		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValores();
+
+		try {
+			ProdutoBD produtoBD = new ProdutoBD();
+			
+			DefaultTableModel model = (DefaultTableModel) tabelaProduto.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Produto> lista = produtoBD.pesquisarProduto();
+			
+			for(int num = 0 ; num < lista.size() ; num ++) {
+				model.addRow(new Object [] {
+						lista.get(num).getId(),
+						lista.get(num).getNome(),
+						lista.get(num).getMarca(),
+						lista.get(num).getTamanho(),
+						lista.get(num).getCor(),
+						lista.get(num).getPreco(),
+						lista.get(num).getQuantidade()
+				});
 			}
-		});
-		btnNewButton.setBounds(29, 450, 100, 23);
-		contentPane.add(btnNewButton);
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
+		}
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
 		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -138,7 +154,7 @@ public class TelaEstoque extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(249, 450, 106, 23);
+		btnNewButton_1.setBounds(185, 448, 106, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -149,7 +165,7 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(563, 450, 89, 23);
+		btnNewButton_2.setBounds(499, 448, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -167,7 +183,7 @@ public class TelaEstoque extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(365, 450, 89, 23);
+		btnNewButton_3.setBounds(301, 448, 89, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -184,7 +200,7 @@ public class TelaEstoque extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(464, 450, 89, 23);
+		btnNewButton_4.setBounds(400, 448, 89, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
@@ -236,10 +252,10 @@ public class TelaEstoque extends JFrame {
 			}
 		});
 		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton_5.setBounds(662, 450, 89, 23);
+		btnNewButton_5.setBounds(598, 448, 89, 23);
 		contentPane.add(btnNewButton_5);
 		
-		JLabel lblNewLabel_3 = new JLabel("Preço:");
+		JLabel lblNewLabel_3 = new JLabel("Preco");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel_3.setBounds(523, 364, 86, 14);

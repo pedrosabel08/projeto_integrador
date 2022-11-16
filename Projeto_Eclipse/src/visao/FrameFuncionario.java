@@ -115,6 +115,26 @@ public class FrameFuncionario extends JFrame {
 		tabelaFuncionario.setBounds(220, 221, 155, -152);
 		scrollPane.setViewportView(tabelaFuncionario);
 		
+		try {
+			FuncionarioBD funcionarioBD = new FuncionarioBD();
+			
+			DefaultTableModel model = (DefaultTableModel) tabelaFuncionario.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Funcionario> lista = funcionarioBD.pesquisarFuncionario();
+			
+			for(int num = 0 ; num < lista.size() ; num ++) {
+				model.addRow(new Object [] {
+						lista.get(num).getId(),
+						lista.get(num).getNome(),
+						lista.get(num).getSenha()
+				});
+			}
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
+		}
+		
 		txtID = new JTextField();
 		txtID.setBackground(Color.WHITE);
 		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
