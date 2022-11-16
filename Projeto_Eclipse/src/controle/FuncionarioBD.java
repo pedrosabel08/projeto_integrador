@@ -18,7 +18,7 @@ public class FuncionarioBD {
 	ArrayList<Funcionario> lista = new ArrayList<>();
 	
 	public void cadastrarFuncionario(Funcionario funcionario) {
-		String sql = "insert into funcionario (senha,nome) values (?,?)";
+		String sql = "insert into funcionario (nome,senha) values (?,?)";
 		
 		conn = new Conexao().faz_conexao();
 		

@@ -162,6 +162,7 @@ public class FrameFornecedor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarFornecedor();
 				LimparCampos();
+				listarValores();
 			}
 		});
 		btnNewButton.setBounds(67, 421, 108, 23);
@@ -185,6 +186,7 @@ public class FrameFornecedor extends JFrame {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				AlterarFornecedor();
 				LimparCampos();
+				listarValores();
 				}
 				else {
 				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
@@ -200,6 +202,7 @@ public class FrameFornecedor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				excluirFornecedor();
+				listarValores();
 				LimparCampos();	
 				}
 				else {
@@ -319,4 +322,29 @@ public class FrameFornecedor extends JFrame {
 		FornecedorBD fornecedorBD = new FornecedorBD();
 		fornecedorBD.excluirFornecedor(fornecedor);
 	}
+	
+	private void listarValores() {
+		try {
+			FornecedorBD fornecedorBD = new FornecedorBD();
+			
+			DefaultTableModel model = (DefaultTableModel) tabelaFornecedor.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Fornecedor> lista = fornecedorBD.pesquisarFornecedor();
+			
+			for(int num = 0 ; num < lista.size() ; num ++) {
+				model.addRow(new Object [] {
+						lista.get(num).getId(),
+						lista.get(num).getNome(),
+						lista.get(num).getCnpj(),
+						lista.get(num).getContato()
+
+				});
+			}
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
+		}
+	}
+
 }
