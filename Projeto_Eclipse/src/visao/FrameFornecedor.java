@@ -13,28 +13,30 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import controle.FornecedorBD;
 import controle.FuncionarioBD;
 import modelo.Fornecedor;
 import modelo.Funcionario;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.JFormattedTextField;
 
 public class FrameFornecedor extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtID;
 	private JTextField txtNome;
-	private JTextField txtCNPJ;
-	private JTextField txtContato;
 	private JTable tabelaFornecedor;
-
+	private JFormattedTextField txtCNPJ;
+	private JFormattedTextField txtContato;
 	/**
 	 * Launch the application.
 	 */
@@ -67,7 +69,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(67, 74, 673, 262);
+		scrollPane.setBounds(67, 74, 647, 262);
 		contentPane.add(scrollPane);
 		
 		tabelaFornecedor = new JTable();
@@ -80,6 +82,28 @@ public class FrameFornecedor extends JFrame {
 		));
 		scrollPane.setViewportView(tabelaFornecedor);
 		
+		try {
+			FornecedorBD fornecedorBD = new FornecedorBD();
+			
+			DefaultTableModel model = (DefaultTableModel) tabelaFornecedor.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Fornecedor> lista = fornecedorBD.pesquisarFornecedor();
+			
+			for(int num = 0 ; num < lista.size() ; num ++) {
+				model.addRow(new Object [] {
+						lista.get(num).getId(),
+						lista.get(num).getNome(),
+						lista.get(num).getCnpj(),
+						lista.get(num).getContato()
+
+				});
+			}
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
+		}
+	
 		JLabel lblNewLabel = new JLabel("ID:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -95,13 +119,13 @@ public class FrameFornecedor extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("CNPJ:");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_2.setBounds(413, 347, 165, 14);
+		lblNewLabel_2.setBounds(385, 347, 135, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Contato:");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_3.setBounds(623, 347, 117, 14);
+		lblNewLabel_3.setBounds(579, 347, 135, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		txtID = new JTextField();
@@ -119,41 +143,30 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
-		txtCNPJ = new JTextField();
-		txtCNPJ.setBackground(Color.WHITE);
-		txtCNPJ.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtCNPJ.setBounds(413, 372, 165, 20);
+		txtCNPJ = new JFormattedTextField();
+		txtCNPJ.setBounds(385, 372, 135, 20);
 		contentPane.add(txtCNPJ);
-		txtCNPJ.setColumns(10);
 		
-		txtContato = new JTextField();
-		txtContato.setBackground(Color.WHITE);
-		txtContato.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtContato.setBounds(623, 372, 117, 20);
-		contentPane.add(txtContato);
-		txtContato.setColumns(10);
+		MaskFormatter maskCNPJ;
+		try {
+			maskCNPJ = new MaskFormatter("##.###.###/####-##");
+			maskCNPJ.install(txtCNPJ);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
 		
 		JButton btnNewButton = new JButton("Cadastrar");
 		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarFornecedor();
-				listarValores();
 				LimparCampos();
 			}
 		});
-		btnNewButton.setBounds(135, 419, 108, 23);
+		btnNewButton.setBounds(67, 421, 108, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Pesquisar");
-		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValores();
-			}
-		});
-		btnNewButton_1.setBounds(10, 419, 108, 23);
-		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Selecionar");
 		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -162,7 +175,7 @@ public class FrameFornecedor extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(253, 419, 108, 23);
+		btnNewButton_2.setBounds(185, 421, 108, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -171,7 +184,6 @@ public class FrameFornecedor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				AlterarFornecedor();
-				listarValores();
 				LimparCampos();
 				}
 				else {
@@ -179,7 +191,7 @@ public class FrameFornecedor extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(371, 419, 102, 23);
+		btnNewButton_3.setBounds(303, 421, 102, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -188,7 +200,6 @@ public class FrameFornecedor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaFornecedor.getSelectedRowCount() > 0) {
 				excluirFornecedor();
-				listarValores();
 				LimparCampos();	
 				}
 				else {
@@ -196,7 +207,7 @@ public class FrameFornecedor extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(483, 419, 101, 23);
+		btnNewButton_4.setBounds(415, 421, 101, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Limpar");
@@ -206,7 +217,7 @@ public class FrameFornecedor extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_5.setBounds(594, 419, 89, 23);
+		btnNewButton_5.setBounds(526, 421, 89, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Fechar");
@@ -219,13 +230,26 @@ public class FrameFornecedor extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_6.setBounds(693, 420, 89, 23);
+		btnNewButton_6.setBounds(625, 422, 89, 23);
 		contentPane.add(btnNewButton_6);
 		
 		JLabel lblNewLabel_4 = new JLabel("Tela de Fornecedores");
 		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
 		lblNewLabel_4.setBounds(336, 31, 135, 14);
 		contentPane.add(lblNewLabel_4);
+		
+		txtContato = new JFormattedTextField();
+		txtContato.setBounds(579, 372, 135, 20);
+		contentPane.add(txtContato);
+		
+		MaskFormatter maskContato;
+		try {
+			maskContato = new MaskFormatter("(##)#####-####");
+			maskContato.install(txtContato);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
 	}
 	
 	private void SelecionarCampos() {
@@ -294,28 +318,5 @@ public class FrameFornecedor extends JFrame {
 		
 		FornecedorBD fornecedorBD = new FornecedorBD();
 		fornecedorBD.excluirFornecedor(fornecedor);
-	}
-	private void listarValores() {
-		try {
-			FornecedorBD fornecedorBD = new FornecedorBD();
-			
-			DefaultTableModel model = (DefaultTableModel) tabelaFornecedor.getModel();
-			model.setNumRows(0);
-			
-			ArrayList<Fornecedor> lista = fornecedorBD.pesquisarFornecedor();
-			
-			for(int num = 0 ; num < lista.size() ; num ++) {
-				model.addRow(new Object [] {
-						lista.get(num).getId(),
-						lista.get(num).getNome(),
-						lista.get(num).getCnpj(),
-						lista.get(num).getContato()
-
-				});
-			}
-			
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
-		}
 	}
 }

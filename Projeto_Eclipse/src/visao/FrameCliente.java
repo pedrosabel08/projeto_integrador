@@ -90,6 +90,31 @@ public class FrameCliente extends JFrame {
 		));
 		scrollPane.setViewportView(tabelaCliente);
 		
+		try {
+			ClienteBD clienteBD = new ClienteBD();
+			
+			DefaultTableModel model = (DefaultTableModel) tabelaCliente.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Cliente> lista = clienteBD.pesquisarCliente();
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			for(int num = 0 ; num < lista.size() ; num ++) {
+				model.addRow(new Object [] {
+						lista.get(num).getId(),
+						lista.get(num).getNome(),
+						lista.get(num).getCPF(),
+						lista.get(num).getRG(),
+						dateFormat.format(lista.get(num).getData_nascimento())
+					
+						
+				});
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,"Erro no Listar Valores" + e);
+		}
+	
 		JLabel lblNewLabel = new JLabel("ID:");
 		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -173,16 +198,6 @@ public class FrameCliente extends JFrame {
 			
 			e1.printStackTrace();
 		}
-		JButton btnNewButton = new JButton("Pesquisar");
-		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValores();
-			}
-		});
-		btnNewButton.setBounds(44, 454, 96, 23);
-		ContentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cadastrar");
 		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
@@ -194,7 +209,7 @@ public class FrameCliente extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_1.setBounds(150, 454, 104, 23);
+		btnNewButton_1.setBounds(74, 454, 104, 23);
 		ContentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Selecionar");
@@ -205,7 +220,7 @@ public class FrameCliente extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(264, 454, 103, 23);
+		btnNewButton_2.setBounds(188, 454, 103, 23);
 		ContentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -224,7 +239,7 @@ public class FrameCliente extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(375, 454, 96, 23);
+		btnNewButton_3.setBounds(299, 454, 96, 23);
 		ContentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -242,7 +257,7 @@ public class FrameCliente extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(481, 454, 96, 23);
+		btnNewButton_4.setBounds(405, 454, 96, 23);
 		ContentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Limpar");
@@ -253,7 +268,7 @@ public class FrameCliente extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_5.setBounds(583, 454, 89, 23);
+		btnNewButton_5.setBounds(507, 454, 89, 23);
 		ContentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Fechar");
@@ -268,7 +283,7 @@ public class FrameCliente extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_6.setBounds(682, 454, 89, 23);
+		btnNewButton_6.setBounds(606, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
 				
 
