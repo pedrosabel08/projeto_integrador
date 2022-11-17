@@ -65,12 +65,13 @@ public class FrameCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameCliente() {
+		setTitle("Cadastro de Clientes");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameCliente.class.getResource("/Imagens/Cliente.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 830, 540);
 		ContentPane = new JPanel();
 		ContentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
-		ContentPane.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Cadastro de Cliente", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		ContentPane.setBorder(null);
 
 		setContentPane(ContentPane);
 		ContentPane.setLayout(null);
@@ -285,6 +286,12 @@ public class FrameCliente extends JFrame {
 		});
 		btnNewButton_6.setBounds(606, 454, 89, 23);
 		ContentPane.add(btnNewButton_6);
+		
+		JLabel lblNewLabel_5 = new JLabel("Cadastro de Clientes");
+		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(74, 11, 624, 20);
+		ContentPane.add(lblNewLabel_5);
 				
 
 	}

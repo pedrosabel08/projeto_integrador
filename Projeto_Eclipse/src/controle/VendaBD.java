@@ -59,9 +59,9 @@ public class VendaBD {
 			ps.executeUpdate();
 		
 			
-			}catch(SQLException e1)
-			{
-				System.out.println("Erro ao conectar ao banco de dados");
+			}catch(SQLException e1) {
+				
+				e1.printStackTrace();
 			}
 	return 0;
 }
