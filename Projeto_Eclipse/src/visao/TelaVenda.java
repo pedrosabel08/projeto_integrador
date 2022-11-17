@@ -448,6 +448,14 @@ public class TelaVenda extends JFrame {
 				txtQtd.setText("");
 
 				JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!");
+				
+				txtIDFunc.setText("");
+				txtIDProd.setText("");
+				txtIDCliente.setText("");
+				txtNomeFunc.setText("");
+				txtNomeCliente.setText("");
+				txtNomeProd.setText("");
+				txtPreco.setText("");
 			}
 
 		});
