@@ -65,7 +65,7 @@ public class TelaLogin extends JFrame {
 	public TelaLogin() {
 		setTitle("Tela de Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 385);
+		setBounds(100, 100, 1800, 900);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(0, 0, 0));
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
@@ -75,19 +75,19 @@ public class TelaLogin extends JFrame {
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
 		lblUsuario.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
-		lblUsuario.setBounds(47, 62, 80, 32);
+		lblUsuario.setBounds(580, 286, 71, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBackground(new Color(255, 255, 255));
 		lblSenha.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
-		lblSenha.setBounds(47, 152, 102, 37);
+		lblSenha.setBounds(580, 366, 102, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setBackground(Color.WHITE);
 		txtUsuario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		txtUsuario.setBounds(159, 65, 230, 30);
+		txtUsuario.setBounds(682, 288, 300, 30);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -99,7 +99,7 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
-		btnFechar.setBounds(61, 257, 118, 37);
+		btnFechar.setBounds(580, 443, 118, 37);
 		contentPane.add(btnFechar);
 		
 		JButton btnContinuar = new JButton("Continuar");
@@ -145,13 +145,13 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnContinuar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 16));
-		btnContinuar.setBounds(319, 257, 118, 37);
+		btnContinuar.setBounds(864, 443, 118, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
 		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		txtSenha.setBounds(159, 157, 230, 30);
+		txtSenha.setBounds(682, 370, 300, 30);
 		contentPane.add(txtSenha);
 	}
 }
