@@ -34,6 +34,8 @@ import modelo.Funcionario;
 import modelo.Produto;
 import modelo.Venda;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
+
 import javax.swing.UIManager;
 
 public class TelaVenda extends JFrame {
@@ -106,6 +108,7 @@ public class TelaVenda extends JFrame {
 		TelaVenda tv = this;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameCliente.class.getResource("/Imagens/carrinhodecompras.png")));
 		setBounds(100, 100, 1200, 620);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
