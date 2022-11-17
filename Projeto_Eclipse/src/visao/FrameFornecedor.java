@@ -69,7 +69,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(67, 74, 647, 262);
+		scrollPane.setBounds(67, 47, 647, 262);
 		contentPane.add(scrollPane);
 		
 		tabelaFornecedor = new JTable();
@@ -165,7 +165,7 @@ public class FrameFornecedor extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton.setBounds(67, 421, 108, 23);
+		btnNewButton.setBounds(64, 421, 108, 23);
 		contentPane.add(btnNewButton);
 		
 		
@@ -233,12 +233,13 @@ public class FrameFornecedor extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_6.setBounds(625, 422, 89, 23);
+		btnNewButton_6.setBounds(625, 421, 89, 23);
 		contentPane.add(btnNewButton_6);
 		
 		JLabel lblNewLabel_4 = new JLabel("Tela de Fornecedores");
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
-		lblNewLabel_4.setBounds(336, 31, 135, 14);
+		lblNewLabel_4.setBounds(67, 22, 647, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		txtContato = new JFormattedTextField();

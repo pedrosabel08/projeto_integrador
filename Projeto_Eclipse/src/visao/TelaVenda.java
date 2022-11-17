@@ -101,7 +101,7 @@ public class TelaVenda extends JFrame {
 	 */
 	String teste;
 	public TelaVenda() {
-		setTitle("TELA DE VENDAS");
+		setTitle("Tela de Vendas");
 
 		TelaVenda tv = this;
 

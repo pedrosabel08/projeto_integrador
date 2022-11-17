@@ -23,6 +23,7 @@ import javax.swing.UIManager;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.SwingConstants;
 
 public class FrameFuncionario extends JFrame {
 
@@ -96,11 +97,11 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(128, 419, 108, 23);
+		btnCadastrar.setBounds(73, 419, 108, 23);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(142, 85, 512, 231);
+		scrollPane.setBounds(142, 59, 512, 231);
 		contentPane.add(scrollPane);
 		
 		tabelaFuncionario = new JTable();
@@ -147,16 +148,7 @@ public class FrameFuncionario extends JFrame {
 		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel_2.setBounds(140, 347, 46, 14);
 		contentPane.add(lblNewLabel_2);
-		
-		JButton btnNewButton = new JButton("Pesquisar");
-		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValores();
-			}
-		});
-		btnNewButton.setBounds(10, 419, 108, 23);
-		contentPane.add(btnNewButton);
+	
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
 		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
@@ -165,7 +157,7 @@ public class FrameFuncionario extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(246, 419, 108, 23);
+		btnNewButton_1.setBounds(191, 419, 108, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -175,7 +167,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(364, 419, 108, 23);
+		btnNewButton_2.setBounds(309, 419, 108, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -192,7 +184,7 @@ public class FrameFuncionario extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(482, 419, 108, 23);
+		btnNewButton_3.setBounds(427, 419, 108, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -209,7 +201,7 @@ public class FrameFuncionario extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(600, 419, 86, 23);
+		btnNewButton_4.setBounds(545, 419, 86, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
@@ -222,12 +214,13 @@ public class FrameFuncionario extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_5.setBounds(696, 419, 95, 23);
+		btnNewButton_5.setBounds(641, 419, 95, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JLabel lblNewLabel_3 = new JLabel("Tela de Funcionários");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
-		lblNewLabel_3.setBounds(336, 34, 136, 14);
+		lblNewLabel_3.setBounds(142, 22, 512, 14);
 		contentPane.add(lblNewLabel_3);
 		
 	}

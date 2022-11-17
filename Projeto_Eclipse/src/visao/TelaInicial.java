@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class TelaInicial extends JFrame {
 
@@ -39,7 +40,7 @@ public class TelaInicial extends JFrame {
 	 */
 	public TelaInicial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 490, 320);
+		setBounds(100, 100, 550, 400);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -47,7 +48,7 @@ public class TelaInicial extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarClientes = new JButton("Clientes");
-		btnCadastrarClientes.setBackground(UIManager.getColor("Button.shadow"));
+		btnCadastrarClientes.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -56,12 +57,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnCadastrarClientes.setBounds(44, 73, 151, 23);
+		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnCadastrarClientes.setBounds(44, 73, 151, 36);
 		contentPane.add(btnCadastrarClientes);
 		
 		JButton btnCadastrarProdutos = new JButton("Produtos");
-		btnCadastrarProdutos.setBackground(UIManager.getColor("Button.shadow"));
+		btnCadastrarProdutos.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -70,12 +71,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnCadastrarProdutos.setBounds(276, 73, 151, 23);
+		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnCadastrarProdutos.setBounds(340, 73, 151, 36);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("Hist\u00F3rico");
-		btnHistricoDeVendas.setBackground(UIManager.getColor("Button.shadow"));
+		btnHistricoDeVendas.setBackground(UIManager.getColor("Button.focus"));
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HistVendas frame = new HistVendas();
@@ -83,12 +84,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnHistricoDeVendas.setBounds(44, 168, 151, 23);
+		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnHistricoDeVendas.setBounds(44, 215, 151, 36);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("Realizar Venda");
-		btnRealizarVenda.setBackground(UIManager.getColor("Button.shadow"));
+		btnRealizarVenda.setBackground(UIManager.getColor("Button.focus"));
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -97,23 +98,23 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 							}
 		});
-		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnRealizarVenda.setBounds(276, 168, 151, 23);
+		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnRealizarVenda.setBounds(340, 215, 151, 36);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
-		btnNewButton.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
+		btnNewButton.setBackground(UIManager.getColor("Button.focus"));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(153, 232, 167, 23);
+		btnNewButton.setBounds(186, 267, 167, 36);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Funcion\u00E1rios");
-		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_1.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -122,12 +123,12 @@ public class TelaInicial extends JFrame {
 				func.setVisible(true);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(44, 118, 151, 23);
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnNewButton_1.setBounds(44, 146, 151, 36);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Fornecedor");
-		btnNewButton_2.setBackground(UIManager.getColor("Button.shadow"));
+		btnNewButton_2.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -136,13 +137,14 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		btnNewButton_2.setBounds(276, 118, 151, 23);
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnNewButton_2.setBounds(340, 146, 151, 36);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Tela Inicial");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
-		lblNewLabel.setBounds(200, 23, 83, 14);
+		lblNewLabel.setBounds(186, 22, 167, 14);
 		contentPane.add(lblNewLabel);
 	}
 
