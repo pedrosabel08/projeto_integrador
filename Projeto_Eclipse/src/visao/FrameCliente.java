@@ -68,7 +68,8 @@ public class FrameCliente extends JFrame {
 		setTitle("Cadastro de Clientes");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameCliente.class.getResource("/Imagens/Cliente.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 830, 540);
+		setBounds(100, 100, 1800, 900);
+		this.setExtendedState(MAXIMIZED_BOTH);
 		ContentPane = new JPanel();
 		ContentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		ContentPane.setBorder(null);
@@ -77,11 +78,11 @@ public class FrameCliente extends JFrame {
 		ContentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(74, 39, 624, 302);
+		scrollPane.setBounds(317, 147, 1321, 471);
 		ContentPane.add(scrollPane);
 		
 		tabelaCliente = new JTable();
-		tabelaCliente.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		tabelaCliente.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		tabelaCliente.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -117,60 +118,63 @@ public class FrameCliente extends JFrame {
 		}
 	
 		JLabel lblNewLabel = new JLabel("ID:");
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(74, 352, 86, 14);
+		lblNewLabel.setBounds(317, 671, 86, 14);
 		ContentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome:");
-		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(200, 352, 86, 14);
+		lblNewLabel_1.setBounds(546, 671, 176, 14);
 		ContentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("CPF:");
-		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(327, 352, 86, 14);
+		lblNewLabel_2.setBounds(850, 671, 176, 14);
 		ContentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("RG:");
-		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(459, 352, 86, 14);
+		lblNewLabel_3.setBounds(1158, 671, 176, 14);
 		ContentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Data de Nascimento:");
-		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setBounds(569, 352, 129, 14);
+		lblNewLabel_4.setBounds(1462, 671, 176, 14);
 		ContentPane.add(lblNewLabel_4);
 		
 		txtID = new JTextField();
 		txtID.setBackground(Color.WHITE);
-		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtID.setEnabled(false);
-		txtID.setBounds(74, 382, 86, 20);
+		txtID.setBounds(317, 701, 86, 30);
 		ContentPane.add(txtID);
 		txtID.setColumns(10);
 		
 		txtCPF = new JFormattedTextField();
-		txtCPF.setBounds(337, 383, 76, 20);
+		txtCPF.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtCPF.setBounds(850, 701, 176, 30);
 		ContentPane.add(txtCPF);
 		
 		txtNome = new JTextField();
 		txtNome.setBackground(Color.WHITE);
-		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtNome.setBounds(200, 382, 86, 20);
+		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtNome.setBounds(546, 701, 176, 30);
 		ContentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtRG = new JFormattedTextField();
-		txtRG.setBounds(459, 383, 86, 20);
+		txtRG.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtRG.setBounds(1158, 701, 176, 30);
 		ContentPane.add(txtRG);
 		
 		txtDataNasc = new JFormattedTextField();
-		txtDataNasc.setBounds(569, 383, 129, 20);
+		txtDataNasc.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtDataNasc.setBounds(1462, 701, 176, 30);
 		ContentPane.add(txtDataNasc);
 		
 		MaskFormatter maskCPF;
@@ -202,7 +206,7 @@ public class FrameCliente extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("Cadastrar");
 		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadastrarCliente();
@@ -210,23 +214,23 @@ public class FrameCliente extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_1.setBounds(74, 454, 104, 23);
+		btnNewButton_1.setBounds(317, 772, 176, 30);
 		ContentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Selecionar");
 		btnNewButton_2.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(188, 454, 103, 23);
+		btnNewButton_2.setBounds(546, 772, 176, 30);
 		ContentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
 		btnNewButton_3.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -240,12 +244,12 @@ public class FrameCliente extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(299, 454, 96, 23);
+		btnNewButton_3.setBounds(777, 772, 176, 30);
 		ContentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
 		btnNewButton_4.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tabelaCliente.getSelectedRowCount() > 0) {
@@ -258,22 +262,22 @@ public class FrameCliente extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(405, 454, 96, 23);
+		btnNewButton_4.setBounds(1009, 772, 176, 30);
 		ContentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Limpar");
 		btnNewButton_5.setBackground(UIManager.getColor("Button.shadow"));
-		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
 			}
 		});
-		btnNewButton_5.setBounds(507, 454, 89, 23);
+		btnNewButton_5.setBounds(1234, 772, 176, 30);
 		ContentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Fechar");
-		btnNewButton_6.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_6.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_6.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -284,13 +288,13 @@ public class FrameCliente extends JFrame {
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_6.setBounds(606, 454, 89, 23);
+		btnNewButton_6.setBounds(1462, 772, 176, 30);
 		ContentPane.add(btnNewButton_6);
 		
 		JLabel lblNewLabel_5 = new JLabel("Cadastro de Clientes");
-		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
+		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setBounds(74, 11, 624, 20);
+		lblNewLabel_5.setBounds(546, 63, 885, 49);
 		ContentPane.add(lblNewLabel_5);
 				
 
