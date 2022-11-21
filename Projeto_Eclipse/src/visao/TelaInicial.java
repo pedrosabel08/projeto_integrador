@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class TelaInicial extends JFrame {
 
@@ -43,13 +44,15 @@ public class TelaInicial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameCliente.class.getResource("/Imagens/inicial.png")));
 		setBounds(100, 100, 1800, 900);
+		this.setExtendedState(MAXIMIZED_BOTH);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnCadastrarClientes = new JButton("Clientes (1)");
+		JButton btnCadastrarClientes = new JButton("  Clientes");
+		btnCadastrarClientes.setIcon(new ImageIcon(TelaInicial.class.getResource("/Imagens/Cliente.png")));
 		btnCadastrarClientes.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -59,11 +62,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnCadastrarClientes.setBounds(515, 290, 167, 36);
+		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnCadastrarClientes.setBounds(670, 255, 182, 71);
 		contentPane.add(btnCadastrarClientes);
 		
-		JButton btnCadastrarProdutos = new JButton("Produtos (4)");
+		JButton btnCadastrarProdutos = new JButton("  Produtos");
+		btnCadastrarProdutos.setIcon(new ImageIcon(TelaInicial.class.getResource("/Imagens/produtos.png")));
 		btnCadastrarProdutos.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -73,11 +77,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnCadastrarProdutos.setBounds(851, 290, 167, 36);
+		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnCadastrarProdutos.setBounds(1034, 255, 182, 71);
 		contentPane.add(btnCadastrarProdutos);
 		
-		JButton btnHistricoDeVendas = new JButton("Histórico (3)");
+		JButton btnHistricoDeVendas = new JButton("  Hist\u00F3rico");
+		btnHistricoDeVendas.setIcon(new ImageIcon("C:\\Users\\Pedro\\projeto_integrador\\Projeto_Eclipse\\src\\Imagens\\historico.png"));
 		btnHistricoDeVendas.setBackground(UIManager.getColor("Button.focus"));
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -86,11 +91,12 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnHistricoDeVendas.setBounds(515, 432, 167, 36);
+		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnHistricoDeVendas.setBounds(670, 533, 182, 71);
 		contentPane.add(btnHistricoDeVendas);
 		
-		JButton btnRealizarVenda = new JButton("Realizar Venda (6)");
+		JButton btnRealizarVenda = new JButton("    Venda");
+		btnRealizarVenda.setIcon(new ImageIcon(TelaInicial.class.getResource("/Imagens/carrinhodecompras.png")));
 		btnRealizarVenda.setBackground(UIManager.getColor("Button.focus"));
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -100,8 +106,8 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 							}
 		});
-		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnRealizarVenda.setBounds(851, 432, 167, 36);
+		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnRealizarVenda.setBounds(1034, 533, 182, 71);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
@@ -112,10 +118,11 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(685, 509, 167, 36);
+		btnNewButton.setBounds(861, 669, 167, 36);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Funcionários (2)");
+		JButton btnNewButton_1 = new JButton("Funcionarios");
+		btnNewButton_1.setIcon(new ImageIcon(TelaInicial.class.getResource("/Imagens/Funcionario.png")));
 		btnNewButton_1.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,11 +132,12 @@ public class TelaInicial extends JFrame {
 				func.setVisible(true);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnNewButton_1.setBounds(515, 363, 167, 36);
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnNewButton_1.setBounds(670, 391, 182, 71);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Fornecedor (5)");
+		JButton btnNewButton_2 = new JButton("Fornecedor");
+		btnNewButton_2.setIcon(new ImageIcon(TelaInicial.class.getResource("/Imagens/Fornecedor.png")));
 		btnNewButton_2.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -139,14 +147,14 @@ public class TelaInicial extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		btnNewButton_2.setBounds(851, 363, 167, 36);
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnNewButton_2.setBounds(1034, 391, 182, 71);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Tela Inicial");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 15));
-		lblNewLabel.setBounds(685, 241, 167, 14);
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
+		lblNewLabel.setBounds(861, 163, 167, 36);
 		contentPane.add(lblNewLabel);
 	}
 
