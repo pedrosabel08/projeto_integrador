@@ -59,7 +59,8 @@ public class TelaEstoque extends JFrame {
 	public TelaEstoque() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(TelaEstoque.class.getResource("/Imagens/produtos.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 540);
+		setBounds(100, 100, 1900, 1000);
+		this.setExtendedState(MAXIMIZED_BOTH);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,30 +70,30 @@ public class TelaEstoque extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel.setBounds(139, 364, 86, 14);
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel.setBounds(525, 648, 176, 30);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtNome.setBounds(139, 389, 86, 20);
+		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtNome.setBounds(525, 679, 176, 30);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Marca:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_1.setBounds(235, 364, 86, 14);
+		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel_1.setBounds(777, 648, 176, 30);
 		contentPane.add(lblNewLabel_1);
 		
 		txtMarca = new JTextField();
-		txtMarca.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		txtMarca.setBounds(235, 389, 86, 20);
+		txtMarca.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtMarca.setBounds(777, 679, 176, 30);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnCadastrar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnCadastrar.setBackground(UIManager.getColor("Button.shadow"));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,17 +102,17 @@ public class TelaEstoque extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(75, 448, 100, 23);
+		btnCadastrar.setBounds(317, 772, 176, 30);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 50, 662, 303);
+		scrollPane.setBounds(317, 147, 1321, 471);
 		contentPane.add(scrollPane);
 		
 		
 		
 		tabelaProduto = new JTable();
-		tabelaProduto.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		tabelaProduto.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		tabelaProduto.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -147,29 +148,29 @@ public class TelaEstoque extends JFrame {
 		}
 		
 		JButton btnNewButton_1 = new JButton("Selecionar");
-		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_1.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(185, 448, 106, 23);
+		btnNewButton_1.setBounds(546, 772, 176, 30);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
-		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_2.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(499, 448, 89, 23);
+		btnNewButton_2.setBounds(1234, 772, 176, 30);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
-		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_3.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -183,11 +184,11 @@ public class TelaEstoque extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(301, 448, 89, 23);
+		btnNewButton_3.setBounds(777, 772, 176, 30);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
-		btnNewButton_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		btnNewButton_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_4.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -200,44 +201,44 @@ public class TelaEstoque extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(400, 448, 89, 23);
+		btnNewButton_4.setBounds(1009, 772, 176, 30);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblTamanho = new JLabel("Tamanho:");
 		lblTamanho.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTamanho.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblTamanho.setBounds(331, 364, 86, 14);
+		lblTamanho.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblTamanho.setBounds(998, 648, 88, 30);
 		contentPane.add(lblTamanho);
 		
 		txtTamanho = new JTextField();
-		txtTamanho.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtTamanho.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtTamanho.setColumns(10);
-		txtTamanho.setBounds(331, 389, 86, 20);
+		txtTamanho.setBounds(998, 679, 88, 30);
 		contentPane.add(txtTamanho);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cor:");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_2.setBounds(427, 364, 86, 14);
+		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel_2.setBounds(1123, 648, 176, 30);
 		contentPane.add(lblNewLabel_2);
 		
 		txtCor = new JTextField();
-		txtCor.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtCor.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtCor.setColumns(10);
-		txtCor.setBounds(427, 389, 86, 20);
+		txtCor.setBounds(1123, 679, 176, 30);
 		contentPane.add(txtCor);
 		
 		txtID = new JTextField();
-		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtID.setEnabled(false);
 		txtID.setColumns(10);
-		txtID.setBounds(43, 389, 86, 20);
+		txtID.setBounds(367, 679, 74, 30);
 		contentPane.add(txtID);
 		
 		JLabel lblId = new JLabel("ID:");
 		lblId.setHorizontalAlignment(SwingConstants.CENTER);
-		lblId.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblId.setBounds(43, 364, 86, 14);
+		lblId.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblId.setBounds(367, 646, 74, 30);
 		contentPane.add(lblId);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
@@ -251,37 +252,38 @@ public class TelaEstoque extends JFrame {
 				
 			}
 		});
-		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		btnNewButton_5.setBounds(598, 448, 89, 23);
+		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnNewButton_5.setBounds(1462, 772, 176, 30);
 		contentPane.add(btnNewButton_5);
 		
 		JLabel lblNewLabel_3 = new JLabel("Preco");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_3.setBounds(523, 364, 86, 14);
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel_3.setBounds(1347, 648, 100, 30);
 		contentPane.add(lblNewLabel_3);
 		
 		txtPreco = new JTextField();
-		txtPreco.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtPreco.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtPreco.setColumns(10);
-		txtPreco.setBounds(523, 389, 86, 20);
+		txtPreco.setBounds(1347, 679, 100, 30);
 		contentPane.add(txtPreco);
 		
 		JLabel lblNewLabel_4 = new JLabel("Quantidade:");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
-		lblNewLabel_4.setBounds(619, 364, 86, 14);
+		lblNewLabel_4.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel_4.setBounds(1476, 648, 162, 30);
 		contentPane.add(lblNewLabel_4);
 		
 		txtQuantidade = new JTextField();
-		txtQuantidade.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
+		txtQuantidade.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtQuantidade.setColumns(10);
-		txtQuantidade.setBounds(619, 389, 86, 20);
+		txtQuantidade.setBounds(1505, 679, 88, 30);
 		contentPane.add(txtQuantidade);
 		
 		JLabel lblNewLabel_5 = new JLabel("Tela de Produtos");
-		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
-		lblNewLabel_5.setBounds(334, 21, 120, 14);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
+		lblNewLabel_5.setBounds(317, 50, 1321, 46);
 		contentPane.add(lblNewLabel_5);
 		
 	}
