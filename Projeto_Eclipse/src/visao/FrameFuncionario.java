@@ -54,6 +54,7 @@ public class FrameFuncionario extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameFuncionario() {
+		setTitle("Tela de Funcionarios");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FrameFuncionario.class.getResource("/Imagens/Funcionario.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1900, 1000);
@@ -67,25 +68,25 @@ public class FrameFuncionario extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
 		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		lblNewLabel.setBounds(622, 666, 78, 22);
+		lblNewLabel.setBounds(801, 651, 78, 22);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
 		txtNome.setBackground(Color.WHITE);
 		txtNome.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		txtNome.setBounds(718, 662, 176, 30);
+		txtNome.setBounds(801, 684, 251, 30);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha:");
 		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		lblNewLabel_1.setBounds(1072, 664, 108, 22);
+		lblNewLabel_1.setBounds(1075, 651, 108, 22);
 		contentPane.add(lblNewLabel_1);
 		
 		txtSenha = new JTextField();
 		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		txtSenha.setBounds(1190, 659, 176, 30);
+		txtSenha.setBounds(1075, 684, 176, 30);
 		contentPane.add(txtSenha);
 		txtSenha.setColumns(10);
 		
@@ -98,11 +99,11 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 		}
 		});
-		btnCadastrar.setBounds(132, 775, 176, 30);
+		btnCadastrar.setBounds(679, 744, 176, 30);
 		contentPane.add(btnCadastrar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(132, 150, 1321, 471);
+		scrollPane.setBounds(679, 152, 572, 471);
 		contentPane.add(scrollPane);
 		
 		tabelaFuncionario = new JTable();
@@ -141,13 +142,13 @@ public class FrameFuncionario extends JFrame {
 		txtID.setBackground(Color.WHITE);
 		txtID.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		txtID.setEnabled(false);
-		txtID.setBounds(339, 662, 95, 30);
+		txtID.setBounds(679, 684, 95, 30);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("ID:");
 		lblNewLabel_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		lblNewLabel_2.setBounds(245, 667, 68, 20);
+		lblNewLabel_2.setBounds(679, 652, 68, 20);
 		contentPane.add(lblNewLabel_2);
 	
 		
@@ -158,7 +159,7 @@ public class FrameFuncionario extends JFrame {
 				SelecionarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(361, 775, 176, 30);
+		btnNewButton_1.setBounds(679, 797, 176, 30);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Limpar");
@@ -168,7 +169,7 @@ public class FrameFuncionario extends JFrame {
 				LimparCampos();
 			}
 		});
-		btnNewButton_2.setBounds(1049, 775, 176, 30);
+		btnNewButton_2.setBounds(1075, 744, 176, 30);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Alterar");
@@ -185,7 +186,7 @@ public class FrameFuncionario extends JFrame {
 				}
 			}
 		});
-		btnNewButton_3.setBounds(592, 775, 176, 30);
+		btnNewButton_3.setBounds(876, 744, 176, 30);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Excluir");
@@ -202,26 +203,26 @@ public class FrameFuncionario extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(824, 775, 176, 30);
+		btnNewButton_4.setBounds(876, 797, 176, 30);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Fechar");
 		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				TelaInicial inicio = new TelaInicial();
 				inicio.setLocationRelativeTo(null);
 				inicio.setVisible(true);
 			}
 		});
-		btnNewButton_5.setBounds(1277, 775, 176, 30);
+		btnNewButton_5.setBounds(1075, 797, 176, 30);
 		contentPane.add(btnNewButton_5);
 		
 		JLabel lblNewLabel_3 = new JLabel("Tela de Funcionarios");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.BOLD, 13));
-		lblNewLabel_3.setBounds(132, 93, 1321, 14);
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI", Font.BOLD, 24));
+		lblNewLabel_3.setBounds(295, 84, 1321, 30);
 		contentPane.add(lblNewLabel_3);
 		
 	}

@@ -57,14 +57,14 @@ public class TelaInicial extends JFrame {
 		btnCadastrarClientes.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				FrameCliente frame = new FrameCliente();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarClientes.setBounds(518, 255, 182, 71);
+		btnCadastrarClientes.setBounds(700, 275, 182, 71);
 		contentPane.add(btnCadastrarClientes);
 		
 		JButton btnCadastrarProdutos = new JButton("  Produtos");
@@ -72,14 +72,14 @@ public class TelaInicial extends JFrame {
 		btnCadastrarProdutos.setBackground(UIManager.getColor("Button.focus"));
 		btnCadastrarProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				TelaEstoque frame = new TelaEstoque();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarProdutos.setBounds(882, 255, 182, 71);
+		btnCadastrarProdutos.setBounds(1064, 275, 182, 71);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("  Hist\u00F3rico");
@@ -93,7 +93,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnHistricoDeVendas.setBounds(518, 533, 182, 71);
+		btnHistricoDeVendas.setBounds(700, 553, 182, 71);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("    Venda");
@@ -101,25 +101,25 @@ public class TelaInicial extends JFrame {
 		btnRealizarVenda.setBackground(UIManager.getColor("Button.focus"));
 		btnRealizarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				TelaVenda frame = new TelaVenda();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 							}
 		});
 		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnRealizarVenda.setBounds(882, 533, 182, 71);
+		btnRealizarVenda.setBounds(1064, 553, 182, 71);
 		contentPane.add(btnRealizarVenda);
 		
-		JButton btnNewButton = new JButton("Fechar");
+		JButton btnNewButton = new JButton("Fechar Sistema");
 		btnNewButton.setBackground(UIManager.getColor("Button.focus"));
-		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
+		btnNewButton.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(709, 669, 167, 36);
+		btnNewButton.setBounds(700, 683, 182, 71);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Funcionarios");
@@ -127,14 +127,14 @@ public class TelaInicial extends JFrame {
 		btnNewButton_1.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				FrameFuncionario func = new FrameFuncionario();
 				func.setLocationRelativeTo(null);
 				func.setVisible(true);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_1.setBounds(518, 391, 182, 71);
+		btnNewButton_1.setBounds(700, 411, 182, 71);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Fornecedor");
@@ -142,21 +142,33 @@ public class TelaInicial extends JFrame {
 		btnNewButton_2.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				FrameFornecedor frame = new FrameFornecedor();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
 		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_2.setBounds(882, 391, 182, 71);
+		btnNewButton_2.setBounds(1064, 411, 182, 71);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Tela Inicial");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 22));
-		lblNewLabel.setBounds(709, 163, 167, 36);
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 24));
+		lblNewLabel.setBounds(901, 188, 167, 36);
 		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton_3 = new JButton("Log Off");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				TelaLogin frame = new TelaLogin();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		btnNewButton_3.setBounds(1064, 683, 182, 71);
+		contentPane.add(btnNewButton_3);
 	}
-
 }
