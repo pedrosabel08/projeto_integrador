@@ -20,6 +20,7 @@ import controle.FuncionarioBD;
 import modelo.Cliente;
 import modelo.Funcionario;
 import javax.swing.UIManager;
+import java.awt.Color;
 
 public class TabelaFuncionario extends JFrame {
 
@@ -43,7 +44,7 @@ public class TabelaFuncionario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
+		contentPane.setBackground(new Color(18, 183, 237));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
