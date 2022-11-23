@@ -30,11 +30,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   PRIMARY KEY (`idVenda`),
    CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
     FOREIGN KEY (`idProdutos`)
-    REFERENCES `mydb`.`Clientes` (`idClientes`),
-       CONSTRAINT `fk_Venda_Clientes`
+    REFERENCES `mydb`.`Produtos` (`idProdutos`),
+    
+	CONSTRAINT `fk_Venda_Clientes`
     FOREIGN KEY (`idClientes`)
-    REFERENCES `mydb`.`Funcionario` (`idFuncionario`),
-           CONSTRAINT `fk_Venda_Funcionario`
+    REFERENCES `mydb`.`Clientes` (`idClientes`),
+    
+	CONSTRAINT `fk_Venda_Funcionario`
     FOREIGN KEY (`idFuncionario`)
     REFERENCES `mydb`.`Funcionario` (`idFuncionario`))
 ENGINE = InnoDB;
@@ -153,25 +155,25 @@ insert into Funcionario (idFuncionario, senha, nome) values (2, '12345', 'Arthur
 insert into Funcionario (idFuncionario, senha, nome) values (3, '12345', 'Eduardo');
 
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (1, '47.474.698/0001-40', '(49) 3853-3231', 'Burk Plover');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (1, '47.474.698/0001-40', ' (49) 3853-3231', 'Burk Plover');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (2, '95.322.810/0001-70', '(83) 2254-2818', 'Karleen Brewett');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (2, '95.322.810/0001-70', ' (83) 2254-2818', 'Karleen Brewett');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (3, '73.224.259/0001-90', '(73) 2056-7033', 'Samuele Acom');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (3, '73.224.259/0001-90', ' (73) 2056-7033', 'Samuele Acom');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (4, '69.427.339/0001-75', '(98) 3881-7264', 'Kristian Dawes');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (4, '69.427.339/0001-75', ' (98) 3881-7264', 'Kristian Dawes');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (5, '17.627.024/0001-78', '(97) 3227-6595', 'Tadd Oakman');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (5, '17.627.024/0001-78', ' (97) 3227-6595', 'Tadd Oakman');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (6, '80.107.368/0001-92', '(98) 3625-7628', 'Edgard Domange');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (6, '80.107.368/0001-92', ' (98) 3625-7628', 'Edgard Domange');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (7, '25.854.123/0001-10', '(65) 2152-4375', 'Karil Hearons');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (7, '25.854.123/0001-10', ' (65) 2152-4375', 'Karil Hearons');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (8, '14.459.938/0001-89', '(96) 2374-9417', 'Kiley Cloake');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (8, '14.459.938/0001-89', ' (96) 2374-9417', 'Kiley Cloake');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9, '85.825.878/0001-19', '(86) 2417-5347', 'Linet Furley');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9, '85.825.878/0001-19', ' (86) 2417-5347', 'Linet Furley');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (10, '33.958.886/0001-30', '(91) 3521-4808', 'Rhiamon Kinde');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (10, '33.958.886/0001-30', ' (91) 3521-4808', 'Rhiamon Kinde');
 
 
  

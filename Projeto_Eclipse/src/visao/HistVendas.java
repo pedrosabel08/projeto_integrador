@@ -48,8 +48,7 @@ public class HistVendas extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 580, 370);
 		contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
-		contentPane.setBorder(new TitledBorder(null, "Historico de Vendas", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		contentPane.setBackground(new Color(18, 183, 237));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -122,5 +121,11 @@ public class HistVendas extends JFrame {
 		});
 		btnTotal.setBounds(156, 256, 102, 30);
 		contentPane.add(btnTotal);
+		
+		JLabel lblNewLabel = new JLabel("Historico de Vendas");
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 12));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(25, 11, 507, 14);
+		contentPane.add(lblNewLabel);
 	}
 }

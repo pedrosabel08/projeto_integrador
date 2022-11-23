@@ -15,6 +15,7 @@ import javax.swing.UIManager;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class TelaInicial extends JFrame {
 
@@ -46,7 +47,7 @@ public class TelaInicial extends JFrame {
 		setBounds(100, 100, 1800, 900);
 		this.setExtendedState(MAXIMIZED_BOTH);
 		contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("InternalFrame.activeTitleBackground"));
+		contentPane.setBackground(new Color(18, 183, 237));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -63,7 +64,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarClientes.setBounds(670, 255, 182, 71);
+		btnCadastrarClientes.setBounds(518, 255, 182, 71);
 		contentPane.add(btnCadastrarClientes);
 		
 		JButton btnCadastrarProdutos = new JButton("  Produtos");
@@ -78,11 +79,11 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarProdutos.setBounds(1034, 255, 182, 71);
+		btnCadastrarProdutos.setBounds(882, 255, 182, 71);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("  Hist\u00F3rico");
-		btnHistricoDeVendas.setIcon(new ImageIcon("C:\\Users\\Pedro\\projeto_integrador\\Projeto_Eclipse\\src\\Imagens\\historico.png"));
+		btnHistricoDeVendas.setIcon(new ImageIcon("C:\\Users\\Aluno\\projeto_integrador\\Projeto_Eclipse\\src\\Imagens\\historico.png"));
 		btnHistricoDeVendas.setBackground(UIManager.getColor("Button.focus"));
 		btnHistricoDeVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,7 +93,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnHistricoDeVendas.setBounds(670, 533, 182, 71);
+		btnHistricoDeVendas.setBounds(518, 533, 182, 71);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("    Venda");
@@ -107,7 +108,7 @@ public class TelaInicial extends JFrame {
 							}
 		});
 		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnRealizarVenda.setBounds(1034, 533, 182, 71);
+		btnRealizarVenda.setBounds(882, 533, 182, 71);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar");
@@ -118,7 +119,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(861, 669, 167, 36);
+		btnNewButton.setBounds(709, 669, 167, 36);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Funcionarios");
@@ -133,7 +134,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_1.setBounds(670, 391, 182, 71);
+		btnNewButton_1.setBounds(518, 391, 182, 71);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Fornecedor");
@@ -148,13 +149,13 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_2.setBounds(1034, 391, 182, 71);
+		btnNewButton_2.setBounds(882, 391, 182, 71);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Tela Inicial");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
-		lblNewLabel.setBounds(861, 163, 167, 36);
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 22));
+		lblNewLabel.setBounds(709, 163, 167, 36);
 		contentPane.add(lblNewLabel);
 	}
 
