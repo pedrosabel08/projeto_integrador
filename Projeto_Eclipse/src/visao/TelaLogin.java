@@ -76,19 +76,19 @@ public class TelaLogin extends JFrame {
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
 		lblUsuario.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
-		lblUsuario.setBounds(680, 337, 102, 32);
+		lblUsuario.setBounds(570, 337, 102, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBackground(new Color(255, 255, 255));
 		lblSenha.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
-		lblSenha.setBounds(680, 402, 102, 37);
+		lblSenha.setBounds(570, 402, 102, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setBackground(Color.WHITE);
 		txtUsuario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		txtUsuario.setBounds(878, 322, 300, 47);
+		txtUsuario.setBounds(768, 322, 300, 47);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -100,7 +100,7 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnFechar.setBounds(879, 501, 118, 37);
+		btnFechar.setBounds(769, 501, 118, 37);
 		contentPane.add(btnFechar);
 		
 		JButton btnContinuar = new JButton("Continuar");
@@ -146,13 +146,13 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnContinuar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnContinuar.setBounds(1060, 501, 118, 37);
+		btnContinuar.setBounds(950, 501, 118, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
 		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		txtSenha.setBounds(878, 399, 300, 47);
+		txtSenha.setBounds(768, 399, 300, 47);
 		contentPane.add(txtSenha);
 	}
 }
