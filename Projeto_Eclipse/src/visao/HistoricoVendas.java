@@ -120,7 +120,7 @@ public class HistoricoVendas extends JFrame {
 		contentPane.add(btnTotal);
 		
 		JLabel lblNewLabel = new JLabel("Historico de Vendas");
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 12));
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 13));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(25, 11, 507, 14);
 		contentPane.add(lblNewLabel);

@@ -82,20 +82,20 @@ public class TelaLogin extends JFrame {
 		lblUsuario.setBorder(null);
 		lblUsuario.setBackground(new Color(0, 0, 139));
 		lblUsuario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 22));
-		lblUsuario.setBounds(734, 489, 102, 32);
+		lblUsuario.setBounds(570, 490, 102, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setForeground(new Color(0, 0, 0));
 		lblSenha.setBackground(new Color(255, 255, 255));
 		lblSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 22));
-		lblSenha.setBounds(734, 590, 102, 37);
+		lblSenha.setBounds(570, 591, 102, 37);
 		contentPane.add(lblSenha);
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setBackground(Color.WHITE);
 		txtUsuario.setFont(new Font("Yu Gothic UI", Font.PLAIN, 20));
-		txtUsuario.setBounds(919, 482, 300, 47);
+		txtUsuario.setBounds(755, 483, 300, 47);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -107,7 +107,7 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnFechar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 20));
-		btnFechar.setBounds(734, 676, 118, 37);
+		btnFechar.setBounds(570, 677, 118, 37);
 		contentPane.add(btnFechar);
 		
 		JButton btnContinuar = new JButton("Continuar");
@@ -153,24 +153,24 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnContinuar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 20));
-		btnContinuar.setBounds(1075, 676, 144, 37);
+		btnContinuar.setBounds(911, 677, 144, 37);
 		contentPane.add(btnContinuar);
 		
 		txtSenha = new JPasswordField();
 		txtSenha.setBackground(Color.WHITE);
 		txtSenha.setFont(new Font("Yu Gothic UI", Font.PLAIN, 20));
-		txtSenha.setBounds(919, 585, 300, 47);
+		txtSenha.setBounds(755, 586, 300, 47);
 		contentPane.add(txtSenha);
 		
 		JLabel lblNewLabel_1 = new JLabel("Tela de Login:");
 		lblNewLabel_1.setFont(new Font("Yu Gothic UI", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(919, 409, 133, 32);
+		lblNewLabel_1.setBounds(755, 410, 133, 32);
 		contentPane.add(lblNewLabel_1);
 		
 		Panel panel = new Panel();
 		panel.setBackground(new Color(0, 0, 139));
 		panel.setForeground(new Color(0, 0, 139));
-		panel.setBounds(703, 55, 549, 329);
+		panel.setBounds(539, 56, 549, 329);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
