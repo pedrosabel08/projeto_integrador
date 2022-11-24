@@ -253,7 +253,7 @@ public class FrameFornecedor extends JFrame {
 		
 		MaskFormatter maskContato;
 		try {
-			maskContato = new MaskFormatter(" (##)#####-####");
+			maskContato = new MaskFormatter("(##)#####-####");
 			maskContato.install(txtContato);
 		} catch (ParseException e1) {
 			
