@@ -75,6 +75,7 @@ public class FrameFornecedor extends JFrame {
 		contentPane.add(scrollPane);
 		
 		tabelaFornecedor = new JTable();
+		tabelaFornecedor.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
 		tabelaFornecedor.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
