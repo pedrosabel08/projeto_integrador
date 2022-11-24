@@ -64,7 +64,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnCadastrarClientes.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarClientes.setBounds(700, 275, 182, 71);
+		btnCadastrarClientes.setBounds(542, 177, 182, 71);
 		contentPane.add(btnCadastrarClientes);
 		
 		JButton btnCadastrarProdutos = new JButton("  Produtos");
@@ -79,7 +79,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnCadastrarProdutos.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnCadastrarProdutos.setBounds(1064, 275, 182, 71);
+		btnCadastrarProdutos.setBounds(906, 177, 182, 71);
 		contentPane.add(btnCadastrarProdutos);
 		
 		JButton btnHistricoDeVendas = new JButton("  Hist\u00F3rico");
@@ -93,7 +93,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnHistricoDeVendas.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnHistricoDeVendas.setBounds(700, 553, 182, 71);
+		btnHistricoDeVendas.setBounds(542, 455, 182, 71);
 		contentPane.add(btnHistricoDeVendas);
 		
 		JButton btnRealizarVenda = new JButton("    Venda");
@@ -108,7 +108,7 @@ public class TelaInicial extends JFrame {
 							}
 		});
 		btnRealizarVenda.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnRealizarVenda.setBounds(1064, 553, 182, 71);
+		btnRealizarVenda.setBounds(906, 455, 182, 71);
 		contentPane.add(btnRealizarVenda);
 		
 		JButton btnNewButton = new JButton("Fechar Sistema");
@@ -119,7 +119,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(700, 683, 182, 71);
+		btnNewButton.setBounds(542, 585, 182, 71);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Funcionarios");
@@ -134,7 +134,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_1.setBounds(700, 411, 182, 71);
+		btnNewButton_1.setBounds(542, 313, 182, 71);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Fornecedor");
@@ -149,16 +149,17 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_2.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_2.setBounds(1064, 411, 182, 71);
+		btnNewButton_2.setBounds(906, 313, 182, 71);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Tela Inicial");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.BOLD, 24));
-		lblNewLabel.setBounds(901, 188, 167, 36);
+		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 24));
+		lblNewLabel.setBounds(728, 90, 182, 36);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton_3 = new JButton("Log Off");
+		btnNewButton_3.setBackground(UIManager.getColor("Button.focus"));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -168,7 +169,7 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		btnNewButton_3.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		btnNewButton_3.setBounds(1064, 683, 182, 71);
+		btnNewButton_3.setBounds(906, 585, 182, 71);
 		contentPane.add(btnNewButton_3);
 	}
 }
