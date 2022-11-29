@@ -80,7 +80,7 @@ public class HistoricoVendas extends JFrame {
 		}
 
 		tbVendas.setModel(modelo);
-		JButton btnFechar = new JButton("Fechar");
+		JButton btnFechar = new JButton("Voltar");
 		btnFechar.setBackground(UIManager.getColor("Button.shadow"));
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -276,7 +276,7 @@ public class FrameCliente extends JFrame {
 		btnNewButton_5.setBounds(1047, 772, 176, 30);
 		ContentPane.add(btnNewButton_5);
 		
-		JButton btnNewButton_6 = new JButton("Fechar");
+		JButton btnNewButton_6 = new JButton("Voltar");
 		btnNewButton_6.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_6.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_6.addActionListener(new ActionListener() {

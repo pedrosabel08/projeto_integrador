@@ -206,7 +206,7 @@ public class FrameFuncionario extends JFrame {
 		btnNewButton_4.setBounds(711, 778, 176, 30);
 		contentPane.add(btnNewButton_4);
 		
-		JButton btnNewButton_5 = new JButton("Fechar");
+		JButton btnNewButton_5 = new JButton("Voltar");
 		btnNewButton_5.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

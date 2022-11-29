@@ -512,7 +512,7 @@ public class TelaVenda extends JFrame {
 		btnFinalizar.setBounds(701, 855, 274, 55);
 		contentPane.add(btnFinalizar);
 
-		JButton btnFechar = new JButton("Fechar");
+		JButton btnFechar = new JButton("Voltar");
 		btnFechar.setBackground(UIManager.getColor("Button.shadow"));
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
