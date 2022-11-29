@@ -227,7 +227,7 @@ public class FrameFornecedor extends JFrame {
 		btnNewButton_5.setBounds(1051, 767, 176, 30);
 		contentPane.add(btnNewButton_5);
 		
-		JButton btnNewButton_6 = new JButton("Fechar");
+		JButton btnNewButton_6 = new JButton("Voltar");
 		btnNewButton_6.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

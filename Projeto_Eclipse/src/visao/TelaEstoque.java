@@ -243,7 +243,7 @@ public class TelaEstoque extends JFrame {
 		lblId.setBounds(105, 647, 74, 30);
 		contentPane.add(lblId);
 		
-		JButton btnNewButton_5 = new JButton("Fechar");
+		JButton btnNewButton_5 = new JButton("Voltar");
 		btnNewButton_5.setBackground(UIManager.getColor("Button.shadow"));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
