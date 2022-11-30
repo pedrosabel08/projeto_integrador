@@ -98,7 +98,7 @@ public class FuncionarioBD {
 			stmt.execute();
 			stmt.close();
 			
-			JOptionPane.showMessageDialog(null,"Funcionario exclu�do com sucesso!");
+			JOptionPane.showMessageDialog(null,"Funcionario excluido com sucesso!");
 			
 		} catch (SQLException e) {
 			
