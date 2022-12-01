@@ -36,6 +36,7 @@ public class TelaEstoque extends JFrame {
 	private JTextField txtID;
 	private JTextField txtPreco;
 	private JTextField txtQuantidade;
+	private JTextField txtFornecedor;
 
 	/**
 	 * Launch the application.
@@ -119,7 +120,7 @@ public class TelaEstoque extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preco", "Quantidade"
+				"ID", "Nome", "Marca", "Tamanho", "Cor", "Preco", "Quantidade", "Fornecedor"
 			}
 		));
 		tabelaProduto.setBounds(220, 221, 155, -152);
@@ -141,7 +142,8 @@ public class TelaEstoque extends JFrame {
 						lista.get(num).getTamanho(),
 						lista.get(num).getCor(),
 						lista.get(num).getPreco(),
-						lista.get(num).getQuantidade()
+						lista.get(num).getQuantidade(),
+						lista.get(num).getFornecedor()
 				});
 			}
 			
@@ -197,6 +199,7 @@ public class TelaEstoque extends JFrame {
 				if(tabelaProduto.getSelectedRowCount() > 0) {
 				excluirProduto();
 				listarValores();
+				LimparCampos();
 				}
 				else {
 				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
@@ -288,6 +291,18 @@ public class TelaEstoque extends JFrame {
 		lblNewLabel_5.setBounds(126, 47, 1321, 46);
 		contentPane.add(lblNewLabel_5);
 		
+		txtFornecedor = new JTextField();
+		txtFornecedor.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		txtFornecedor.setColumns(10);
+		txtFornecedor.setBounds(1434, 678, 88, 30);
+		contentPane.add(txtFornecedor);
+		
+		JLabel lblNewLabel_4_1 = new JLabel("Fornecedor:");
+		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
+		lblNewLabel_4_1.setBounds(1397, 645, 162, 30);
+		contentPane.add(lblNewLabel_4_1);
+		
 	}
 	
 	private void SelecionarCampos() {
@@ -302,6 +317,7 @@ public class TelaEstoque extends JFrame {
 		txtCor.setText(tabelaProduto.getModel().getValueAt(setar, 4).toString());
 		txtPreco.setText(tabelaProduto.getModel().getValueAt(setar, 5).toString());
 		txtQuantidade.setText(tabelaProduto.getModel().getValueAt(setar, 6).toString());
+		txtFornecedor.setText(tabelaProduto.getModel().getValueAt(setar, 7).toString());
 	}
 		else {
 			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
@@ -309,7 +325,7 @@ public class TelaEstoque extends JFrame {
 	}
 	
 	private void CadastrarProduto() {
-		String nome, marca, tamanho, cor, preco;
+		String nome, marca, tamanho, cor, preco, fornecedor;
 		int quantidade;
 		
 		nome = txtNome.getText();
@@ -318,6 +334,7 @@ public class TelaEstoque extends JFrame {
 		cor = txtCor.getText();
 		preco = txtPreco.getText();
 		quantidade = Integer.parseInt(txtQuantidade.getText());
+		fornecedor = txtFornecedor.getText();
 		
 		Produto produto = new Produto();
 		produto.setNome(nome);
@@ -326,6 +343,7 @@ public class TelaEstoque extends JFrame {
 		produto.setCor(cor);
 		produto.setPreco(Double.valueOf(preco));
 		produto.setQuantidade(quantidade);
+		produto.setFornecedor(fornecedor);
 		
 		ProdutoBD produtoBD = new ProdutoBD();
 		produtoBD.cadastrarProduto(produto);
@@ -339,6 +357,7 @@ public class TelaEstoque extends JFrame {
 		txtPreco.setText("");
 		txtQuantidade.setText("");
 		txtNome.requestFocus();
+		txtFornecedor.setText("");
 	}
 	private void AlterarProduto() {
 		int id, quantidade;
@@ -392,7 +411,8 @@ public class TelaEstoque extends JFrame {
 						lista.get(num).getTamanho(),
 						lista.get(num).getCor(),
 						lista.get(num).getPreco(),
-						lista.get(num).getQuantidade()
+						lista.get(num).getQuantidade(),
+						lista.get(num).getFornecedor()
 				});
 			}
 			
