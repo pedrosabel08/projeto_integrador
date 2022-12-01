@@ -21,82 +21,72 @@ USE `mydb` ;
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
-  `idVenda` INT NOT NULL auto_increment,
-  `idProdutos` INT,
-  `idClientes` INT,
-  `idFuncionario` INT,
-  `valor` DOUBLE NULL,
-  `data` DATE NULL,
-  PRIMARY KEY (`idVenda`),
-   CONSTRAINT `fk_Venda_has_Produtos_Produtos1`
-    FOREIGN KEY (`idProdutos`)
-    REFERENCES `mydb`.`Produtos` (`idProdutos`),
-    
-	CONSTRAINT `fk_Venda_Clientes`
-    FOREIGN KEY (`idClientes`)
-    REFERENCES `mydb`.`Clientes` (`idClientes`),
-    
-	CONSTRAINT `fk_Venda_Funcionario`
-    FOREIGN KEY (`idFuncionario`)
-    REFERENCES `mydb`.`Funcionario` (`idFuncionario`))
-ENGINE = InnoDB;
+    `idVenda` INT NOT NULL AUTO_INCREMENT,
+    `idProdutos` INT,
+    `idClientes` INT,
+    `idFuncionario` INT,
+    `valor` DOUBLE NULL,
+    `data` DATE NULL,
+    PRIMARY KEY (`idVenda`),
+    CONSTRAINT `fk_Venda_has_Produtos_Produtos1` FOREIGN KEY (`idProdutos`)
+        REFERENCES `mydb`.`Produtos` (`idProdutos`),
+    CONSTRAINT `fk_Venda_Clientes` FOREIGN KEY (`idClientes`)
+        REFERENCES `mydb`.`Clientes` (`idClientes`),
+    CONSTRAINT `fk_Venda_Funcionario` FOREIGN KEY (`idFuncionario`)
+        REFERENCES `mydb`.`Funcionario` (`idFuncionario`)
+)  ENGINE=INNODB;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Clientes` (
-  `idClientes` INT NOT NULL auto_increment,
-  `nome` VARCHAR(45) NULL,
-  `cpf` VARCHAR(45) NULL,
-  `rg` VARCHAR(45) NULL,
-  `data_nascimento` DATE NULL,
-  PRIMARY KEY (`idClientes`))
-ENGINE = InnoDB;
+    `idClientes` INT NOT NULL AUTO_INCREMENT,
+    `nome` VARCHAR(45) NULL,
+    `cpf` VARCHAR(45) NULL,
+    `rg` VARCHAR(45) NULL,
+    `data_nascimento` DATE NULL,
+    PRIMARY KEY (`idClientes`)
+)  ENGINE=INNODB;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
-  `idFuncionario` INT NOT NULL auto_increment,
-  `senha` VARCHAR(45) NULL,
-  `nome` VARCHAR(45) NULL,
-  PRIMARY KEY (`idFuncionario`))
-ENGINE = InnoDB;
-
+    `idFuncionario` INT NOT NULL AUTO_INCREMENT,
+    `senha` VARCHAR(45) NULL,
+    `nome` VARCHAR(45) NULL,
+    PRIMARY KEY (`idFuncionario`)
+)  ENGINE=INNODB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Produtos` (
-  `idProdutos` INT NOT NULL auto_increment,
-  `nome` VARCHAR(45) NULL,
-  `marca` VARCHAR(45) NULL,
-  `tamanho` VARCHAR(15) NULL,
-  `cor` VARCHAR(45) NULL,
-  `preco` VARCHAR(45) NULL,
-  `quantidade` int NOT NULL,
-  PRIMARY KEY (`idProdutos`))
-ENGINE = InnoDB;
-
+    `idProdutos` INT NOT NULL AUTO_INCREMENT,
+    `idFornecedor` INT,
+    `nome` VARCHAR(45) NULL,
+    `marca` VARCHAR(45) NULL,
+    `tamanho` VARCHAR(15) NULL,
+    `cor` VARCHAR(45) NULL,
+    `preco` VARCHAR(45) NULL,
+    `quantidade` INT NOT NULL,
+    PRIMARY KEY (`idProdutos`),
+        CONSTRAINT `fk_Produto_Fornecedor` FOREIGN KEY (`idFornecedor`)
+        REFERENCES `mydb`.`Fornecedor` (`idFornecedor`)
+)  ENGINE=INNODB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `idFornecedor` INT NOT NULL auto_increment,
-  `cnpj` VARCHAR(45) NULL,
-  `contato` VARCHAR(45) NULL,
-  `nome` VARCHAR(45) NULL,
-  PRIMARY KEY (`idFornecedor`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Venda_has_Produtos`
--- -----------------------------------------------------
-
+    `idFornecedor` INT NOT NULL AUTO_INCREMENT,
+    `cnpj` VARCHAR(45) NULL,
+    `contato` VARCHAR(45) NULL,
+    `nome` VARCHAR(45) NULL,
+    PRIMARY KEY (`idFornecedor`)
+)  ENGINE=INNODB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -125,36 +115,6 @@ insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (9, 'Br
 insert into Clientes (idClientes ,nome, cpf, rg, data_nascimento) values (10, 'Maible Aubin', '237.106.760-10', '26.971.984-2', "1974-10-08");
 
 
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (1, 'Camisa', 'Hering', 'S', 'Violet', '35', 92);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (2, 'Calça', 'Off-White', 'L', 'Violet', '20', 23);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (3, 'Camiseta', 'Supreme', 'M', 'Goldenrod', '28', 73);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (4, 'Cinto', 'Off-White', 'G', 'Teal', '45', 25);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (5, 'Regata', 'Nike', '3XL', 'Orange', '39', 84);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (6, 'Camisa Polo', 'Lacoste', 'M', 'Preta', '64', 123);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (7, 'Bermuda', 'Cyclone', 'GG', 'Red', '97', 73);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (8, 'Shorts', 'Adidas', 'M', 'Aquamarine', '12', 62);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (9, 'Jaqueta', 'Riachuelo', 'M', 'Blue', '62', 47);
-
-insert into Produtos (idProdutos, nome, marca, tamanho, cor, preco, quantidade) values (10, 'Moletom', 'Grizzly', 'G', 'Purple', '34', 93);
-
-
-
-
-insert into Funcionario (idFuncionario, senha, nome) values (1, '12345', 'Pedro');
-
-insert into Funcionario (idFuncionario, senha, nome) values (2, '12345', 'Arthur');
-
-insert into Funcionario (idFuncionario, senha, nome) values (3, '12345', 'Eduardo');
-
-
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (1, '47.474.698/0001-40', '(49)93853-3231', 'Burk Plover');
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (2, '95.322.810/0001-70', '(83)92254-2818', 'Karleen Brewett');
@@ -167,13 +127,39 @@ insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (5, '17.627.02
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (6, '80.107.368/0001-92', '(98)93625-7628', 'Edgard Domange');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (7, '25.854.123/0001-10', '(65)92152-4375', 'Karil Hearons');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (7,  '25.854.123/0001-10', '(65)92152-4375', 'Karil Hearons');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (8, '14.459.938/0001-89', '(96)92374-9417', 'Kiley Cloake');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (8,  '14.459.938/0001-89', '(96)92374-9417', 'Kiley Cloake');
 
-insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9, '85.825.878/0001-19', '(86)92417-5347', 'Linet Furley');
+insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (9,  '85.825.878/0001-19', '(86)92417-5347', 'Linet Furley');
 
 insert into Fornecedor (idFornecedor, cnpj, contato, nome) values (10, '33.958.886/0001-30', '(91)93521-4808', 'Rhiamon Kinde');
 
 
- 
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (1, 1, 'Camisa', 'Hering', 'S', 'Violet', '35', 92);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (2, 2, 'Calça', 'Off-White', 'L', 'Violet', '20', 23);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (3, 3, 'Camiseta', 'Supreme', 'M', 'Goldenrod', '28', 73);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (4, 4, 'Cinto', 'Off-White', 'G', 'Teal', '45', 25);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (5, 5,  'Regata', 'Nike', '3XL', 'Orange', '39', 84);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (6, 6,  'Camisa Polo', 'Lacoste', 'M', 'Preta', '64', 123);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (7, 7,  'Bermuda', 'Cyclone', 'GG', 'Red', '97', 73);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (8, 8,  'Shorts', 'Adidas', 'M', 'Aquamarine', '12', 62);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (9, 9,  'Jaqueta', 'Riachuelo', 'M', 'Blue', '62', 47);
+
+insert into Produtos (idProdutos, idFornecedor, nome, marca, tamanho, cor, preco, quantidade) values (10, 10, 'Moletom', 'Grizzly', 'G', 'Purple', '34', 93);
+
+
+insert into Funcionario (idFuncionario, senha, nome) values (1, '12345', 'Pedro');
+
+insert into Funcionario (idFuncionario, senha, nome) values (2, '12345', 'Arthur');
+
+insert into Funcionario (idFuncionario, senha, nome) values (3, '12345', 'Eduardo');
+
