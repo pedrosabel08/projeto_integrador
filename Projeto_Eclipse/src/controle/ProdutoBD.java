@@ -18,7 +18,7 @@ public class ProdutoBD {
 	ArrayList<Produto> lista = new ArrayList<>();
 	
 	public void cadastrarProduto(Produto produto) {
-		String sql = "insert into produtos (nome, marca, tamanho, cor, preco, quantidade) values (?, ?, ?, ?, ?, ?)";
+		String sql = "insert into produtos (nome, marca, tamanho, cor, preco, quantidade, idFornecedor) values (?, ?, ?, ?, ?, ?, ?)";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -31,6 +31,7 @@ public class ProdutoBD {
 			stmt.setString(4, produto.getCor());
 			stmt.setDouble(5, produto.getPreco());
 			stmt.setInt(6, produto.getQuantidade());
+			stmt.setString(7, produto.getFornecedor());
 			
 			
 			stmt.execute();
@@ -44,7 +45,7 @@ public class ProdutoBD {
 		
 	}
 	public ArrayList <Produto> pesquisarProduto(){
-		String sql = "select * from produtos";
+		String sql = "select idProdutos, f.nome, p.nome, marca, tamanho, cor, preco, quantidade from produtos p inner join fornecedor f on p.idFornecedor = f.idFornecedor order by idProdutos;";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -56,7 +57,8 @@ public class ProdutoBD {
 			while(rs.next()) {
 				Produto produto = new Produto();
 				produto.setId(rs.getInt("idProdutos"));
-				produto.setNome(rs.getString("nome"));
+				produto.setFornecedor(rs.getString("f.nome"));
+				produto.setNome(rs.getString("p.nome"));
 				produto.setMarca(rs.getString("marca"));
 				produto.setTamanho(rs.getString("tamanho"));
 				produto.setCor(rs.getString("cor"));
@@ -153,6 +155,7 @@ public class ProdutoBD {
 
 		return quantidadeID;
 	}
+	
 	public Produto listarProdutosID(Produto produto) {
 		Produto prod = new Produto();
 		String sql = "select * from produtos where idProdutos = ? ";
@@ -169,6 +172,7 @@ public class ProdutoBD {
 				prod.setCor(rs.getString("cor"));
 				prod.setPreco(rs.getDouble("preco"));
 				prod.setQuantidade(rs.getInt("quantidade"));
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -176,4 +180,5 @@ public class ProdutoBD {
 
 		return prod;
 	}
+
 }

@@ -1,7 +1,7 @@
 package modelo;
 public class Produto {
 	private int Id, quantidade;
-	private String Nome, Marca, Tamanho, Cor;
+	private String Nome, Marca, Tamanho, Cor, fornecedor;
 	private Double preco;
 	public int getId() {
 		return Id;
@@ -44,6 +44,12 @@ public class Produto {
 	}
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+	public String getFornecedor() {
+		return fornecedor;
+	}
+	public void setFornecedor(String fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 }
