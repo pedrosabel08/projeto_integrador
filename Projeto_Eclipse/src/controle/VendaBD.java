@@ -58,7 +58,6 @@ public class VendaBD {
 			
 			ps.executeUpdate();
 		
-			
 			}catch(SQLException e1) {
 				
 				e1.printStackTrace();
