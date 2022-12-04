@@ -509,7 +509,7 @@ public class TelaVenda extends JFrame {
             }
     }); 
 		btnFinalizar.setFont(new Font("Yu Gothic UI", Font.PLAIN, 20));
-		btnFinalizar.setBounds(701, 855, 274, 55);
+		btnFinalizar.setBounds(1100, 730, 254, 55);
 		contentPane.add(btnFinalizar);
 
 		JButton btnFechar = new JButton("Voltar");
