@@ -157,8 +157,10 @@ public class TelaEstoque extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelecionarCampos();
+				txtFornecedor.setEditable(false);
 			}
 		});
+		
 		btnNewButton_1.setBounds(356, 771, 176, 30);
 		contentPane.add(btnNewButton_1);
 		
@@ -182,6 +184,7 @@ public class TelaEstoque extends JFrame {
 				AlterarProduto();
 				listarValores();
 				LimparCampos();
+				txtFornecedor.setEditable(true);
 				}
 				else {
 				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para alterar!");
@@ -200,6 +203,7 @@ public class TelaEstoque extends JFrame {
 				excluirProduto();
 				listarValores();
 				LimparCampos();
+				txtFornecedor.setEditable(true);
 				}
 				else {
 				JOptionPane.showMessageDialog(null,"Selecione uma linha da tabela para excluir!");
@@ -297,17 +301,17 @@ public class TelaEstoque extends JFrame {
 		txtFornecedor.setBounds(1434, 678, 88, 30);
 		contentPane.add(txtFornecedor);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("Fornecedor:");
+		JLabel lblNewLabel_4_1 = new JLabel("ID do Fornecedor:");
 		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4_1.setFont(new Font("Yu Gothic UI", Font.PLAIN, 17));
-		lblNewLabel_4_1.setBounds(1397, 645, 162, 30);
+		lblNewLabel_4_1.setBounds(1378, 647, 162, 30);
 		contentPane.add(lblNewLabel_4_1);
 		
 	}
-	
 	private void SelecionarCampos() {
+		
 		if(tabelaProduto.getSelectedRowCount() > 0) {
-
+		
 		int setar = tabelaProduto.getSelectedRow();
 		
 		txtID.setText(tabelaProduto.getModel().getValueAt(setar, 0).toString());
@@ -318,6 +322,7 @@ public class TelaEstoque extends JFrame {
 		txtPreco.setText(tabelaProduto.getModel().getValueAt(setar, 5).toString());
 		txtQuantidade.setText(tabelaProduto.getModel().getValueAt(setar, 6).toString());
 		txtFornecedor.setText(tabelaProduto.getModel().getValueAt(setar, 7).toString());
+		
 	}
 		else {
 			JOptionPane.showMessageDialog(null,"Clique em uma linha da tabela para selecionar!");
